@@ -1,0 +1,16 @@
+{
+    "name": "jestereo/crowdfunding",
+    "description": "A crowdfunding platform for projects",
+    "autoload": {
+        "psr-4": {
+            "Jestereo\\Crowdfunding\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Galand504",
+            "email": "zunigagerardo541@gmail.com"
+        }
+    ],
+    "require": {}
+}

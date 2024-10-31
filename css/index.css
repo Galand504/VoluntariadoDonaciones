@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Para que el footer esté siempre al final */
+}
+
+body {
+    display: flex; /* Usar flexbox en el body */
+    flex-direction: column; /* Coloca los elementos en columna */
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+footer {
+    background-color: #333; /* Color de fondo del pie de página */
+    color: white; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    padding: 10px 0; /* Espaciado vertical */
+    width: 100%; /* Ancho completo */
+    /* Cambios para el pie de página fijo */
+}
+
+main {
+    flex: 1; /* Este flex crecerá para llenar el espacio restante */
+    padding: 20px; /* Espaciado interno */
+    display: flex; /* Permite contenido flexible */
+    flex-direction: column; /* Organiza en columna */
+}
+
+.auth-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.auth-buttons .btn {
+    background-color: white;
+    color: #4CAF50;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #e7e7e7;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+/* Contenedor del slider */
+.slider-container {
+    width: 100%; /* Ocupa todo el ancho de la página */
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px; /* Espacio entre el slider y el contenido inferior */
+}
+
+/* Banda de imágenes */
+.slider {
+    display: flex;
+    width: 600%; /* Duplicado en JavaScript */
+    animation: slide 120s infinite linear;
+}
+
+.slider img {
+    width: 50%; 
+    height: 500px; /* Puedes ajustar esta altura según lo que necesites */
+    object-fit: cover; /* Mantiene las proporciones y recorta si es necesario */
+}
+
+/* Animación del slider */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.description, .features {
+    padding: 20px;
+    text-align: center;
+}
+
+.features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features ul li {
+    margin: 10px 0;
+    font-size: 18px;
+}
