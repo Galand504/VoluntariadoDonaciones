@@ -3,7 +3,7 @@
     "description": "A crowdfunding platform for projects",
     "autoload": {
         "psr-4": {
-            "Jestereo\\Crowdfunding\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [

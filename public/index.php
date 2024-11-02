@@ -1,3 +1,12 @@
+<?php
+require dirname(__DIR__).'vendor/autoload.php';
+
+	if(isset($_GET[‘Rutas’])) { 
+		echo “existe la variable route”;
+	}else{
+		echo “no existe la variable route”;
+	}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
