@@ -1,6 +1,4 @@
 {
-    "name": "jestereo/crowdfunding",
-    "description": "A crowdfunding platform for projects",
     "autoload": {
         "psr-4": {
             "App\\": "src/"

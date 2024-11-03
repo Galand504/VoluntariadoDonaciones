@@ -24,10 +24,6 @@ class ComposerStaticInitd64eb552e2c9fc3c2017afc463d5f42e
         array (
             'PhpOption\\' => 10,
         ),
-        'J' => 
-        array (
-            'Jestereo\\Crowdfunding\\' => 22,
-        ),
         'G' => 
         array (
             'GrahamCampbell\\ResultType\\' => 26,
@@ -54,10 +50,6 @@ class ComposerStaticInitd64eb552e2c9fc3c2017afc463d5f42e
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
-        ),
-        'Jestereo\\Crowdfunding\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
         'GrahamCampbell\\ResultType\\' => 
         array (

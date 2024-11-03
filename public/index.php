@@ -1,10 +1,42 @@
 <?php
-require dirname(__DIR__).'vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
-	if(isset($_GET[‘Rutas’])) { 
-		echo “existe la variable route”;
+if (isset($_GET['route'])) {
+    echo "existe la variable route";
+
+    $url = explode('/', $_GET['route']);
+
+    $lista = ['auth', 'user']; // lista de rutas permitidas
+
+    $file = dirname(__DIR__) . '/src/Routes/' . $url[0] . '.php';
+
+    if (!in_array($url[0], $lista)) {
+        // echo "La ruta no existe";
+echo json_encode(responseHTTP::status200("La ruta no existe"))
+        //header("HTTP/1.1 404 Not Found");
+        exit; // Finalizamos la ejecución si la ruta no es válida
+    }
+
+    if(!file_exists($file) || !is_readable($file)){
+        echo "El archivo no existe o no es legible";
+
+    $url = explode('/', $_GET['route']);
+
+    $lista = ['auth', 'user']; // lista de rutas permitidas
+
+    $file = dirname(__DIR__) . '/src/Routes/' . $url[0] . '.php';
+
+    if (!in_array($url[0], $lista)) {
+        // echo "La ruta no existe";
+echo json_encode(responseHTTP::status200("La ruta no existe"))
+        //header("HTTP/1.1 404 Not Found");
+        exit; // Finalizamos la ejecución si la ruta no es válida
+    }
+
+    if(!file_exists($file) || !is_readable($file)){
+        echo "El archivo no existe o no es legible";
 	}else{
-		echo “no existe la variable route”;
+		echo "no existe la variable route";
 	}
 ?>
 <!DOCTYPE html>

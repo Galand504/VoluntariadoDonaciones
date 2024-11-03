@@ -8,7 +8,6 @@ class Usuario {
 
     public function registrar($nombre, $email, $contraseña) {
         // Lógica para registrar un nuevo usuario
-        // Asegúrate de implementar validaciones y sanitizaciones
         $hashedPassword = password_hash($contraseña, PASSWORD_DEFAULT);
         $query = "INSERT INTO usuarios (nombre, email, contraseña) VALUES (:nombre, :email, :contraseña)";
         $stmt = $this->db->prepare($query);
