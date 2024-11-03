@@ -1,5 +1,9 @@
 <?php
-// db.php - Archivo de conexión a la base de datos usando POO
+namespace App\Base;
+
+use PDO;
+use PDOException;
+use Exception;
 
 class Database {
     private $host = 'localhost';
@@ -15,13 +19,22 @@ class Database {
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            echo "Error en la conexión: " . $e->getMessage();
+            throw new Exception("Error en la conexión: " . $e->getMessage());
         }
 
         return $this->conn;
     }
+
+    public function disconnect() {
+        $this->conn = null;
+    }
 }
 
 // Instancia la conexión y guárdala en $db
-$db = (new Database())->connect();
+try {
+    $db = (new Database())->connect();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
 ?>
+

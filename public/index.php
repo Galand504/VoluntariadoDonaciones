@@ -1,43 +1,34 @@
 <?php
 require dirname(__DIR__) . '/vendor/autoload.php';
+use App\configuracion\responseHTTP;
 
-if (isset($_GET['route'])) {
+if (isset($_GET['Rutas'])) {
     echo "existe la variable route";
 
-    $url = explode('/', $_GET['route']);
+    $url = explode('/', $_GET['Rutas']);
 
     $lista = ['auth', 'user']; // lista de rutas permitidas
 
-    $file = dirname(__DIR__) . '/src/Routes/' . $url[0] . '.php';
+    $file = dirname(__DIR__) . '/src/Rutas/' . $url[0] . '.php';
 
     if (!in_array($url[0], $lista)) {
         // echo "La ruta no existe";
-echo json_encode(responseHTTP::status200("La ruta no existe"))
+    echo responseHTTP::status200("La ruta no existe");
         //header("HTTP/1.1 404 Not Found");
         exit; // Finalizamos la ejecución si la ruta no es válida
     }
 
     if(!file_exists($file) || !is_readable($file)){
         echo "El archivo no existe o no es legible";
-
-    $url = explode('/', $_GET['route']);
-
-    $lista = ['auth', 'user']; // lista de rutas permitidas
-
-    $file = dirname(__DIR__) . '/src/Routes/' . $url[0] . '.php';
-
-    if (!in_array($url[0], $lista)) {
-        // echo "La ruta no existe";
-echo json_encode(responseHTTP::status200("La ruta no existe"))
-        //header("HTTP/1.1 404 Not Found");
-        exit; // Finalizamos la ejecución si la ruta no es válida
+    }else{
+        require $file;
+        exit;
     }
 
-    if(!file_exists($file) || !is_readable($file)){
-        echo "El archivo no existe o no es legible";
-	}else{
-		echo "no existe la variable route";
-	}
+} else {
+    // Mensaje si no existe la variable `route`
+    echo "no existe la variable route";
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -53,8 +44,8 @@ echo json_encode(responseHTTP::status200("La ruta no existe"))
         <div class="logo">
         <h1>Bienvenido a Manos Solidarias</h1>
         <div class="auth-buttons">
-            <a href="html/registrar.html" class="btn">Registrarse</a>
-            <a href="html/login.html" class="btn">Iniciar Sesión</a>
+            <a href="/html/registrar.html" class="btn">Registrarse</a>
+            <a href="/html/login.html" class="btn">Iniciar Sesión</a>
         </div>
     </header>
 <div class="slider-container">
