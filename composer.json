@@ -6,5 +6,11 @@
 },
 	    "config": {
         "optimize-autoloader": true
+},
+    "require": {
+        "monolog/monolog": "^2.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "symfony/console": "^5.0"
+    }
 }
-}
+
