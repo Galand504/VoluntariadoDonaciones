@@ -1,45 +1,75 @@
+/* Reset general */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Altura completa de la página */
 html, body {
-    height: 100%; /* Para que el footer esté siempre al final */
+    height: auto;
+    margin: 0;
 }
 
+/* Diseño principal del body */
 body {
-    display: flex; /* Usar flexbox en el body */
-    flex-direction: column; /* Coloca los elementos en columna */
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
 }
 
+/* Estilo para el header */
 header {
-    background-color: #4CAF50;
+    display: flex; /* Usamos flexbox para alinear el logo y el título en línea */
+    align-items: center; /* Alinea el contenido verticalmente */
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    background-color: #2d5db8; /* Fondo azul */
     padding: 20px;
-    text-align: center;
     color: white;
     position: relative;
 }
 
-footer {
-    background-color: #333; /* Color de fondo del pie de página */
-    color: white; /* Color del texto */
-    text-align: center; /* Centrar el texto */
-    padding: 10px 0; /* Espaciado vertical */
-    width: 100%; /* Ancho completo */
-    /* Cambios para el pie de página fijo */
+/* Estilo para el contenedor del logo */
+.logo-container {
+    margin-right: 15px; /* Añade un margen entre el logotipo y el título */
 }
 
+/* Estilo para el logo */
+.logo {
+    width: 50px; /* Tamaño del logo */
+    height: auto; /* Mantiene las proporciones de la imagen */
+}
+
+/* Estilo para el título */
+h1 {
+    font-size: clamp(24px, 4vw + 1em, 48px);
+    margin: 0;
+    color: white; /* Establece el color del título a blanco */
+    text-align: center; /* Centra el título en el header */
+    flex: 1; /* Hace que el título ocupe el espacio disponible */
+}
+
+/* Estilo para el contenido principal */
 main {
-    flex: 1; /* Este flex crecerá para llenar el espacio restante */
-    padding: 20px; /* Espaciado interno */
-    display: flex; /* Permite contenido flexible */
-    flex-direction: column; /* Organiza en columna */
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Estilo para el pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+}
+
+/* Estilo para los botones de autenticación */
 .auth-buttons {
     position: absolute;
     top: 10px;
@@ -47,8 +77,7 @@ main {
 }
 
 .auth-buttons .btn {
-    background-color: white;
-    color: #4CAF50;
+    background-color: white;    color: #4CAF50;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
@@ -59,42 +88,55 @@ main {
     background-color: #e7e7e7;
 }
 
-h1 {
-    font-size: 2em;
-    margin: 20px 0;
-}
-
 /* Contenedor del slider */
-.slider-container {
-    width: 100%; /* Ocupa todo el ancho de la página */
+.slider-box {
+    width: 1080px;
+    height: auto;
+    margin: 50px auto 0;
     overflow: hidden;
+}
+.slider-box ul{
+    display: flex;  
+    padding: 0;
+    width: 400%;  
+    animation: slide 20s infinite linear; 
+}
+
+/* Estilo para los enlaces (solo afecta a las imágenes con enlace) */
+.slider a {
+    display: block;  /* Hace que el enlace ocupe todo el espacio de la imagen */
+    width: 100%;  /* El enlace toma todo el ancho de la imagen */
+}
+.slider-box li {
+    width: 100%;  /* Las imágenes ocupan todo el ancho del contenedor */
+    list-style: none;
     position: relative;
-    margin-bottom: 20px; /* Espacio entre el slider y el contenido inferior */
 }
-
-/* Banda de imágenes */
-.slider {
-    display: flex;
-    width: 600%; /* Duplicado en JavaScript */
-    animation: slide 120s infinite linear;
+.slider-box img{
+    width: 100%;
+    object-fit: scale-down;
 }
-
-.slider img {
-    width: 50%; 
-    height: 500px; /* Puedes ajustar esta altura según lo que necesites */
-    object-fit: cover; /* Mantiene las proporciones y recorta si es necesario */
+/* Hacer que el enlace sea clickeable */
+.slider a:hover {
+    cursor: pointer;  /* Cambia el puntero cuando se pasa por encima del enlace */
 }
 
 /* Animación del slider */
 @keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    0% {margin-left: 0%;}
+    20%{margin-left: 0%;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    95%{margin-left: -300%;}
 }
 
+/* Estilo para la descripción y características */
 .description, .features {
     padding: 20px;
     text-align: center;
@@ -108,4 +150,14 @@ h1 {
 .features ul li {
     margin: 10px 0;
     font-size: 18px;
+}
+
+@media(max-width:991px) {
+
+    body {
+        padding: 30px;
+    }
+    .slider-box{
+        width: 100%;
+    }
 }

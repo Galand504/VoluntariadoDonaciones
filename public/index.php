@@ -1,19 +1,20 @@
 <?php
-require dirname(__DIR__) . '/vendor/autoload.php';
+use App\configuracion\errorlogs;
 use App\configuracion\responseHTTP;
-
-if (isset($_GET['Rutas'])) {
-    echo "existe la variable route";
-
-    $url = explode('/', $_GET['Rutas']);
+require dirname(__DIR__) . '/vendor/autoload.php';
+errorlogs::activa_error_logs();
+if (isset($_GET['route'])) {
+    
+    $url = explode('/', $_GET['route']);
 
     $lista = ['auth', 'user']; // lista de rutas permitidas
 
-    $file = dirname(__DIR__) . '/src/Rutas/' . $url[0] . '.php';
+    $file = dirname(__DIR__) . '/src/rutas/' . $url[0] . '.php';
 
     if (!in_array($url[0], $lista)) {
         // echo "La ruta no existe";
     echo responseHTTP::status200("La ruta no existe");
+    error_log("Esto es una prueba de un error");
         //header("HTTP/1.1 404 Not Found");
         exit; // Finalizamos la ejecución si la ruta no es válida
     }
@@ -26,8 +27,7 @@ if (isset($_GET['Rutas'])) {
     }
 
 } else {
-    // Mensaje si no existe la variable `route`
-    echo "no existe la variable route";
+    // echo "no existe";
 }
 ?>
 <!DOCTYPE html>
@@ -37,24 +37,37 @@ if (isset($_GET['Rutas'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+ </head>
 <body>
     <header>
-        <div class="logo">
+    <div class="logo-container">
+    <a href="index.php">
+    <img src="../img/Logo.jpg" alt="Logotipo" class="logo"> 
+    </a>
+</div>
         <h1>Bienvenido a Manos Solidarias</h1>
         <div class="auth-buttons">
             <a href="/html/registrar.html" class="btn">Registrarse</a>
             <a href="/html/login.html" class="btn">Iniciar Sesión</a>
         </div>
     </header>
-<div class="slider-container">
-    <div class="slider" id="carouselImages">
-            <img src="../recgraficos/image1.jpg" alt="Imagen 1">
-            <img src="../recgraficos/image2.jpg" alt="Imagen 2">
-            <img src="../recgraficos/image3.jpg" alt="Imagen 3">
-            <img src="../recgraficos/image4.jpg" alt="Imagen 4">
-        </div>
+<div class="slider-box">
+    <ul>
+        <li>
+            <img src="../img/image1.jpeg" alt="Imagen 1">
+        </li>
+        <li>
+    <a href="#SobreNosotros">
+            <img src="../img/image2.jpeg" alt="Imagen 2">
+    </a>
+        </li>
+        <li>
+            <img src="../img/image3.jpeg" alt="Imagen 3">
+        </li>
+        <li>    
+            <img src="../img/image4.jpeg" alt="Imagen 4">
+        </li>       
+    </ul>
     </div>
     <main>
         <h2>Descripción Breve</h2>
@@ -68,40 +81,14 @@ if (isset($_GET['Rutas'])) {
             <li>Reportes de donaciones.</li>
         </ul>
     </main>
+    <main> 
+    <section id="#SobreNosotros">
+        <h2>Sobre Nosotros</h2>
+    </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 Plataforma de Donaciones y Voluntariado. Todos los derechos reservados.</p>
     </footer>
-    <script>
-        const images = [
-            "../recgraficos/image1.jpg",
-            "../recgraficos/image2.jpg",
-            "../recgraficos/image3.jpg",
-            "../recgraficos/image4.jpg"
-        ];
-
-        const carousel = document.getElementById('carouselImages');
-
-        // Duplicar imágenes
-        images.forEach(image => {
-            const imgElement = document.createElement('img');
-            imgElement.src = image;
-            imgElement.alt = `Imagen ${images.indexOf(image) + 1}`;
-            carousel.appendChild(imgElement); // Agregar cada imagen al slider
-        });
-
-        let currentIndex = 0;
-        const totalImages = images.length; // Número de imágenes originales
-
-        function moveCarousel(direction) {
-            currentIndex = (currentIndex + direction + totalImages) % totalImages; // Ajuste para las imágenes originales
-            carousel.style.transform = `translateX(${-currentIndex * (100 / (totalImages * 2))}%)`;
-        }
-
-        // Iniciar el carrusel automáticamente
-        setInterval(() => {
-            moveCarousel(1);
-        }, 2000);
-    </script>
 </body>
 </html>

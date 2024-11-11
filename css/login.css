@@ -11,7 +11,7 @@ body {
     display: flex; /* Flexbox para centrar el contenido */
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
-    height: 100vh; /* Altura completa de la ventana */
+    height: auto; /* Altura completa de la ventana */
 }
 
 .container {
