@@ -1,78 +1,111 @@
-// Funcionalidad de navegación
-const menuToggle = document.getElementById('menu-toggle');
-const sidebar = document.getElementById('sidebar');
-const content = document.querySelector('.content');
-const profileButton = document.querySelector('.profile');
-const profileMenu = document.getElementById('profile-menu');
-
-// Expandir/colapsar sidebar
-menuToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('collapsed');
-    content.classList.toggle('expanded');
-});
-
-// Mostrar/ocultar menú de perfil
-profileButton.addEventListener('click', () => {
-    profileMenu.classList.toggle('profile-menu-visible');
-});
-
-// Cerrar menú de perfil al hacer clic fuera de él
-document.addEventListener('click', (event) => {
-    if (!profileButton.contains(event.target) && !profileMenu.contains(event.target)) {
-        profileMenu.classList.remove('profile-menu-visible');
-    }
-});
-
-// Crear gráfico de registros de usuarios y empresas
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtener el contexto del canvas
     const ctx = document.getElementById('userChart').getContext('2d');
     
-    // Crear el gráfico
-    const userChart = new Chart(ctx, {
-        type: 'line', // Tipo de gráfico
-        data: {
-            labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'], // Días de la semana
-            datasets: [
-                {
-                    label: 'Usuarios Registrados', // Título de la primera línea
-                    data: [10, 15, 8, 12, 18, 10, 20], // Datos de usuarios registrados
-                    borderColor: 'rgba(75, 192, 192, 1)', // Color de la línea
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Color del área debajo de la línea
-                    fill: true, // Rellenar el área debajo de la línea
-                    tension: 0.4 // Curvatura de la línea
-                },
-                {
-                    label: 'Empresas Registradas', // Título de la segunda línea
-                    data: [5, 10, 15, 10, 5, 20, 25], // Datos de empresas registradas
-                    borderColor: 'rgba(255, 99, 132, 1)', // Color de la línea
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)', // Color del área debajo de la línea
-                    fill: true, // Rellenar el área debajo de la línea
-                    tension: 0.4 // Curvatura de la línea
-                }
-            ]
-        },
+    const data = {
+        labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+        datasets: [{
+            label: 'Registros de Usuarios',
+            data: [30, 45, 60, 90, 75, 120, 150],
+            fill: false,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            tension: 0.1
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
         options: {
-            responsive: true, // El gráfico se ajusta a diferentes tamaños de pantalla
-            plugins: {
-                legend: {
-                    position: 'top' // Posición de la leyenda (arriba)
-                },
-                tooltip: {
-                    mode: 'index', // Modo de los tooltips
-                    intersect: false // El tooltip se muestra cuando no hay intersección
-                }
-            },
+            responsive: true,
             scales: {
                 x: {
-                    beginAtZero: true, // Iniciar el eje X desde cero
+                    title: {
+                        display: true,
+                        text: 'Días de la Semana'
+                    }
                 },
                 y: {
-                    beginAtZero: true // Iniciar el eje Y desde cero
+                    title: {
+                        display: true,
+                        text: 'Cantidad de Registros'
+                    },
+                    beginAtZero: true
                 }
             }
         }
-    });
+    };
+
+    new Chart(ctx, config);
 });
+
+function filterActivities(type) {
+    const activities = document.querySelectorAll('.activity-item');
+    activities.forEach(activity => {
+        if (activity.getAttribute('data-type') === type) {
+            activity.style.display = 'flex';  // Mostrar actividades del tipo seleccionado
+        } else {
+            activity.style.display = 'none';  // Ocultar las actividades de otro tipo
+        }
+    });
+}
+
+// Obtener los elementos del perfil y el menú
+const profileButton = document.querySelector('.container .header .nav .user .img-case');
+const profileMenu = document.getElementById('profile-menu');
+
+// Alternar visibilidad del menú de perfil al hacer clic en la imagen
+profileButton.addEventListener('click', function(event) {
+    event.stopPropagation(); // Evitar que el evento se propague
+    profileMenu.classList.toggle('profile-menu-visible');
+});
+
+// Cerrar el menú de perfil al hacer clic fuera de él
+document.addEventListener('click', function(event) {
+    if (!profileMenu.contains(event.target) && !profileButton.contains(event.target)) {
+        profileMenu.classList.remove('profile-menu-visible');
+    }
+});
+    const modal = document.getElementById("modal");
+    const openModalBtn = document.getElementById("openModalBtn");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const formRegistrarActividad = document.getElementById("formRegistrarActividad");
+
+    // Abrir el modal
+    openModalBtn.onclick = function() {
+        modal.style.display = "block";
+    };
+
+    // Cerrar el modal
+    closeModalBtn.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Cerrar el modal si se hace clic fuera de él
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    // Manejar el envío del formulario
+    formRegistrarActividad.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const nombreActividad = document.getElementById("nombreActividad").value;
+        const descripcionActividad = document.getElementById("descripcionActividad").value;
+        const tipoActividad = document.getElementById("tipoActividad").value;
+
+        if (!nombreActividad || !descripcionActividad || !tipoActividad) {
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
+
+        console.log("Actividad registrada:");
+        console.log("Nombre:", nombreActividad);
+        console.log("Descripción:", descripcionActividad);
+        console.log("Tipo de Actividad:", tipoActividad);
+
+        formRegistrarActividad.reset();
+        modal.style.display = "none";
+    });
 
 

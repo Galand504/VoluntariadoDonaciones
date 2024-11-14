@@ -4,22 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/menuadmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Menu de Administrador</title>
 
 </head>
 <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
     <div class="side-menu">
         <div class="brand-name">
-        <h1>Brand</h1>
+            <h1></h1>
         </div>
         <ul>
-            <li>Menu</li>
-            <li>Inicio</li>
-            <li>CRUD</li>
-            <li>Voluntariados</li>
-            <li>Beneficas</li>
+            <li><a href="/html/dashboard.html">Inicio</a></li>
+            <li><a href="/html/crud.html">CRUD</a></li>
+            <li>
+                <!-- Botón para abrir el modal de registrar actividad -->
+                <button id="openModalBtn" style="background:none; border:none; color: inherit; font-size: inherit; cursor: pointer;">Registrar Actividad</button>
+            </li>
+            <li><a href="/html/voluntarios.html">Voluntariados</a></li>
+            <li><a href="/html/donaciones.html">Donaciones</a></li>
         </ul>
-    </div>  
+    </div>
+    <!-- Modal de Registro de Actividad -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <div class="form-container">
+            <h2>Registrar Actividad</h2>
+            <form id="formRegistrarActividad">
+                <div class="form-group">
+                    <label for="nombreActividad">Nombre de la Actividad</label>
+                    <input type="text" id="nombreActividad" name="nombreActividad" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcionActividad">Descripción</label>
+                    <textarea id="descripcionActividad" name="descripcionActividad" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipoActividad">Tipo de Actividad</label>
+                    <select id="tipoActividad" name="tipoActividad" required>
+                        <option value="">Selecciona el tipo de actividad</option>
+                        <option value="donacion">Donación</option>
+                        <option value="voluntariado">Voluntariado</option>
+                    </select>
+                </div>
+
+                <button type="submit">Registrar Actividad</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+    
     <div class="container">
         <div class="header">
             <div class="nav">
@@ -28,11 +71,20 @@
                     <button type="submit"><img src="/img/search.png" alt=""></button>
                 </div>
                 <div class="user">
-                    <a href="#"class='btn'>Agregar Nuevo</a>
+                    <a href="#"class='btn'></a>
                     <img src="/img/notifications.png" alt="">
-                    <div class="img-case">
-                        <img src="/img/user.png" alt="">
+                    <div class="img-case" id="profile-button">
+                        <img src="/img/user.png" alt="Perfil" />
                     </div>
+                    
+                    <!-- Menú de perfil expansible -->
+                    <div id="profile-menu" class="profile-menu">
+                        <ul>
+                            <li><a href="#">Mi Perfil</a></li>
+                            <li><a href="#">Configuración</a></li>
+                            <li><a href="#">Cerrar Sesión</a></li>
+                        </ul>
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -76,10 +128,47 @@
                 </div>
             </div>
             <div class="content-2">
-                <div class="recent-paymets"></div>
-            </div>
+                <!-- Sección para el gráfico -->
+                <div class="recent-payments">
+                    <div class="tittle">
+                        <h2>Gráfico de Pagos Recientes</h2>
+                    </div>
+                    <div id="chart-container">
+                        <canvas id="userChart"></canvas>
+                    </div>                    
+                </div>
+            
+                <!-- Sección para el To-Do List (esto sigue igual) -->
+                <div class="activity-list-container">
+                    <h2>Actividades</h2>
+                    <div class="button-container">
+                        <button class="filter-button" onclick="filterActivities('beneficencia')">Beneficencia</button>
+                        <button class="filter-button" onclick="filterActivities('voluntariado')">Voluntariado</button>
+                    </div>
+                    <ul class="activity-list">
+                        <li class="activity-item current" data-type="beneficencia">
+                            <div class="date">2024-11-12</div>
+                            <div class="description">Desarrollo del proyecto de beneficencia</div>
+                        </li>
+                        <li class="activity-item past" data-type="voluntariado">
+                            <div class="date">2024-11-01</div>
+                            <div class="description">Reunión de voluntarios</div>
+                        </li>
+                        <li class="activity-item upcoming" data-type="beneficencia">
+                            <div class="date">2024-11-20</div>
+                            <div class="description">Revisión de donaciones</div>
+                        </li>
+                        <li class="activity-item upcoming" data-type="voluntariado">
+                            <div class="date">2024-11-25</div>
+                            <div class="description">Capacitación de nuevos voluntarios</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>    
         </div>
     </div>
+    <script src="/js/admin.js"></script>
+
 </body>
 </html>
 

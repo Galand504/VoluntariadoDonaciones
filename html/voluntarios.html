@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitaciones de Actividades de Beneficencia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos de la página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Estilo de la invitación en formato de tarjeta */
+        .invitacion {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .invitacion:hover {
+            transform: translateY(-5px);
+        }
+
+        .icono {
+            font-size: 60px;
+            color: #007bff;
+            margin-right: 20px;
+        }
+
+        .detalle {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .titulo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+
+        .descripcion {
+            font-size: 15px;
+            color: #666;
+            margin: 8px 0;
+        }
+
+        .fecha-lugar {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .boton-participar {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 10px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .boton-participar:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .modal form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .modal form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Ejemplo de invitación -->
+        <div class="invitacion">
+            <i class="fas fa-hand-holding-heart icono"></i>
+            <div class="detalle">
+                <p class="titulo">Donación de Ropa</p>
+                <p class="descripcion">Recogida de ropa en buen estado para personas necesitadas en la comunidad.</p>
+                <p class="fecha-lugar"><strong>Fecha:</strong> 25 de noviembre, 2024 &nbsp;|&nbsp; <strong>Lugar:</strong> Centro Comunitario</p>
+                <button class="boton-participar" id="donacionRopaBtn">Participar</button>
+            </div>
+        </div>
+
+        <div class="invitacion">
+            <i class="fas fa-people-carry icono"></i>
+            <div class="detalle">
+                <p class="titulo">Recolección de Alimentos</p>
+                <p class="descripcion">Campaña para recolectar alimentos no perecederos y ayudar a familias en situación vulnerable.</p>
+                <p class="fecha-lugar"><strong>Fecha:</strong> 30 de noviembre, 2024 &nbsp;|&nbsp; <strong>Lugar:</strong> Plaza Central</p>
+                <button class="boton-participar" id="recoleccionAlimentosBtn">Participar</button>
+            </div>
+        </div>
+
+        <div class="invitacion">
+            <i class="fas fa-hands-helping icono"></i>
+            <div class="detalle">
+                <p class="titulo">Voluntariado en Refugio</p>
+                <p class="descripcion">Apoyo en el refugio para organizar y distribuir los recursos donados a los beneficiarios.</p>
+                <p class="fecha-lugar"><strong>Fecha:</strong> 5 de diciembre, 2024 &nbsp;|&nbsp; <strong>Lugar:</strong> Refugio Esperanza</p>
+                <button class="boton-participar" id="voluntariadoRefugioBtn">Participar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para la donación de ropa -->
+    <div id="donacionRopaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeDonacionRopa">&times;</span>
+            <h2>Formulario de Participación en Donación de Ropa</h2>
+            <form>
+                <label for="nombreRopa">Nombre Completo:</label>
+                <input type="text" id="nombreRopa" name="nombreRopa" required>
+
+                <label for="telefonoRopa">Teléfono de Contacto:</label>
+                <input type="text" id="telefonoRopa" name="telefonoRopa" required>
+
+                <label for="donacionRopa">¿Qué Ropa Puedes Donar?</label>
+                <input type="text" id="donacionRopa" name="donacionRopa" required>
+
+                <button type="submit">Confirmar Participación</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para la recolección de alimentos -->
+    <div id="recoleccionAlimentosModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeRecoleccionAlimentos">&times;</span>
+            <h2>Formulario de Participación en Recolección de Alimentos</h2>
+            <form>
+                <label for="nombreAlimentos">Nombre Completo:</label>
+                <input type="text" id="nombreAlimentos" name="nombreAlimentos" required>
+
+                <label for="telefonoAlimentos">Teléfono de Contacto:</label>
+                <input type="text" id="telefonoAlimentos" name="telefonoAlimentos" required>
+
+                <label for="donacionAlimentos">¿Qué Alimentos Puedes Donar?</label>
+                <input type="text" id="donacionAlimentos" name="donacionAlimentos" required>
+
+                <button type="submit">Confirmar Participación</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para el voluntariado en refugio -->
+    <div id="voluntariadoRefugioModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeVoluntariadoRefugio">&times;</span>
+            <h2>Formulario de Participación en Voluntariado en Refugio</h2>
+            <form>
+                <label for="nombreRefugio">Nombre Completo:</label>
+                <input type="text" id="nombreRefugio" name="nombreRefugio" required>
+
+                <label for="telefonoRefugio">Teléfono de Contacto:</label>
+                <input type="text" id="telefonoRefugio" name="telefonoRefugio" required>
+
+                <label for="horasRefugio">Horas Disponibles para Voluntariado:</label>
+                <input type="text" id="horasRefugio" name="horasRefugio" required>
+
+                <button type="submit">Confirmar Participación</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar y cerrar los modales
+        document.getElementById("donacionRopaBtn").onclick = function() {
+            document.getElementById("donacionRopaModal").style.display = "block";
+        };
+        document.getElementById("recoleccionAlimentosBtn").onclick = function() {
+            document.getElementById("recoleccionAlimentosModal").style.display = "block";
+        };
+        document.getElementById("voluntariadoRefugioBtn").onclick = function() {
+            document.getElementById("voluntariadoRefugioModal").style.display = "block";
+        };
+
+        // Cerrar los modales
+        document.getElementById("closeDonacionRopa").onclick = function() {
+            document.getElementById("donacionRopaModal").style.display = "none";
+        };
+        document.getElementById("closeRecoleccionAlimentos").onclick = function() {
+            document.getElementById("recoleccionAlimentosModal").style.display = "none";
+        };
+        document.getElementById("closeVoluntariadoRefugio").onclick = function() {
+            document.getElementById("voluntariadoRefugioModal").style.display = "none";
+        };
+
+        // Cerrar modal si se hace clic fuera de él
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("donacionRopaModal")) {
+                document.getElementById("donacionRopaModal").style.display = "none";
+            } else if (event.target == document.getElementById("recoleccionAlimentosModal")) {
+                document.getElementById("recoleccionAlimentosModal").style.display = "none";
+            } else if (event.target == document.getElementById("voluntariadoRefugioModal")) {
+                document.getElementById("voluntariadoRefugioModal").style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
+
+
