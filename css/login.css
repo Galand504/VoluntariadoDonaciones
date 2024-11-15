@@ -19,7 +19,7 @@ body {
     padding: 20px; /* Espacio interno */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    width: 300px; /* Ancho del formulario */
+    width: auto; /* Ancho del formulario */
 }
 
 h2 {

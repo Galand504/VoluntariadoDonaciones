@@ -13,7 +13,7 @@ if (isset($_GET['route'])) {
 
     if (!in_array($url[0], $lista)) {
         // echo "La ruta no existe";
-    echo responseHTTP::status200("La ruta no existe");
+    echo json_encode(responseHTTP::status400());
     error_log("Esto es una prueba de un error");
         //header("HTTP/1.1 404 Not Found");
         exit; // Finalizamos la ejecución si la ruta no es válida
@@ -27,7 +27,7 @@ if (isset($_GET['route'])) {
     }
 
 } else {
-    // echo "no existe";
+    echo json_encode(responseHTTP::status400());
 }
 ?>
 <!DOCTYPE html>

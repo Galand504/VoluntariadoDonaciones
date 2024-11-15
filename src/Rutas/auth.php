@@ -1,3 +1,5 @@
 <?php
-echo "Hemos llegado al recurso AUTH";
 
+use App\Configuracion\security;
+
+echo json_encode(security:: secretKey());

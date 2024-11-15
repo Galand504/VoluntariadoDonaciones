@@ -1,7 +1,8 @@
 <?php
 namespace App\Configuracion;
-
+date_default_timezone_set('America/Tegucigalpa'); //agregamos la zona horaria
 class errorlogs{
+
     public static function activa_error_logs(){
         error_reporting(E_ALL);
 
