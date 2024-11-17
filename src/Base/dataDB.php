@@ -2,10 +2,12 @@
 use App\Configuracion\errorlogs;
 use App\Configuracion\responseHTTP;
 use App\Base\Database;
-/* cargamos nuestras variables de entorno de nuestra conexion a BD*/
+use Dotenv\Dotenv;
 
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__),2);
+$dotenv = Dotenv::createImmutable('C:/xampp/htdocs/Crowdfunding/');
 $dotenv->load();
+
+
 
 $data = array(
     "user" => $_ENV['USER'],
