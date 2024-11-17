@@ -1,5 +1,13 @@
+
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 CREATE DATABASE voluntariadodonaciones;
 USE voluntariadodonaciones;
+
+--
 
 DELIMITER $$
 --
@@ -10,9 +18,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `AddProyecto` (IN `p_titulo` VARCHAR
     VALUES (p_titulo, p_descripcion, p_objetivo, p_presupuesto, p_estado, p_idUsuario);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AddUsuario` (IN `p_nombre` VARCHAR(255), IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_tipoUsuario` ENUM('Donante','Voluntario','Organizador'))   BEGIN
-    INSERT INTO Usuario (nombre, email, contraseña, tipoUsuario) 
-    VALUES (p_nombre, p_email, p_contraseña, p_tipoUsuario);
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AddUsuario` (IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_rol` ENUM('Donante','Voluntario','Organizador'))   BEGIN
+    INSERT INTO Usuario (email, contraseña, Rol) 
+    VALUES (p_email, p_contraseña, p_rol);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteProyecto` (IN `p_idProyecto` INT)   BEGIN
@@ -29,6 +37,19 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllUsuarios` ()   BEGIN
     SELECT * FROM Usuario;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_usuario` (IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_nombre` VARCHAR(255), IN `p_apellido` VARCHAR(255), IN `p_dni` VARCHAR(255), IN `p_edad` INT, IN `p_telefono` VARCHAR(20), OUT `p_id_usuario` INT)   BEGIN
+    -- Insertar en la tabla usuario
+    INSERT INTO usuario (email, contraseña) 
+    VALUES (p_email, p_contraseña);
+
+    -- Obtener el ID del usuario insertado
+    SET p_id_usuario = LAST_INSERT_ID();
+
+    -- Insertar en la tabla persona
+    INSERT INTO persona (nombre, apellido, dni, edad, telefono, id_usuario)
+    VALUES (p_nombre, p_apellido, p_dni, p_edad, p_telefono, p_id_usuario);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateProyecto` (IN `p_idProyecto` INT, IN `p_titulo` VARCHAR(255), IN `p_descripcion` TEXT, IN `p_objetivo` VARCHAR(255), IN `p_presupuesto` FLOAT, IN `p_estado` ENUM('En Proceso','Completado','Cancelado'))   BEGIN
@@ -68,9 +89,17 @@ CREATE TABLE `donacion` (
   `idDonacion` int(11) NOT NULL,
   `monto` float NOT NULL,
   `fecha` date NOT NULL,
-  `idUsuario` int(11) DEFAULT NULL,
+  `id_usuario` int(11) DEFAULT NULL,
   `idProyecto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `donacion`
+--
+
+INSERT INTO `donacion` (`idDonacion`, `monto`, `fecha`, `id_usuario`, `idProyecto`) VALUES
+(3, 100, '2024-11-16', 1, 2),
+(4, 100, '2024-11-16', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -100,8 +129,15 @@ CREATE TABLE `persona` (
   `Apellido` varchar(100) NOT NULL,
   `Edad` varchar(50) NOT NULL,
   `Telefono` varchar(50) NOT NULL,
-  `IdUsuario` int(11) NOT NULL
+  `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `persona`
+--
+
+INSERT INTO `persona` (`IdPersona`, `DNI`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `id_usuario`) VALUES
+(5, '23232312', 'Gerardo', 'Lopez', '32', '42232423432', 31);
 
 -- --------------------------------------------------------
 
@@ -154,12 +190,18 @@ CREATE TABLE `riesgo` (
 --
 
 CREATE TABLE `usuario` (
-  `idUsuario` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `contraseña` varchar(255) NOT NULL,
   `Rol` enum('Donante','Voluntario','Organizador') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `email`, `contraseña`, `Rol`) VALUES
+(31, 'ger@gmail.com', 'ewrwerew', 'Donante');
 
 -- --------------------------------------------------------
 
@@ -190,7 +232,7 @@ ALTER TABLE `actualizacion`
 --
 ALTER TABLE `donacion`
   ADD PRIMARY KEY (`idDonacion`),
-  ADD KEY `donacion_ibfk_1` (`idUsuario`),
+  ADD KEY `donacion_ibfk_1` (`id_usuario`),
   ADD KEY `donacion_ibfk_2` (`idProyecto`);
 
 --
@@ -206,7 +248,7 @@ ALTER TABLE `pago`
 --
 ALTER TABLE `persona`
   ADD PRIMARY KEY (`IdPersona`),
-  ADD KEY `IdUsuario` (`IdUsuario`);
+  ADD KEY `persona` (`id_usuario`);
 
 --
 -- Indices de la tabla `proyecto`
@@ -234,8 +276,7 @@ ALTER TABLE `riesgo`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id_usuario`);
 
 --
 -- Indices de la tabla `voluntario`
@@ -258,7 +299,7 @@ ALTER TABLE `actualizacion`
 -- AUTO_INCREMENT de la tabla `donacion`
 --
 ALTER TABLE `donacion`
-  MODIFY `idDonacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idDonacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `pago`
@@ -270,7 +311,7 @@ ALTER TABLE `pago`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `IdPersona` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `proyecto`
@@ -294,7 +335,7 @@ ALTER TABLE `riesgo`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `voluntario`
@@ -313,30 +354,23 @@ ALTER TABLE `actualizacion`
   ADD CONSTRAINT `actualizacion_ibfk_1` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `donacion`
---
-ALTER TABLE `donacion`
-  ADD CONSTRAINT `donacion_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `donacion_ibfk_2` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `pago`
 --
 ALTER TABLE `pago`
   ADD CONSTRAINT `pago_ibfk_1` FOREIGN KEY (`idDonacion`) REFERENCES `donacion` (`idDonacion`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `pago_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `pago_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `persona`
 --
 ALTER TABLE `persona`
-  ADD CONSTRAINT `persona_ibfk_1` FOREIGN KEY (`IdUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `persona` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `proyecto`
 --
 ALTER TABLE `proyecto`
-  ADD CONSTRAINT `proyecto_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `proyecto_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `recompensa`
@@ -355,5 +389,9 @@ ALTER TABLE `riesgo`
 -- Filtros para la tabla `voluntario`
 --
 ALTER TABLE `voluntario`
-  ADD CONSTRAINT `voluntario_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `voluntario_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
