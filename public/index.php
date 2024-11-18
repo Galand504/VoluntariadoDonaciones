@@ -7,7 +7,7 @@ if (isset($_GET['route'])) {
     
     $url = explode('/', $_GET['route']);
 
-    $lista = ['auth', 'user']; // lista de rutas permitidas
+    $lista = ['auth', 'user', 'AddUsuario', 'UpdateUsuario', 'DeleteUsuario', 'GetAllUsuarios', 'GetUsuarioById']; // lista de rutas permitidas
 
     $file = dirname(__DIR__) . '/src/rutas/' . $url[0] . '.php';
 
@@ -27,7 +27,6 @@ if (isset($_GET['route'])) {
     }
 
 } else {
-    echo json_encode(responseHTTP::status400());
 }
 ?>
 <!DOCTYPE html>

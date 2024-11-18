@@ -1,5 +1,3 @@
-
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -10,36 +8,37 @@ USE voluntariadodonaciones;
 --
 
 DELIMITER $$
---
--- Procedimientos
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AddProyecto` (IN `p_titulo` VARCHAR(255), IN `p_descripcion` TEXT, IN `p_objetivo` VARCHAR(255), IN `p_presupuesto` FLOAT, IN `p_estado` ENUM('En Proceso','Completado','Cancelado'), IN `p_idUsuario` INT)   BEGIN
-    INSERT INTO Proyecto (titulo, descripcion, objetivo, presupuesto, estado, idUsuario) 
-    VALUES (p_titulo, p_descripcion, p_objetivo, p_presupuesto, p_estado, p_idUsuario);
-END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AddUsuario` (IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_rol` ENUM('Donante','Voluntario','Organizador'))   BEGIN
+-- Procedimiento para agregar un nuevo usuario
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AddUsuario` (IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_rol` ENUM('Donante','Voluntario','Organizador'))   
+BEGIN
     INSERT INTO Usuario (email, contraseña, Rol) 
     VALUES (p_email, p_contraseña, p_rol);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteProyecto` (IN `p_idProyecto` INT)   BEGIN
-    DELETE FROM Proyecto WHERE idProyecto = p_idProyecto;
+-- Procedimiento para eliminar un usuario por su ID
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteUsuario` (IN `p_idUsuario` INT)   
+BEGIN
+    DELETE FROM Usuario WHERE id_usuario = p_idUsuario;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteUsuario` (IN `p_idUsuario` INT)   BEGIN
-    DELETE FROM Usuario WHERE idUsuario = p_idUsuario;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllProyectos` ()   BEGIN
-    SELECT * FROM Proyecto;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllUsuarios` ()   BEGIN
+-- Procedimiento para obtener todos los usuarios
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllUsuarios` ()   
+BEGIN
     SELECT * FROM Usuario;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_usuario` (IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_nombre` VARCHAR(255), IN `p_apellido` VARCHAR(255), IN `p_dni` VARCHAR(255), IN `p_edad` INT, IN `p_telefono` VARCHAR(20), OUT `p_id_usuario` INT)   BEGIN
+-- Procedimiento para actualizar los datos de un usuario
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateUsuario` (IN `p_idUsuario` INT, IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_rol` ENUM('Donante','Voluntario','Organizador'))   
+BEGIN
+    UPDATE Usuario 
+    SET email = p_email, contraseña = p_contraseña, Rol = p_rol
+    WHERE id_usuario = p_idUsuario;
+END$$
+
+-- Procedimiento para insertar un usuario con más detalles (nombre, apellido, etc.)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_usuario` (IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_nombre` VARCHAR(255), IN `p_apellido` VARCHAR(255), IN `p_dni` VARCHAR(255), IN `p_edad` INT, IN `p_telefono` VARCHAR(20), OUT `p_id_usuario` INT)   
+BEGIN
     -- Insertar en la tabla usuario
     INSERT INTO usuario (email, contraseña) 
     VALUES (p_email, p_contraseña);
@@ -52,21 +51,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_usuario` (IN `p_email` VA
     VALUES (p_nombre, p_apellido, p_dni, p_edad, p_telefono, p_id_usuario);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateProyecto` (IN `p_idProyecto` INT, IN `p_titulo` VARCHAR(255), IN `p_descripcion` TEXT, IN `p_objetivo` VARCHAR(255), IN `p_presupuesto` FLOAT, IN `p_estado` ENUM('En Proceso','Completado','Cancelado'))   BEGIN
-    UPDATE Proyecto 
-    SET titulo = p_titulo, descripcion = p_descripcion, objetivo = p_objetivo, presupuesto = p_presupuesto, estado = p_estado
-    WHERE idProyecto = p_idProyecto;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateUsuario` (IN `p_idUsuario` INT, IN `p_nombre` VARCHAR(255), IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_tipoUsuario` ENUM('Donante','Voluntario','Organizador'))   BEGIN
-    UPDATE Usuario 
-    SET nombre = p_nombre, email = p_email, contraseña = p_contraseña, tipoUsuario = p_tipoUsuario
-    WHERE idUsuario = p_idUsuario;
-END$$
-
 DELIMITER ;
 
--- --------------------------------------------------------
+COMMIT;
 
 --
 -- Estructura de tabla para la tabla `actualizacion`

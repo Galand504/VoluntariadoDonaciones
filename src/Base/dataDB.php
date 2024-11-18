@@ -4,7 +4,7 @@ use App\Configuracion\responseHTTP;
 use App\Base\Database;
 use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable('C:/xampp/htdocs/Crowdfunding/');
+$dotenv = Dotenv::createImmutable(dirname(__DIR__,2));
 $dotenv->load();
 
 

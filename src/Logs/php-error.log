@@ -29,3 +29,470 @@
 [15-Nov-2024 14:28:52 America/Tegucigalpa] Esto es una prueba de un error
 [15-Nov-2024 14:28:52 America/Tegucigalpa] Esto es una prueba de un error
 [15-Nov-2024 14:28:52 America/Tegucigalpa] Esto es una prueba de un error
+[17-Nov-2024 10:45:41 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 10
+[17-Nov-2024 10:45:41 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 10
+[17-Nov-2024 10:45:41 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 10
+[17-Nov-2024 10:45:42 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 10:45:42 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:15
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(15): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::add_usuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(27): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 15
+[17-Nov-2024 10:56:12 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:56:12 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:56:12 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:56:12 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 10:56:12 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::add_usuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(27): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 10:56:13 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:56:13 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:56:13 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:56:13 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 10:56:13 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::add_usuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(27): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 10:58:46 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:58:46 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:58:46 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:58:46 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 10:58:46 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::addusuario('empresa@example...', 'securepassword', 'Organizador', 'Empresa', 'Mi Empresa', 'S.A.', NULL, NULL, '555987654', 'Calle Falsa 123', 'ABC Corporation', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(27): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 10:58:47 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:58:47 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:58:47 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:58:47 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 10:58:47 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::addusuario('empresa@example...', 'securepassword', 'Organizador', 'Empresa', 'Mi Empresa', 'S.A.', NULL, NULL, '555987654', 'Calle Falsa 123', 'ABC Corporation', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(27): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 10:58:48 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:58:48 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:58:48 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 10:58:48 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 10:58:48 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::addusuario('empresa@example...', 'securepassword', 'Organizador', 'Empresa', 'Mi Empresa', 'S.A.', NULL, NULL, '555987654', 'Calle Falsa 123', 'ABC Corporation', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(27): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 11:01:56 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:01:56 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:01:56 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:01:56 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 11:01:56 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::addusuario('empresa@example...', 'securepassword', 'Organizador', 'Empresa', 'Mi Empresa', 'S.A.', NULL, NULL, '555987654', 'Calle Falsa 123', 'ABC Corporation', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(27): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 11:10:33 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:10:33 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:10:33 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:10:33 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 11:10:33 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::addusuario('empresa@example...', 'securepassword', 'Organizador', 'Empresa', 'Mi Empresa', 'S.A.', NULL, NULL, '555987654', 'Calle Falsa 123', 'ABC Corporation', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(27): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 11:35:36 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:35:36 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:35:36 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:35:36 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 11:35:36 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::addusuario('empresa@example...', 'securepassword', 'Organizador', 'Empresa', 'Mi Empresa', 'S.A.', NULL, NULL, '555987654', 'Calle Falsa 123', 'ABC Corporation', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(25): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 11:35:37 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:35:37 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:35:37 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:35:37 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 11:35:37 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::addusuario('empresa@example...', 'securepassword', 'Organizador', 'Empresa', 'Mi Empresa', 'S.A.', NULL, NULL, '555987654', 'Calle Falsa 123', 'ABC Corporation', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(25): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 11:35:38 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:35:38 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:35:38 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:35:38 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 11:35:38 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::addusuario('empresa@example...', 'securepassword', 'Organizador', 'Empresa', 'Mi Empresa', 'S.A.', NULL, NULL, '555987654', 'Calle Falsa 123', 'ABC Corporation', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(25): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 11:41:12 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:41:12 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:41:12 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 11:41:12 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(42): App\clases\usuario::addusuario('empresa@example...', 'securepassword', 'Organizador', 'Empresa', 'Mi Empresa', 'S.A.', NULL, NULL, '555987654', 'Calle Falsa 123', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(25): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 11:41:13 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:41:13 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:41:13 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 11:41:13 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(42): App\clases\usuario::addusuario('empresa@example...', 'securepassword', 'Organizador', 'Empresa', 'Mi Empresa', 'S.A.', NULL, NULL, '555987654', 'Calle Falsa 123', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(25): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 11:46:31 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:46:31 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 11:46:32 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 11:46:32 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(42): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 12:14:47 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:14:47 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:14:47 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 12:14:47 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(42): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 12:15:02 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:15:02 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:15:02 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 12:15:02 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(42): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 12:15:03 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:15:03 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:15:03 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 12:15:03 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(42): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 12:18:56 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:18:56 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:18:56 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 12:18:57 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(43): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 12:27:16 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:27:16 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:27:16 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 12:27:16 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(44): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Donante', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 12:27:21 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:27:21 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:27:21 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 12:27:22 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(44): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 12:27:42 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:27:42 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 12:27:42 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 12:27:42 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(44): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 13:27:36 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:27:36 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:27:45 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 13:27:45 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(44): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 13:27:47 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:27:47 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:27:47 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 13:27:49 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(44): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 13:31:16 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:31:16 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:31:16 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 13:31:17 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.AddUsuario; expected 10, got 13 in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(44): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 13:36:21 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:36:21 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:36:21 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 13:36:22 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.AddUsuario; expected 10, got 13 in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(54): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 13:36:23 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:36:23 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:36:23 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 13:36:23 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.AddUsuario; expected 10, got 13 in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(54): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 13:38:48 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:38:48 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:38:48 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 13:38:48 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.AddUsuario; expected 10, got 13 in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(19): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(54): App\clases\usuario::addusuario('test@example.co...', 'password123', 'Voluntario', 'Persona', 'John', 'Doe', '12345678', 30, '555123456', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(28): App\Controladores\AddUsuarioController->addusuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 19
+[17-Nov-2024 13:56:30 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:56:30 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:56:30 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 13:56:30 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 14:07:30 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[17-Nov-2024 14:07:51 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[17-Nov-2024 14:07:51 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[17-Nov-2024 14:07:52 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[17-Nov-2024 14:08:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:08:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:08:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:08:04 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 14:28:12 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[17-Nov-2024 14:36:51 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[17-Nov-2024 14:45:40 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[17-Nov-2024 14:45:40 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:45:40 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:45:40 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:45:44 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 14:51:39 America/Tegucigalpa] PHP Warning:  Undefined array key "tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 14:51:39 America/Tegucigalpa] PHP Warning:  Undefined array key "tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 14:51:40 America/Tegucigalpa] PHP Warning:  Undefined array key "tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 14:51:40 America/Tegucigalpa] PHP Warning:  Undefined array key "tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 14:54:13 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[17-Nov-2024 14:54:13 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:54:13 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:54:13 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:54:13 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 14:55:14 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[17-Nov-2024 14:55:14 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:55:14 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:55:14 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 14:55:14 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 15:05:28 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[17-Nov-2024 15:05:28 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 15:05:28 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 15:05:28 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 15:05:28 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 16:21:49 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 16:21:49 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 16:21:49 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 16:21:49 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 16:59:59 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 16:59:59 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 16:59:59 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 16:59:59 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 16:59:59 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.UpdateUsuario; expected 14, got 13 in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(49): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\UpdateUsuarioController.php(40): App\clases\usuario::updateUsuario(31, 'Juan', NULL, 'P\xC3\xA9rez', 'juan.perez@exam...', 'nueva_contrase\xC3...', '123456789', '12345678A', '30', 'Voluntario', 'Persona', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\UpdateUsuario.php(47): App\Controladores\UpdateUsuarioController->updateUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 49
+[17-Nov-2024 17:00:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:00:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:00:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:00:25 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 17:00:25 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(49): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\UpdateUsuarioController.php(40): App\clases\usuario::updateUsuario(31, 'Juan', NULL, 'P\xC3\xA9rez', 'juan.perez@exam...', 'nueva_contrase\xC3...', '123456789', '12345678A', '30', 'Voluntario', 'Persona', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\UpdateUsuario.php(47): App\Controladores\UpdateUsuarioController->updateUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 49
+[17-Nov-2024 17:06:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:06:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:06:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:06:05 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 17:06:05 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(49): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\UpdateUsuarioController.php(40): App\clases\usuario::updateusuario(31, 'Juan', NULL, 'P\xC3\xA9rez', 'juan.perez@exam...', 'nueva_contrase\xC3...', '123456789', '12345678A', '30', 'Voluntario', 'Persona', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\UpdateUsuario.php(47): App\Controladores\UpdateUsuarioController->updateusuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 49
+[17-Nov-2024 17:06:38 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:06:38 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:06:38 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:06:38 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 17:06:38 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(49): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\UpdateUsuarioController.php(40): App\clases\usuario::updateusuario(34, NULL, 'Empresa S.A.', NULL, 'empresa@example...', 'nueva_contrase\xC3...', '987654321', NULL, NULL, 'Organizador', 'Empresa', 'Raz\xC3\xB3n Social S...', 'Calle Ficticia ...', 'ABCD12345')
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\UpdateUsuario.php(47): App\Controladores\UpdateUsuarioController->updateusuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 49
+[17-Nov-2024 17:10:47 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:10:47 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:10:47 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:10:47 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 17:10:47 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(49): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\UpdateUsuarioController.php(40): App\clases\usuario::updateusuario(34, 'Empresa S.A.', 'Empresa S.A.', NULL, 'empresa@example...', 'nueva_contrase\xC3...', '987654321', NULL, NULL, 'Organizador', 'Empresa', 'Raz\xC3\xB3n Social S...', 'Calle Ficticia ...', 'ABCD12345')
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\UpdateUsuario.php(47): App\Controladores\UpdateUsuarioController->updateusuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 49
+[17-Nov-2024 17:17:58 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:17:58 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:17:58 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:17:58 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 17:17:58 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(50): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\UpdateUsuarioController.php(40): App\clases\usuario::updateusuario(34, 'Empresa S.A.', 'Empresa S.A.', NULL, 'empresa@example...', 'nueva_contrase\xC3...', '987654321', NULL, NULL, 'Organizador', 'Empresa', 'Raz\xC3\xB3n Social S...', 'Calle Ficticia ...', 'ABCD12345')
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\UpdateUsuario.php(47): App\Controladores\UpdateUsuarioController->updateusuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 50
+[17-Nov-2024 17:20:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:20:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:20:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:20:25 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 17:21:52 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:21:52 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:21:52 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:21:52 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 17:25:03 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:25:03 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:25:03 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:25:03 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 17:28:28 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:28:28 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:28:28 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 17:28:28 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 17:42:05 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 17:42:05 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 17:44:26 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 17:44:26 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 17:44:27 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 17:44:27 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 17:45:48 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 17:45:48 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 17:55:43 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 17:55:43 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 17:55:44 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 17:55:44 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 17:55:44 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 17:55:44 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 18:06:48 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 18:06:48 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 18:06:49 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 18:06:49 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 18:09:05 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[17-Nov-2024 18:09:05 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[17-Nov-2024 18:09:15 America/Tegucigalpa] PHP Warning:  Undefined array key "nombreEmpresa" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 44
+[17-Nov-2024 18:09:15 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 18:09:15 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 18:09:15 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 18:09:15 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 18:09:16 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 11
+[17-Nov-2024 18:09:16 America/Tegucigalpa] Conexión exitosa
+[17-Nov-2024 18:16:49 America/Tegucigalpa] PHP Warning:  Undefined array key "tipo" in C:\xampp\htdocs\Crowdfunding\src\Rutas\UpdateUsuario.php on line 27
+[17-Nov-2024 18:16:49 America/Tegucigalpa] PHP Warning:  Undefined array key "tipo" in C:\xampp\htdocs\Crowdfunding\src\Rutas\UpdateUsuario.php on line 35

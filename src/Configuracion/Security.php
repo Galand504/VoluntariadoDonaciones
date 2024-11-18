@@ -5,7 +5,7 @@ use Dotenv\Dotenv; //variables de entorno https://github.com/vlucas/phpdotenv
 use Firebase\JWT\JWT; //para generar nuestro JWT https://github.com/firebase/php-jwt
 use Bulletproof\Image;
 use Exception;
-class security {
+class Security {
 
     private static $jwt_data;//Propiedad para guardar los datos decodificados del JWT 
 
@@ -53,7 +53,7 @@ class security {
         );
         
         //creamos el JWT recibe varios parametros pero nos interesa el payload y la key en el metodo encode de JWT
-        $jwt = JWT::encode($payload,$key);
+        $jwt = JWT::encode($payload, $key, 'HS256');
         print_r($jwt);
         return $jwt;
     }
@@ -67,24 +67,19 @@ class security {
         if (!isset(getallheaders()['Authorization'])) {
             //echo "El token de acceso en requerido";
             die(json_encode(ResponseHttp::status400()));            
-            exit;
         }
         try {
             //recibimos el token de acceso y creamos el array 
             //se veria mas o menos asi 
             // $token = "Bearer token"; posicion 0 y posicion 1
             $jwt = explode(" " ,getallheaders()['Authorization']);
-            $data = JWT::decode($jwt[1],$key,array('HS256')); //param1: token, param2: clave, param3: metodo por defecto de encriptacion 
-            //necesitamos crear un array asociativo para poder retornarlo y que sea mas facil recorrerlo
-            //1. definimos el atributo 
-            //private static $jwt_data;//Propiedad para guardar los datos decodificados del JWT 
+            $data = JWT::decode($jwt[1], $key(), ['HS256']); //param1: token, param2: clave, param3: metodo por defecto de encriptacion 
 
             self::$jwt_data = $data; //le pasamos el jwt decodificado y lo retornamos
             return $data;
-            exit;
         } catch (Exception $e) {
             error_log('Token invalido o expiro'. $e);
-            die(json_encode(ResponseHttp::status401('Token invalido o ha expirado'))); //funcion que manda un mj y termina ejecucion 
+            die(json_encode(ResponseHttp::status401())); //funcion que manda un mj y termina ejecucion 
         }
     }
 
@@ -93,63 +88,12 @@ class security {
     {
         $jwt_decoded_array = json_decode(json_encode(self::$jwt_data),true);
         return $jwt_decoded_array['data'];
-        exit;
     }
 
-
+}
     /* TERMINA LA CLASE SECURITY */
 
 
 
 
 
-
-    /*Subir Imagen al servidor*/
-    final public static function uploadImage($file,$name)
-    {
-        $file = new Image($file);
- 
-        $file->setMime(array('png','jpg','jpeg'));//formatos admitidos
-        $file->setSize(10000,500000);//Tamaño admitidos es Bytes
-        $file->setDimension(200,200);//Dimensiones admitidas en Pixeles
-        $file->setLocation('public/Images');//Ubicación de la carpeta
-
-        if ($file[$name]) {
-            $upload = $file->upload();            
-            if ($upload) {
-                $imgUrl = UrlBase::urlBase .'/public/Images/'. $upload->getName().'.'.$upload->getMime();
-                $data = [
-                    'path' => $imgUrl,
-                    'name' => $upload->getName() .'.'. $upload->getMime()
-                ];
-                return $data;               
-            } else {
-                die(json_encode(ResponseHttp::status400($file->getError())));               
-            }
-        }
-    }
-
-    /*Subir fotos en base64*/
-    final public static function uploadImageBase64(array $data, string $name) 
-    {        
-        $token = bin2hex(random_bytes(32).time()); 
-        $name_img = $token . '.png';
-        $route = dirname(__DIR__, 2) . "/public/Images/{$name_img}";        
-    
-        //Decodificamos la imagen
-        $img_decoded = base64_decode(
-            preg_replace('/^[^,]*,/', '', $data[$name])
-        );
-    
-        $v = file_put_contents($route,$img_decoded);
-    
-        //Validamos si se subio la imagen
-        if ($v) {
-            return UrlBase::urlBase . "/public/Images/{$name_img}";
-        } else {
-            unlink($route);
-            die(json_encode(ResponseHttp::status500('No se puede subir la imagen')));
-        }   
-        
-    }
-}

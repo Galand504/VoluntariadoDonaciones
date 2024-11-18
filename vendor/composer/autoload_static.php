@@ -160,6 +160,8 @@ class ComposerStaticInitd751713988987e9331980363e24189ce
 
     public static $classMap = array (
         'App\\Base\\Database' => __DIR__ . '/../..' . '/src/Base/Database.php',
+        'App\\Configuracion\\Security' => __DIR__ . '/../..' . '/src/Configuracion/Security.php',
+        'App\\Configuracion\\donacion' => __DIR__ . '/../..' . '/src/Configuracion/donacion.php',
         'App\\Configuracion\\errorlogs' => __DIR__ . '/../..' . '/src/Configuracion/errorlogs.php',
         'App\\Configuracion\\responseHTTP' => __DIR__ . '/../..' . '/src/Configuracion/responseHTTP.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
