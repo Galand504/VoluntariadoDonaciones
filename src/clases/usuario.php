@@ -4,6 +4,7 @@ namespace App\clases;
 use App\Base\Database;
 use App\Configuracion\Security;
 use PDO;
+use PDOException;
 
 class usuario {
 
@@ -40,7 +41,7 @@ class usuario {
         return $p_id_usuario ? true : false; // Retorna true si la operación fue exitosa, false de lo contrario
     }
          // Ejecuta el procedimiento almacenado UpdateUsuario
-        public static function updateusuario($idUsuario, $nombre,  $apellido, $email, $contraseña, $telefono, $dni, $edad, $Rol, $tipo, $nombreEmpresa = null,
+        public static function updateUsuario($idUsuario, $nombre,  $apellido, $email, $contraseña, $telefono, $dni, $edad, $rol, $tipo, $nombreEmpresa = null,
         $razonSocial = null, $telefonoEmpresa = null, $direccion = null, $registroFiscal = null) {
             $con = Database::getConnection(); // Llamamos al Singleton para obtener la conexión
     
@@ -48,7 +49,7 @@ class usuario {
             $hashed_password = Security::createPassword($contraseña);
     
             // Preparar y ejecutar el procedimiento almacenado
-            $stmt = $con->prepare("CALL UpdateUsuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $con->prepare("CALL UpdateUsuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute([
                 $idUsuario,
                 $nombre,
@@ -58,7 +59,7 @@ class usuario {
                 $telefono,
                 $dni,
                 $edad,
-                $Rol,
+                $rol,
                 $tipo,
                 $nombreEmpresa ?? null,
                 $telefonoEmpresa ?? null,   
@@ -70,6 +71,54 @@ class usuario {
             // Comprobar si se actualizó correctamente
             return $stmt->rowCount() > 0;
         }
+        public static function deleteUsuario($idUsuario) {
+            $con = Database::getConnection(); // Llamamos al Singleton para obtener la conexión
+        
+            try {
+                // Preparar y ejecutar el procedimiento almacenado
+                $stmt = $con->prepare("CALL DeleteUsuario(?)");
+                $stmt->execute([$idUsuario]);
+        
+                // Devolver true si la operación fue exitosa
+                return true;
+            } catch (PDOException $e) {
+                error_log("Error en deleteUsuario: " . $e->getMessage());
+                return false;
+            }
+        }
+        
+        public static function getAllUsuarios() {
+            $con = Database::getConnection(); // Obtener la conexión
+            try {
+                $query = "CALL GetAllUsuarios()";
+                $stmt = $con->prepare($query);
+                $stmt->execute();
+                $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+                return $usuarios; // Retornar la lista de usuarios
+            } catch (PDOException $e) {
+                error_log("Error en getAllUsuarios: " . $e->getMessage());
+                return false; // Retornar false en caso de error
+            }
+        }
+        
+        public static function getUsuarioById($idUsuario) {
+            $con = Database::getConnection(); // Obtener la conexión
+            try {
+                $query = "CALL GetUsuarioById(:idUsuario)";
+                $stmt = $con->prepare($query);
+                $stmt->bindParam(':idUsuario', $idUsuario, PDO::PARAM_INT);
+                $stmt->execute();
+                $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+                return $usuario; // Retornar el usuario encontrado
+            } catch (PDOException $e) {
+                error_log("Error en getUsuarioById: " . $e->getMessage());
+                return false; // Retornar false en caso de error
+            }
+        }
+        
+        
     }
     
 

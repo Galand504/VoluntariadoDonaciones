@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Validar los campos necesarios según el tipo
-    if (isset($data['Tipo']) && $data['Tipo'] === 'Persona') {
+    if (isset($data['tipo']) && $data['tipo'] === 'Persona') {
         if (empty($data['nombre'])) {
             echo json_encode([
                 'status' => 'error',
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]);
             exit;
         }
-    } elseif (isset($data['Tipo']) && $data['Tipo'] === 'Empresa') {
+    } elseif (isset($data['tipo']) && $data['tipo'] === 'Empresa') {
         if (empty($data['nombreEmpresa'])) {
             echo json_encode([
                 'status' => 'error',
@@ -44,14 +44,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Instanciar el controlador y procesar la solicitud
     $controller = new UpdateUsuarioController();
-    $response = $controller->updateusuario($data);
+    $response = $controller->updateUsuario($data);
 
     // Retornar la respuesta al cliente
     echo $response;
 } else {
     // Método no permitido
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Método no permitido.'
-    ]);
+    echo json_encode(responseHTTP::status400());
 }

@@ -11,9 +11,9 @@ class UpdateUsuarioController {
      * @param array $data Datos enviados para la actualización
      * @return string Respuesta en formato JSON
      */
-    public function updateusuario($data) {
+    public function updateUsuario($data) {
         // Validar que los datos mínimos están presentes
-        if (!isset($data['id_usuario'], $data['email'], $data['contraseña'], $data['Rol'], $data['Tipo'])) {
+        if (!isset($data['id_usuario'], $data['email'], $data['contraseña'], $data['rol'], $data['tipo'])) {
             return json_encode([
                 'status' => 'error',
                 'message' => 'Faltan datos obligatorios: id_usuario, email, contraseña y tipo.'
@@ -23,15 +23,15 @@ class UpdateUsuarioController {
         // Asignar valores con manejo de valores opcionales
         $idUsuario = $data['id_usuario'];
         $nombre = $data['nombre'] ?? null;
-        $nombreEmpresa = $data['nombreEmpresa'] ?? null;
         $apellido = $data['apellido'] ?? null;
         $email = $data['email'];
         $contraseña = $data['contraseña'];
         $telefono = $data['telefono'] ?? null;
         $dni = $data['dni'] ?? null;
         $edad = $data['edad'] ?? null;
-        $Rol = $data['Rol'] ?? null;
-        $Tipo = $data['Tipo'];
+        $rol = $data['rol'];
+        $tipo = $data['tipo'];
+        $nombreEmpresa = $data['nombreEmpresa'] ?? null;
         $razonSocial = $data['razonSocial'] ?? null;
         $telefonoEmpresa = $data['telefonoEmpresa'] ?? null;
         $direccion = $data['direccion'] ?? null;
@@ -41,15 +41,15 @@ class UpdateUsuarioController {
         $result = usuario::updateUsuario(
             $idUsuario,
             $nombre,
-            $nombreEmpresa,
             $apellido,
             $email,
             $contraseña,
             $telefono,
             $dni,
             $edad,
-            $Rol,
-            $Tipo,
+            $rol,
+            $tipo,
+            $nombreEmpresa,
             $razonSocial,
             $telefonoEmpresa,
             $direccion,
