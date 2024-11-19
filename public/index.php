@@ -7,7 +7,7 @@ if (isset($_GET['route'])) {
     
     $url = explode('/', $_GET['route']);
 
-    $lista = ['auth', 'user', 'AddUsuario', 'UpdateUsuario', 'DeleteUsuario', 'GetAllUsuarios', 'GetUsuarioById']; // lista de rutas permitidas
+    $lista = ['auth', 'user', 'AddUsuario', 'UpdateUsuario', 'DeleteUsuario', 'GetAllUsuarios', 'GetUsuarioById', 'pruebabase']; // lista de rutas permitidas
 
     $file = dirname(__DIR__) . '/src/rutas/' . $url[0] . '.php';
 
@@ -34,8 +34,9 @@ if (isset($_GET['route'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
     <title>Página Principal</title>
-    <link rel="stylesheet" href="/css/index.css">
+    
  </head>
 <body>
     <header>
@@ -46,8 +47,8 @@ if (isset($_GET['route'])) {
 </div>
         <h1>Bienvenido a Manos Solidarias</h1>
         <div class="auth-buttons">
-            <a href="/html/registrar.html" class="btn">Registrarse</a>
-            <a href="/html/login.html" class="btn">Iniciar Sesión</a>
+            <a href="../html/registrar.html" class="btn">Registrarse</a>
+            <a href="../html/login.html" class="btn">Iniciar Sesión</a>
         </div>
     </header>
 <div class="slider-box">

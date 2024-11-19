@@ -9,6 +9,15 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 use App\Controladores\AddUsuarioController;
 use App\Configuracion\responseHTTP;
 
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    // Solo responder con un código 200 a las solicitudes OPTIONS
+    header('HTTP/1.1 200 OK');
+    header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+    exit;
+}
+
+
 // Verificar que el método sea POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener los datos enviados en el cuerpo de la solicitud

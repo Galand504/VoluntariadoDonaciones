@@ -673,3 +673,38 @@ Stack trace:
 [17-Nov-2024 20:50:14 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
 [17-Nov-2024 20:50:14 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
 [17-Nov-2024 20:50:14 America/Tegucigalpa] Conexión exitosa
+[18-Nov-2024 08:14:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 08:14:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 08:14:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 08:14:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 08:14:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 08:14:05 America/Tegucigalpa] Conexión exitosa
+[18-Nov-2024 08:14:22 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 08:14:22 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 08:14:22 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 08:14:22 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 08:14:22 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 08:14:22 America/Tegucigalpa] Conexión exitosa
+[18-Nov-2024 12:46:04 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[18-Nov-2024 12:46:04 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[18-Nov-2024 12:47:44 America/Tegucigalpa] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 39
+[18-Nov-2024 12:47:44 America/Tegucigalpa] PHP Warning:  Undefined array key "apellido" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 40
+[18-Nov-2024 12:47:44 America/Tegucigalpa] PHP Warning:  Undefined array key "telefono" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 43
+[18-Nov-2024 12:47:44 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 12:47:44 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 12:47:44 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 12:47:44 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 12:47:44 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[18-Nov-2024 12:47:44 America/Tegucigalpa] Conexión exitosa
+[18-Nov-2024 16:47:18 America/Tegucigalpa] Esto es una prueba de un error
+[18-Nov-2024 18:13:28 America/Tegucigalpa] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\Crowdfunding\src\Rutas\auth.php on line 4
+[18-Nov-2024 18:13:28 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in C:\xampp\htdocs\Crowdfunding\src\Rutas\auth.php:4
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(25): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Rutas\auth.php on line 4
+[18-Nov-2024 18:16:32 America/Tegucigalpa] Error en la conexión a la base de datos: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[18-Nov-2024 18:18:07 America/Tegucigalpa] Conexión exitosa
+[18-Nov-2024 18:18:08 America/Tegucigalpa] Conexión exitosa
+[18-Nov-2024 18:18:09 America/Tegucigalpa] Conexión exitosa
+[18-Nov-2024 18:18:09 America/Tegucigalpa] Conexión exitosa
