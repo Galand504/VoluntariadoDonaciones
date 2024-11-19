@@ -6,13 +6,7 @@ errorlogs::activa_error_logs();
 if (isset($_GET['route'])) {
     
     $url = explode('/', $_GET['route']);
-
-<<<<<<< HEAD
-    $lista = ['auth', 'user', 'AddUsuario', 'UpdateUsuario', 'DeleteUsuario', 'GetAllUsuarios', 'GetUsuarioById', 'pruebabase']; // lista de rutas permitidas
-=======
-    $lista = ['auth', 'user', 'AddUsuario', 'UpdateUsuario', 'DeleteUsuario', 'GetAllUsuarios', 'GetUsuarioById', 'DonacionAPI']; // lista de rutas permitidas
->>>>>>> f467e625a3228c2a7d85ff61d993aa0dfb69d184
-
+    $lista = ['auth', 'user', 'AddUsuario', 'UpdateUsuario', 'DeleteUsuario', 'GetAllUsuarios', 'GetUsuarioById', 'pruebabase'];
     $file = dirname(__DIR__) . '/src/rutas/' . $url[0] . '.php';
 
     if (!in_array($url[0], $lista)) {
