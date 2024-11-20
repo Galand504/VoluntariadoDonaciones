@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="icon" href="/img/favicon-16x16.png" type="image/x-icon">
     <title>Registro de Usuario</title>
 </head>
 <body>
+   
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -17,7 +19,7 @@
                         <!-- Selección de Tipo de Usuario -->
                         <div class="mb-3 text-center">
                             <label for="Tipo">Tipo de Usuario</label>
-                            <select id="Tipo" class="form-select">
+                            <select id="Tipo" class="form-select" onchange="toggleForm()">
                                 <option value="Persona" selected>Persona</option>
                                 <option value="Empresa">Empresa</option>
                             </select>
@@ -25,52 +27,53 @@
     
                         <!-- Formulario Dinámico -->
                         <form id="formulario">
-                            <!-- Campos Específicos -->
+                            <!-- Campos Específicos para Persona -->
                             <div id="form_persona" style="display: block;">
                                 <h6>Datos Personales</h6>
                                 <div class="mb-3">
                                     <label for="nombre">Nombre</label>
-                                    <input type="text" id="nombre" name="nombre" class="form-control" required>
+                                    <input type="text" id="nombre" name="nombre" class="form-control" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="apellido">Apellido</label>
-                                    <input type="text" id="apellido" name="apellido" class="form-control" required>
+                                    <input type="text" id="apellido" name="apellido" class="form-control" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="dni">DNI</label>
-                                    <input type="text" id="dni" name="dni" class="form-control" required>
+                                    <input type="text" id="dni" name="dni" class="form-control" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="edad">Edad</label>
-                                    <input type="number" id="edad" name="edad" class="form-control" min="1" max="120" required>
+                                    <input type="number" id="edad" name="edad" class="form-control" min="1" max="120" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="telefono">Teléfono</label>
-                                    <input type="tel" id="telefono" name="telefono" class="form-control" required>
+                                    <input type="tel" id="telefono" name="telefono" class="form-control" >
                                 </div>
                             </div>
     
+                            <!-- Campos Específicos para Empresa -->
                             <div id="form_empresa" style="display: none;">
                                 <h6>Datos de Empresa</h6>
                                 <div class="mb-3">
                                     <label for="nombreEmpresa">Nombre de la Empresa</label>
-                                    <input type="text" id="nombreEmpresa" name="nombreEmpresa" class="form-control" required>
+                                    <input type="text" id="nombreEmpresa" name="nombreEmpresa" class="form-control" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="razonSocial">Razón Social</label>
-                                    <input type="text" id="razonSocial" name="razonSocial" class="form-control" required>
+                                    <input type="text" id="razonSocial" name="razonSocial" class="form-control" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="registroFiscal">Registro Fiscal</label>
-                                    <input type="text" id="registroFiscal" name="registroFiscal" class="form-control" required>
+                                    <input type="text" id="registroFiscal" name="registroFiscal" class="form-control" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="direccion">Dirección</label>
-                                    <input type="text" id="direccion" name="direccion" class="form-control" required>
+                                    <input type="text" id="direccion" name="direccion" class="form-control" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="telefonoEmpresa">Teléfono</label>
-                                    <input type="tel" id="telefonoEmpresa" name="telefonoEmpresa" class="form-control" required>
+                                    <input type="tel" id="telefonoEmpresa" name="telefonoEmpresa" class="form-control" >
                                 </div>
                             </div>
     
@@ -105,6 +108,6 @@
             </div>
         </div>
     </div>
-    <script src="../js/addusuario.js"></script>
+    <script src="/js/addusuario.js"></script>
 </body>
 </html>

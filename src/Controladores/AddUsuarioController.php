@@ -36,16 +36,16 @@ class AddUsuarioController {
         $contraseña = $data['contraseña'];
         $rol = $data['rol'];
         $Tipo = $data['Tipo'];
-        $nombre = $data['nombre'];
-        $apellido = $data['apellido']; 
-        $dni = $data['dni'] ?? null; // Opcional para tipo Empresa
-        $edad = $data['edad'] ?? null; // Opcional para tipo Empresa
-        $telefono = $data['telefono'];
+        $nombre = $data['nombre'] ?? null;
+        $apellido = $data['apellido' ] ?? null; 
+        $dni = $data['dni'] ?? null; 
+        $edad = $data['edad'] ?? null; 
+        $telefono = $data['telefono'] ?? null;
         $nombreEmpresa = $data['nombreEmpresa'];
         $direccion = $data['direccion'] ?? null;
         $telefonoEmpresa = $data['telefonoEmpresa'] ?? null;
-        $razonSocial = $data['razonSocial'] ?? null; // Se vincula con apellido solo si es tipo Empresa
-        $registroFiscal = $data['registroFiscal'] ?? null; // Solo para tipo Empresa
+        $razonSocial = $data['razonSocial'] ?? null; 
+        $registroFiscal = $data['registroFiscal'] ?? null; 
     
         // Validar datos adicionales para Empresa
         if ($Tipo === 'Empresa') {

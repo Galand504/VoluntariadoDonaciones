@@ -12,44 +12,57 @@
             document.getElementById('form_empresa').style.display = 'block';
         }
     });
-    document.getElementById("formulario").addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita que el formulario se envíe de manera tradicional
-    
-        // Obtener tipo de usuario
-        const Tipo = document.getElementById("Tipo").value;
+    // Función para mostrar el formulario adecuado según el tipo de usuario
+function toggleForm() {
+    const tipoUsuario = document.getElementById("Tipo").value;
+    if (tipoUsuario === "Persona") {
+        document.getElementById("form_persona").style.display = "block";
+        document.getElementById("form_empresa").style.display = "none";
+    } else {
+        document.getElementById("form_persona").style.display = "none";
+        document.getElementById("form_empresa").style.display = "block";
+    }
+}
 
-        // Crear un objeto FormData para recolectar los datos del formulario
-        const formData = new FormData(this);
-    
-        
-        formData.append("Tipo", Tipo);
-    
-        // Obtener la URL de la API
-        const apiUrl = "/Rutas/AddUsuario.php";
-    
-        // Crear una solicitud AJAX con fetch para enviar los datos a la API
-        fetch(apiUrl, {
-            method: "POST", // Utilizamos el método POST
-            body: formData, // Enviamos los datos del formulario
-            headers: {
-                "Accept": "application/json" // Indicamos que aceptamos respuestas en formato JSON
-            }
-        })
-        .then(response => response.json()) // Convertimos la respuesta a JSON
-        .then(data => {
-            if (data.success) {
-                // Si la respuesta indica éxito, mostramos un mensaje de éxito
-                alert("Usuario registrado correctamente");
-                document.getElementById("formulario").reset(); // Limpiamos el formulario
-            } else {
-                // Si ocurre un error, mostramos un mensaje de error
-                alert("Hubo un error al registrar al usuario: " + data.message);
-            }
-        })
-        .catch(error => {
-            // Si hay un error en la solicitud, lo mostramos en consola
-            console.error("Error en la solicitud:", error);
-            alert("Hubo un problema al procesar tu solicitud.");
-        });
+document.getElementById("formulario").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita el envío tradicional del formulario
+
+    // Obtener el tipo de usuario seleccionado
+    const tipoUsuario = document.getElementById("Tipo").value;
+
+    // Crear un objeto FormData
+    const formData = new FormData(this);
+
+    // Agregar tipo de usuario al FormData
+    formData.append("Tipo", tipoUsuario);
+
+    // Definir la URL de la API
+    const apiUrl = "http://localhost/Crowdfunding/src/Rutas/AddUsuario.php";
+
+    // Realizar la solicitud utilizando fetch
+    fetch(apiUrl, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "application/json" // Indica que esperamos una respuesta en formato JSON
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Error en la solicitud, código de respuesta: " + response.status);
+        }
+        return response.json(); // Convertir la respuesta a JSON
+    })
+    .then(data => {
+        if (data.status === 'success') {
+            alert("Usuario registrado correctamente");
+            document.getElementById("formulario").reset(); // Limpiar el formulario
+        } else {
+            alert("Hubo un error al registrar al usuario: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Error en la solicitud:", error);
+        alert("Hubo un problema al procesar tu solicitud.");
     });
-    
+});

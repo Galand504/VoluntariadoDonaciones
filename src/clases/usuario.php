@@ -22,11 +22,11 @@ class usuario {
             $hashed_password, // Se utiliza la contraseña hasheada
             $rol,
             $Tipo,
-            $nombre,
-            $apellido,
-            $dni,
-            $edad,
-            $telefono,
+            $nombre ?? null,
+            $apellido ?? null,
+            $dni ?? null,
+            $edad ?? null,
+            $telefono ?? null,
             $nombreEmpresa ?? null,
             $telefonoEmpresa ?? null,
             $direccion ?? null, // Si no se pasa, se asigna null
@@ -52,13 +52,13 @@ class usuario {
             $stmt = $con->prepare("CALL UpdateUsuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute([
                 $idUsuario,
-                $nombre,
-                $apellido,
+                $nombre ?? null,
+                $apellido ?? null,
                 $email,
                 $hashed_password, // Contraseña hasheada
-                $telefono,
-                $dni,
-                $edad,
+                $telefono ?? null,
+                $dni ?? null,
+                $edad ?? null,
                 $rol,
                 $tipo,
                 $nombreEmpresa ?? null,
