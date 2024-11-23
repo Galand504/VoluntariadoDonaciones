@@ -36,8 +36,7 @@ document.getElementById("formulario").addEventListener("submit", function(event)
     // Agregar tipo de usuario al FormData
     formData.append("Tipo", tipoUsuario);
 
-    // Definir la URL de la API
-    const apiUrl = "http://localhost/Crowdfunding/src/Rutas/AddUsuario.php";
+    const apiUrl = "http://localhost:3000/src/Rutas/AddUsuario.php"
 
     // Realizar la solicitud utilizando fetch
     fetch(apiUrl, {

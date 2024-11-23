@@ -723,3 +723,140 @@ Stack trace:
 [19-Nov-2024 09:36:55 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
 [19-Nov-2024 09:36:55 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
 [19-Nov-2024 09:36:55 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 12:56:19 America/Tegucigalpa] PHP Warning:  Undefined array key "nombreEmpresa" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 44
+[22-Nov-2024 12:56:19 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 12:56:19 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 12:56:19 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 12:56:19 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 12:56:19 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 12:56:20 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 12:56:20 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_usuario' in 'field list' in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:20
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(20): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(64): App\clases\usuario::addusuario('admin@example.c...', 'contra1234', 'Administrador', 'Persona', 'Admin', 'User', '12345678', 30, '1234567890', NULL, NULL, NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(35): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 20
+[22-Nov-2024 12:57:25 America/Tegucigalpa] PHP Warning:  Undefined array key "nombreEmpresa" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 44
+[22-Nov-2024 12:57:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 12:57:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 12:57:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 12:57:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 12:57:25 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 12:57:25 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 12:57:25 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_usuario' in 'field list' in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:20
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(20): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(64): App\clases\usuario::addusuario('admin@example.c...', 'contra1234', 'Administrador', 'Persona', 'Admin', 'User', '12345678', 30, '1234567890', NULL, NULL, NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(35): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 20
+[22-Nov-2024 13:02:52 America/Tegucigalpa] PHP Warning:  Undefined array key "nombreEmpresa" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 44
+[22-Nov-2024 13:02:52 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:02:52 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:02:52 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:02:52 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:02:52 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:02:52 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 13:02:52 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_usuario' in 'field list' in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:20
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(20): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(64): App\clases\usuario::addusuario('admin@example.c...', 'contra1234', 'Administrador', 'Persona', 'Admin', 'User', '12345678', 30, '1234567890', NULL, NULL, NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(35): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 20
+[22-Nov-2024 13:02:53 America/Tegucigalpa] PHP Warning:  Undefined array key "nombreEmpresa" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 44
+[22-Nov-2024 13:02:53 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:02:53 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:02:53 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:02:53 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:02:53 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:02:53 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 13:02:54 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_usuario' in 'field list' in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:20
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(20): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(64): App\clases\usuario::addusuario('admin@example.c...', 'contra1234', 'Administrador', 'Persona', 'Admin', 'User', '12345678', 30, '1234567890', NULL, NULL, NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(35): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 20
+[22-Nov-2024 13:09:05 America/Tegucigalpa] PHP Warning:  Undefined array key "nombreEmpresa" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 44
+[22-Nov-2024 13:09:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:09:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:09:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:09:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:09:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:09:05 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 13:11:39 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:39 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:39 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:39 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:39 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:39 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 13:11:39 America/Tegucigalpa] Error en getAllUsuarios: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.id_usuario' in 'on clause'
+[22-Nov-2024 13:11:41 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:41 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:41 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:41 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:41 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:41 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 13:11:41 America/Tegucigalpa] Error en getAllUsuarios: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.id_usuario' in 'on clause'
+[22-Nov-2024 13:11:49 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:49 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:49 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:49 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:49 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:11:49 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 13:11:49 America/Tegucigalpa] Error en getAllUsuarios: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.id_usuario' in 'on clause'
+[22-Nov-2024 13:13:19 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:13:19 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:13:19 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:13:19 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:13:19 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:13:19 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 13:13:19 America/Tegucigalpa] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_usuario' in 'field list' in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:20
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php(20): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(64): App\clases\usuario::addusuario('empresa@example...', 'password123', 'Organizador', 'Empresa', NULL, NULL, NULL, NULL, NULL, 'Empresa X', 'Calle Ficticia ...', '555987654', 'Empresa X S.A.', 'RFC123456', NULL)
+#2 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(35): App\Controladores\AddUsuarioController->addUsuario(Array)
+#3 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 20
+[22-Nov-2024 13:15:51 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:15:51 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:15:51 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:15:51 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:15:51 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:15:51 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 13:16:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:16:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:16:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:16:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:16:04 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:16:04 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 13:16:04 America/Tegucigalpa] Error en getAllUsuarios: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.telefono' in 'field list'
+[22-Nov-2024 13:16:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:16:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:16:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:16:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:16:05 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:16:05 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 13:16:05 America/Tegucigalpa] Error en getAllUsuarios: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.telefono' in 'field list'
+[22-Nov-2024 13:23:17 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:23:17 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:23:17 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:23:17 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:23:17 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 13:23:17 America/Tegucigalpa] Conexión exitosa
+[22-Nov-2024 20:32:08 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 10
+[22-Nov-2024 20:32:08 America/Tegucigalpa] PHP Warning:  Undefined array key "Tipo" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 18
+[22-Nov-2024 20:32:16 America/Tegucigalpa] PHP Warning:  Undefined array key "nombreEmpresa" in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 44
+[22-Nov-2024 20:32:17 America/Tegucigalpa] PHP Deprecated:  Optional parameter $nombreEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 20:32:17 America/Tegucigalpa] PHP Deprecated:  Optional parameter $direccion declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 20:32:17 America/Tegucigalpa] PHP Deprecated:  Optional parameter $telefonoEmpresa declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 20:32:17 America/Tegucigalpa] PHP Deprecated:  Optional parameter $razonSocial declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 20:32:17 America/Tegucigalpa] PHP Deprecated:  Optional parameter $registroFiscal declared before required parameter $p_id_usuario is implicitly treated as a required parameter in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 12
+[22-Nov-2024 20:32:19 America/Tegucigalpa] Conexión exitosa
