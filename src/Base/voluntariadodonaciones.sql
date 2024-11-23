@@ -1,9 +1,6 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
 CREATE DATABASE voluntariadodonaciones;
 USE voluntariadodonaciones;
+
 
 DELIMITER $$
 --
@@ -495,6 +492,45 @@ CREATE TABLE `donacion` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `empresa`
+--
+
+CREATE TABLE `empresa` (
+  `id_empresa` int(11) NOT NULL,
+  `nombreEmpresa` varchar(255) NOT NULL,
+  `razonSocial` varchar(255) NOT NULL,
+  `registroFiscal` varchar(255) NOT NULL,
+  `telefonoEmpresa` varchar(20) NOT NULL,
+  `direccion` varchar(255) NOT NULL,
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `metodo_pago`
+--
+
+CREATE TABLE `metodo_pago` (
+  `id_metodopago` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `descripcion` varchar(255) DEFAULT NULL,
+  `activo` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `metodo_pago`
+--
+
+INSERT INTO `metodo_pago` (`id_metodopago`, `nombre`, `descripcion`, `activo`) VALUES
+(1, 'Tarjeta de Crédito', NULL, 1),
+(2, 'Tarjeta de Débito', NULL, 1),
+(3, 'PayPal', NULL, 1),
+(4, 'Transferencia Bancaria', NULL, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `pago`
 --
 
@@ -530,7 +566,7 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`IdPersona`, `DNI`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `id_usuario`) VALUES
-(12, '12345678', 'Admin', 'User', '30', '1234567890', 1);
+(12, '12345678', 'Admin', 'User', '30', '1234567890', 52);
 
 -- --------------------------------------------------------
 
@@ -567,6 +603,20 @@ CREATE TABLE `recompensa` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `recompensa_usuario`
+--
+
+CREATE TABLE `recompensa_usuario` (
+  `idRecompensaUsuario` int(11) NOT NULL,
+  `idRecompensa` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `idDonacion` int(11) NOT NULL,
+  `estadoEntrega` enum('Pendiente','En Proceso','Entregado') NOT NULL DEFAULT 'Pendiente'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `riesgo`
 --
 
@@ -597,7 +647,20 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `email`, `contraseña`, `FechaRegistro`, `Rol`, `Tipo`) VALUES
-(1, 'admin@example.com', '$2y$10$10xP/8w9B/TP.e1JM4/Rnu67GlAO.lBYoBWV38Ic.9hx.vmJnbnQC', '2024-11-22 19:09:05', 'Administrador', 'Persona');
+(52, 'admin@example.com', '$2y$10$10xP/8w9B/TP.e1JM4/Rnu67GlAO.lBYoBWV38Ic.9hx.vmJnbnQC', '2024-11-22 19:09:05', 'Administrador', 'Persona');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `voluntariado`
+--
+
+CREATE TABLE `voluntariado` (
+  `idVoluntario` int(11) NOT NULL,
+  `disponibilidad` varchar(255) NOT NULL,
+  `idUsuario` int(11) DEFAULT NULL,
+  `proyecto_idProyecto` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tablas volcadas
@@ -617,6 +680,19 @@ ALTER TABLE `donacion`
   ADD PRIMARY KEY (`idDonacion`),
   ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `idProyecto` (`idProyecto`);
+
+--
+-- Indices de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  ADD PRIMARY KEY (`id_empresa`),
+  ADD KEY `fk_empresa_usuario1_idx` (`id_usuario`);
+
+--
+-- Indices de la tabla `metodo_pago`
+--
+ALTER TABLE `metodo_pago`
+  ADD PRIMARY KEY (`id_metodopago`);
 
 --
 -- Indices de la tabla `pago`
@@ -648,6 +724,15 @@ ALTER TABLE `recompensa`
   ADD KEY `fk_recompensa_proyecto` (`idProyecto`);
 
 --
+-- Indices de la tabla `recompensa_usuario`
+--
+ALTER TABLE `recompensa_usuario`
+  ADD PRIMARY KEY (`idRecompensaUsuario`),
+  ADD KEY `fk_recompensa_usuario_recompensa` (`idRecompensa`),
+  ADD KEY `fk_recompensa_usuario_usuario` (`idUsuario`),
+  ADD KEY `fk_recompensa_usuario_donacion` (`idDonacion`);
+
+--
 -- Indices de la tabla `riesgo`
 --
 ALTER TABLE `riesgo`
@@ -659,6 +744,14 @@ ALTER TABLE `riesgo`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
+
+--
+-- Indices de la tabla `voluntariado`
+--
+ALTER TABLE `voluntariado`
+  ADD PRIMARY KEY (`idVoluntario`),
+  ADD KEY `voluntario_ibfk_1` (`idUsuario`),
+  ADD KEY `fk_voluntariado_proyecto1_idx` (`proyecto_idProyecto`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -675,6 +768,18 @@ ALTER TABLE `actualizacion`
 --
 ALTER TABLE `donacion`
   MODIFY `idDonacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  MODIFY `id_empresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `metodo_pago`
+--
+ALTER TABLE `metodo_pago`
+  MODIFY `id_metodopago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `pago`
@@ -701,6 +806,12 @@ ALTER TABLE `recompensa`
   MODIFY `idRecompensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de la tabla `recompensa_usuario`
+--
+ALTER TABLE `recompensa_usuario`
+  MODIFY `idRecompensaUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `riesgo`
 --
 ALTER TABLE `riesgo`
@@ -711,6 +822,12 @@ ALTER TABLE `riesgo`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
+-- AUTO_INCREMENT de la tabla `voluntariado`
+--
+ALTER TABLE `voluntariado`
+  MODIFY `idVoluntario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -728,6 +845,12 @@ ALTER TABLE `actualizacion`
 ALTER TABLE `donacion`
   ADD CONSTRAINT `dona` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `donacion` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  ADD CONSTRAINT `fk_empresa_usuario1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pago`
@@ -755,10 +878,25 @@ ALTER TABLE `recompensa`
   ADD CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `recompensa_usuario`
+--
+ALTER TABLE `recompensa_usuario`
+  ADD CONSTRAINT `fk_recompensa_usuario_donacion` FOREIGN KEY (`idDonacion`) REFERENCES `donacion` (`idDonacion`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_recompensa_usuario_recompensa` FOREIGN KEY (`idRecompensa`) REFERENCES `recompensa` (`idRecompensa`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_recompensa_usuario_usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE;
+
+--
 -- Filtros para la tabla `riesgo`
 --
 ALTER TABLE `riesgo`
   ADD CONSTRAINT `riesgo_ibfk_1` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `voluntariado`
+--
+ALTER TABLE `voluntariado`
+  ADD CONSTRAINT `fk_voluntariado_proyecto1` FOREIGN KEY (`proyecto_idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `voluntario_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
