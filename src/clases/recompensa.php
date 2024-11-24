@@ -1,43 +1,68 @@
 <?php
 
-class recompensa {
-    private $donaciones;
-    private $donadorEstrella;
-    private $criterioCantidad = 5; // Número mínimo de donaciones para ser donador estrella
-    private $criterioMonto = 1000; // Monto mínimo para ser donador estrella
+namespace App\Configuracion;
 
-    public function __construct($donaciones) {
-        $this->donaciones = $donaciones;
+use App\Configuracion\donacion;
+use App\Configuracion\Pago;
+use PDO;
+
+class recompensa {
+    private $db;
+    private $donacionModel;
+    private $pagoModel;
+    private $donadorEstrella;
+    private $criterioCantidad = 5; // Número mínimo de donaciones
+    private $criterioMonto = 1000; // Monto mínimo total
+
+    public function __construct(PDO $db) {
+        $this->db = $db;
+        $this->donacionModel = new donacion($db);
+        $this->pagoModel = new Pago($db);
         $this->donadorEstrella = $this->determinarDonadorEstrella();
     }
 
     private function determinarDonadorEstrella() {
+        $stmtDonaciones = $this->donacionModel->obtenerDonaciones();
         $donadores = [];
-        foreach ($this->donaciones as $donacion) {
-            $donador = $donacion->getDonador();
-            $monto = $donacion->getMonto();
 
-            if (!isset($donadores[$donador])) {
-                $donadores[$donador] = ['cantidad' => 0, 'total' => 0];
+        while ($donacion = $stmtDonaciones->fetch(PDO::FETCH_ASSOC)) {
+            $idDonacion = $donacion['idDonacion'];
+            $idUsuario = $donacion['id_usuario'];
+            $montoDonacion = $donacion['monto'];
+
+            // Validar los pagos asociados a la donación
+            $pagos = $this->pagoModel->obtenerPagos(['idDonacion' => $idDonacion, 'estado' => 'Completado']);
+            $montoPagosValidados = 0;
+
+            foreach ($pagos as $pago) {
+                $montoPagosValidados += $pago['monto'];
             }
-            $donadores[$donador]['cantidad']++;
-            $donadores[$donador]['total'] += $monto;
+
+            // Solo procesar donaciones con pagos válidos
+            if ($montoPagosValidados >= $montoDonacion) {
+                if (!isset($donadores[$idUsuario])) {
+                    $donadores[$idUsuario] = ['cantidad' => 0, 'total' => 0];
+                }
+                $donadores[$idUsuario]['cantidad']++;
+                $donadores[$idUsuario]['total'] += $montoDonacion;
+            }
         }
 
+        // Verificar los criterios
         foreach ($donadores as $donador => $datos) {
             if ($datos['cantidad'] >= $this->criterioCantidad || $datos['total'] >= $this->criterioMonto) {
-                return $donador;
+                return $donador; // Devuelve el primer donador que cumple los criterios
             }
         }
 
-        return null;
+        return null; // No hay donadores estrella
     }
 
     public function mostrarFormulario() {
         if ($this->donadorEstrella) {
             echo '<form action="recompensa.php" method="post">';
             echo '<h2>Donador Estrella</h2>';
-            echo '<p>Felicidades, ' . htmlspecialchars($this->donadorEstrella) . '! Eres merecedor de una recompensa.</p>';
+            echo '<p>Felicidades, Donador ID: ' . htmlspecialchars($this->donadorEstrella) . '! Eres merecedor de una recompensa.</p>';
             echo '<input type="hidden" name="donador" value="' . htmlspecialchars($this->donadorEstrella) . '">';
             echo '<button type="submit">Reclamar Recompensa</button>';
             echo '</form>';
@@ -46,6 +71,8 @@ class recompensa {
         }
     }
 }
+?>
+
 
 /* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
