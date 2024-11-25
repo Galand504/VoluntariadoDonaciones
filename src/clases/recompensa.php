@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Configuracion;
-require_once __DIR__ . '/ruta/a/pago.php';
-require_once __DIR__ . '/ruta/a/donacion.php';
+
+require_once __DIR__ . '/../pago.php';  
+require_once __DIR__ . '/../donacion.php'; 
 
 use App\Configuracion\donacion;
 use App\Configuracion\Pago;
 use PDO;
 
-class recompensa {
+class recompensa{
     private $db;
     private $donacionModel;
     private $pagoModel;
