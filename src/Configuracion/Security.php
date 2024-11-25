@@ -3,7 +3,6 @@ namespace App\Configuracion; //nombre de espacios
 
 use Dotenv\Dotenv; //variables de entorno https://github.com/vlucas/phpdotenv 
 use Firebase\JWT\JWT; //para generar nuestro JWT https://github.com/firebase/php-jwt
-use Bulletproof\Image;
 use Exception;
 class Security {
 

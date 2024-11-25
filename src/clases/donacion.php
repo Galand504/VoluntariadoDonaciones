@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Configuracion;
+namespace App\clases;
 use PDO;
 use PDOStatement;
 use Exception;

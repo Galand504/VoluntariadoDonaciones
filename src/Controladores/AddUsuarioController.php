@@ -1,6 +1,5 @@
 <?php
 namespace App\Controladores;
-
 use App\clases\usuario;
 
 class AddUsuarioController {

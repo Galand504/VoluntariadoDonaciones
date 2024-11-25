@@ -13,7 +13,7 @@ class UpdateUsuarioController {
      */
     public function updateUsuario($data) {
         // Validar que los datos mínimos están presentes
-        if (!isset($data['id_usuario'], $data['email'], $data['contraseña'], $data['rol'], $data['tipo'])) {
+        if (!isset($data['id_usuario'], $data['email'], $data['contraseña'], $data['tipo'])) {
             return json_encode([
                 'status' => 'error',
                 'message' => 'Faltan datos obligatorios: id_usuario, email, contraseña y tipo.'
@@ -21,7 +21,7 @@ class UpdateUsuarioController {
         }
 
         // Asignar valores con manejo de valores opcionales
-        $idUsuario = $data['id_usuario'];
+        $id_usuario = $data['id_usuario'];
         $nombre = $data['nombre'] ?? null;
         $apellido = $data['apellido'] ?? null;
         $email = $data['email'];
@@ -29,8 +29,8 @@ class UpdateUsuarioController {
         $telefono = $data['telefono'] ?? null;
         $dni = $data['dni'] ?? null;
         $edad = $data['edad'] ?? null;
-        $rol = $data['rol'];
-        $tipo = $data['tipo'];
+        $rol = $data['rol'] ?? null;
+        $tipo = $data['tipo'] ?? null;
         $nombreEmpresa = $data['nombreEmpresa'] ?? null;
         $razonSocial = $data['razonSocial'] ?? null;
         $telefonoEmpresa = $data['telefonoEmpresa'] ?? null;
@@ -39,7 +39,7 @@ class UpdateUsuarioController {
 
         // Llamar al método `updateUsuario` de la clase usuario
         $result = usuario::updateUsuario(
-            $idUsuario,
+            $id_usuario,
             $nombre,
             $apellido,
             $email,

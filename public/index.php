@@ -6,7 +6,7 @@ errorlogs::activa_error_logs();
 if (isset($_GET['route'])) {
     
     $url = explode('/', $_GET['route']);
-    $lista = ['auth', 'user', 'AddUsuario', 'UpdateUsuario', 'DeleteUsuario', 'GetAllUsuarios', 'GetUsuarioById', 'pruebabase'];
+    $lista = ['auth', 'user', 'AddUsuario', 'UpdateUsuario', 'DeleteUsuario', 'GetAllUsuarios', 'GetUsuarioById', 'login'];
     $file = dirname(__DIR__) . '/src/rutas/' . $url[0] . '.php';
 
     if (!in_array($url[0], $lista)) {
@@ -30,42 +30,56 @@ if (isset($_GET['route'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluir Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
     <title>Página Principal</title>
-    
- </head>
+</head>
 <body>
-    <header>
-    <div class="logo-container">
-    <a href="index.php">
-    <img src="../img/Logo.jpg" alt="Logotipo" class="logo"> 
-    </a>
-</div>
-        <h1>Bienvenido a Manos Solidarias</h1>
-        <div class="auth-buttons">
-            <a href="../html/registrar.html" class="btn">Registrarse</a>
-            <a href="../html/login.html" class="btn">Iniciar Sesión</a>
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo-container">
+                <a href="index.php">
+                    <img src="../img/Logo.jpg" alt="Logotipo" class="logo"> 
+                </a>
+            </div>
+            <h1 class="h2">Bienvenido a Manos Solidarias</h1>
+            <div class="auth-buttons">
+                <a href="../html/registrar.html" class="btn btn-outline-light me-2">Registrarse</a>
+                <a href="../html/login.html" class="btn btn-light">Iniciar Sesión</a>
+            </div>
         </div>
     </header>
-<div class="slider-box">
-    <ul>
-        <li>
-            <img src="../img/image1.jpeg" alt="Imagen 1">
-        </li>
-        <li>
-    <a href="#SobreNosotros">
-            <img src="../img/image2.jpeg" alt="Imagen 2">
-    </a>
-        </li>
-        <li>
-            <img src="../img/image3.jpeg" alt="Imagen 3">
-        </li>
-        <li>    
-            <img src="../img/image4.jpeg" alt="Imagen 4">
-        </li>       
-    </ul>
+
+    <!-- Slider con Bootstrap (Carousel Automático) -->
+    <div id="carouselExampleAutoplay" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../img/image1.jpeg" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <a href="#SobreNosotros">
+                    <img src="../img/image2.jpeg" class="d-block w-100" alt="Imagen 2">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/image3.jpeg" class="d-block w-100" alt="Imagen 3">
+            </div>
+            <div class="carousel-item">
+                <img src="../img/image4.jpeg" class="d-block w-100" alt="Imagen 4">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplay" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplay" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <main>
+
+    <main class="container mt-5">
         <h2>Descripción Breve</h2>
         <p>Nuestra plataforma permite a los usuarios hacer donaciones y participar en campañas de voluntariado de manera sencilla y segura.</p>
         <h2>Características Principales</h2>
@@ -77,14 +91,18 @@ if (isset($_GET['route'])) {
             <li>Reportes de donaciones.</li>
         </ul>
     </main>
-    <main> 
-    <section id="#SobreNosotros">
+    
+    <section id="SobreNosotros" class="container mt-5">
         <h2>Sobre Nosotros</h2>
+        <p>Aquí va información sobre la empresa o la plataforma...</p>
     </section>
-    </main>
 
-    <footer>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 Plataforma de Donaciones y Voluntariado. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Incluir Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

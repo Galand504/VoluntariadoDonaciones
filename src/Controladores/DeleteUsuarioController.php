@@ -11,9 +11,9 @@ class DeleteUsuarioController {
      * @param int $idUsuario ID del usuario a eliminar
      * @return string Respuesta en formato JSON
      */
-    public function deleteUsuario($idUsuario) {
+    public function deleteUsuario($id_usuario) {
         // Validar que se envió un ID de usuario
-        if (!$idUsuario) {
+        if (!$id_usuario) {
             return json_encode([
                 'status' => 'error',
                 'message' => 'Falta el ID del usuario a eliminar.'
@@ -21,7 +21,7 @@ class DeleteUsuarioController {
         }
 
         // Llamar al método `deleteUsuario` de la clase usuario
-        $result = usuario::deleteUsuario($idUsuario);
+        $result = usuario::deleteUsuario($id_usuario);
 
         // Verificar el resultado y devolver respuesta
         if ($result) {

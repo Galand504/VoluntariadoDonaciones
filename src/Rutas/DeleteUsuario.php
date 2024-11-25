@@ -10,9 +10,10 @@ use App\Controladores\DeleteUsuarioController;
 
 // Verificar que el método sea DELETE
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-    // Obtener el ID del usuario de la URL o del cuerpo de la solicitud
-    $data = json_decode(file_get_contents("php://input"), true);
-    $idUsuario = $data['id_usuario'] ?? null;
+    // Obtener el ID del usuario de la URL
+    $url_components = parse_url($_SERVER['REQUEST_URI']);
+    $path = explode('/', $url_components['path']);
+    $idUsuario = end($path); // Obtiene el último segmento de la URL, que debería ser el id_usuario
 
     // Validar si se envió el ID del usuario
     if (!$idUsuario) {
@@ -36,3 +37,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
         'message' => 'Método no permitido.'
     ]);
 }
+

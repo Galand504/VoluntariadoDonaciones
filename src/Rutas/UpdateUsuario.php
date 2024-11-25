@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Methods: POST, PUT, OPTIONS");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
@@ -9,8 +9,15 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 use App\Controladores\UpdateUsuarioController;
 use App\Configuracion\responseHTTP;
 
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    // Solo responder con un código 200 a las solicitudes OPTIONS
+    header('HTTP/1.1 200 OK');
+    header('Access-Control-Allow-Methods: POST, PUT, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+    exit;
+}
 // Verificar que el método sea POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     // Obtener los datos enviados en el cuerpo de la solicitud
     $data = json_decode(file_get_contents("php://input"), true);
 
