@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Configuracion;
+require_once __DIR__ . '/ruta/a/pago.php';
 
 use App\Configuracion\donacion;
 use App\Configuracion\Pago;

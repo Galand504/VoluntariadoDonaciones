@@ -3,7 +3,7 @@ class Pago {
     // Conexión a la base de datos y nombre de la tabla
     private $conn;
     private $table_name = "pago";
-
+   
     // Propiedades de la clase Pago
     public $idPago;
     public $fecha;
