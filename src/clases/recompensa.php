@@ -2,6 +2,7 @@
 
 namespace App\Configuracion;
 require_once __DIR__ . '/ruta/a/pago.php';
+require_once __DIR__ . '/ruta/a/donacion.php';
 
 use App\Configuracion\donacion;
 use App\Configuracion\Pago;
