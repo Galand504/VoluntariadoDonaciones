@@ -1,7 +1,3 @@
-CREATE DATABASE voluntariadodonaciones;
-USE voluntariadodonaciones;
-
-
 DELIMITER $$
 --
 -- Procedimientos
@@ -32,23 +28,26 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `AddUsuario` (IN `p_email` VARCHAR(2
     END IF;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteUsuario` (IN `p_idUsuario` INT)   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteUsuario` (IN `p_id_usuario` INT)   BEGIN
     -- Eliminar de la tabla persona si es tipo persona
-    DELETE FROM persona WHERE id_usuario = p_idUsuario;
+    DELETE FROM persona WHERE id_usuario = p_id_usuario;
 
     -- Eliminar de la tabla empresa si es tipo empresa
-    DELETE FROM empresa WHERE id_usuario = p_idUsuario;
+    DELETE FROM empresa WHERE id_usuario = p_id_usuario;
 
     -- Eliminar de la tabla usuario
-    DELETE FROM usuario WHERE id_usuario = p_idUsuario;
+    DELETE FROM usuario WHERE id_usuario = p_id_usuario;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllUsuarios` ()   BEGIN
-    SELECT u.id_usuario, u.email, u.FechaRegistro, u.Rol, u.Tipo, p.nombre, p.apellido, p.dni, p.edad, p.Telefono, e.nombreEmpresa, e.razonSocial,
-    e.registroFiscal, e.telefonoEmpresa, e.direccion
-    FROM usuario u
-    LEFT JOIN persona p ON u.id_usuario = p.id_usuario
-    LEFT JOIN empresa e ON u.id_usuario = e.id_usuario;
+    SELECT u.id_usuario, u.email, u.FechaRegistro, u.Rol, u.Tipo, 
+       p.nombre, p.apellido, p.dni, p.edad, p.Telefono, 
+       e.nombreEmpresa, e.razonSocial, e.registroFiscal, 
+       e.telefonoEmpresa, e.direccion
+FROM usuario u
+LEFT JOIN persona p ON u.id_usuario = p.id_usuario
+LEFT JOIN empresa e ON u.id_usuario = e.id_usuario
+WHERE p.id_usuario IS NOT NULL OR e.id_usuario IS NOT NULL;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetUsuarioById` (IN `p_idUsuario` INT)   BEGIN
@@ -412,9 +411,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_vincular_donacion` (IN `p_id_usu
     END IF;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateUsuario` (IN `p_idUsuario` INT, IN `p_nombre` VARCHAR(255), IN `p_apellido` VARCHAR(255), IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_telefono` VARCHAR(255), IN `p_dni` VARCHAR(255), IN `p_edad` VARCHAR(100), IN `p_rol` ENUM('Voluntario','Donante','Organizador'), IN `p_tipo` ENUM('Persona','Empresa'), IN `p_nombreEmpresa` VARCHAR(255), IN `p_razonSocial` VARCHAR(255), IN `p_telefonoEmpresa` VARCHAR(255), IN `p_direccion` VARCHAR(255), IN `p_registroFiscal` VARCHAR(255))   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateUsuario` (IN `p_id_usuario` INT, IN `p_nombre` VARCHAR(255), IN `p_apellido` VARCHAR(255), IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_telefono` VARCHAR(255), IN `p_dni` VARCHAR(255), IN `p_edad` VARCHAR(100), IN `p_rol` ENUM('Voluntario','Donante','Organizador'), IN `p_tipo` ENUM('Persona','Empresa'), IN `p_nombreEmpresa` VARCHAR(255), IN `p_razonSocial` VARCHAR(255), IN `p_telefonoEmpresa` VARCHAR(255), IN `p_direccion` VARCHAR(255), IN `p_registroFiscal` VARCHAR(255))   BEGIN
     -- Verificar si el usuario existe en la tabla usuario
-    IF NOT EXISTS (SELECT 1 FROM usuario WHERE id_usuario = p_idUsuario) THEN
+    IF NOT EXISTS (SELECT 1 FROM usuario WHERE id_usuario = p_id_usuario) THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El usuario no existe.';
     END IF;
 
@@ -422,16 +421,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateUsuario` (IN `p_idUsuario` IN
     UPDATE usuario
     SET 
         email = p_email,
-        contraseña = p_contraseña,
-        rol = p_rol,
-        tipo = p_tipo
-    WHERE id_usuario = p_idUsuario;
+        contraseña = p_contraseña
+    WHERE id_usuario = p_id_usuario;
 
     -- Si es tipo Persona, actualizar o insertar en la tabla persona
     IF p_tipo = 'Persona' THEN
-        IF NOT EXISTS (SELECT 1 FROM persona WHERE id_usuario = p_idUsuario) THEN
+        IF NOT EXISTS (SELECT 1 FROM persona WHERE id_usuario = p_id_usuario) THEN
             INSERT INTO persona (id_usuario, nombre, apellido, telefono, dni, edad)
-            VALUES (p_idUsuario, p_nombre, p_apellido, p_telefono, p_dni, p_edad);
+            VALUES (p_id_usuario, p_nombre, p_apellido, p_telefono, p_dni, p_edad);
         ELSE
             UPDATE persona
             SET 
@@ -440,15 +437,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateUsuario` (IN `p_idUsuario` IN
                 telefono = p_telefono,
                 dni = p_dni,
                 edad = p_edad
-            WHERE id_usuario = p_idUsuario;
+            WHERE id_usuario = p_id_usuario;
         END IF;
     END IF;
 
     -- Si es tipo Empresa, actualizar o insertar en la tabla empresa
     IF p_tipo = 'Empresa' THEN
-        IF NOT EXISTS (SELECT 1 FROM empresa WHERE id_usuario = p_idUsuario) THEN
+        IF NOT EXISTS (SELECT 1 FROM empresa WHERE id_usuario = p_id_usuario) THEN
             INSERT INTO empresa (id_usuario, nombreEmpresa, razonSocial, telefono, direccion, registroFiscal)
-            VALUES (p_idUsuario, p_nombreEmpresa, p_razonSocial, p_telefonoEmpresa, p_direccion, p_registroFiscal);
+            VALUES (p_id_usuario, p_nombreEmpresa, p_razonSocial, p_telefonoEmpresa, p_direccion, p_registroFiscal);
         ELSE
             UPDATE empresa
             SET 
@@ -457,7 +454,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateUsuario` (IN `p_idUsuario` IN
                 telefono = p_telefonoEmpresa,
                 direccion = p_direccion,
                 registroFiscal = p_registroFiscal
-            WHERE id_usuario = p_idUsuario;
+            WHERE id_usuario = p_id_usuario;
         END IF;
     END IF;
 END$$
@@ -504,6 +501,13 @@ CREATE TABLE `empresa` (
   `direccion` varchar(255) NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`id_empresa`, `nombreEmpresa`, `razonSocial`, `registroFiscal`, `telefonoEmpresa`, `direccion`, `id_usuario`) VALUES
+(12, 'werwer', 'rewrew', 'werewrew', '423432', '96773505', 57);
 
 -- --------------------------------------------------------
 
@@ -566,7 +570,8 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`IdPersona`, `DNI`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `id_usuario`) VALUES
-(12, '12345678', 'Admin', 'User', '30', '1234567890', 52);
+(12, '12345678', 'Admin', 'User', '30', '1234567890', 52),
+(16, '72725', 'Alex', 'Cuevas', '54', '96773505', 59);
 
 -- --------------------------------------------------------
 
@@ -647,7 +652,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `email`, `contraseña`, `FechaRegistro`, `Rol`, `Tipo`) VALUES
-(52, 'admin@example.com', '$2y$10$10xP/8w9B/TP.e1JM4/Rnu67GlAO.lBYoBWV38Ic.9hx.vmJnbnQC', '2024-11-22 19:09:05', 'Administrador', 'Persona');
+(52, 'admin@example.com', '$2y$10$10xP/8w9B/TP.e1JM4/Rnu67GlAO.lBYoBWV38Ic.9hx.vmJnbnQC', '2024-11-22 19:09:05', 'Administrador', 'Persona'),
+(57, 'laura23@gmail.com', '$2y$10$6laa1RSRsiUByJ1BKrkgiuzuUg./v6ggjnfPMPWeX5VmW16hGFsiy', '2024-11-25 02:12:00', 'Voluntario', 'Empresa'),
+(59, 'julian523@hotmail.com', '$2y$10$VasNcJkva.TPflRfVfuMQOJvdVckLZzB24PFM7IifteMNJWtdmw5q', '2024-11-24 04:49:11', 'Voluntario', 'Persona');
 
 -- --------------------------------------------------------
 
@@ -773,7 +780,7 @@ ALTER TABLE `donacion`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `id_empresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_empresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `metodo_pago`
@@ -791,7 +798,7 @@ ALTER TABLE `pago`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `IdPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `IdPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `proyecto`
@@ -821,7 +828,7 @@ ALTER TABLE `riesgo`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `voluntariado`
