@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Donador Estrella</title>
+    <link rel="stylesheet" href="recompensa.css">
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Donador Estrella</h2>
+            <p>Felicidades, Donador ID: <span id="donador-id">12345</span>! Eres merecedor de una recompensa.</p>
+            <form action="recompensa.php" method="post">
+                <input type="hidden" name="donador" value="12345">
+                <button type="submit" class="btn">Reclamar Recompensa</button>
+            </form>
+        </div>
+        <p id="no-donador" class="hidden">No hay donadores estrella en este momento.</p>
+    </div>
+</body>
+</html>

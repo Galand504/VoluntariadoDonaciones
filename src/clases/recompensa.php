@@ -1,13 +1,15 @@
 <?php
-
 namespace App\Configuracion;
+
 
 require_once __DIR__ . '/../pago.php';  
 require_once __DIR__ . '/../donacion.php'; 
 
 use App\Configuracion\donacion;
 use App\Configuracion\Pago;
+use ComposerAutoloaderInitd751713988987e9331980363e24189ce;
 use PDO;
+use php_user_filter;
 
 class recompensa{
     private $db;
@@ -60,22 +62,26 @@ class recompensa{
 
         return null; // No hay donadores estrella
     }
-
     public function mostrarFormulario() {
         if ($this->donadorEstrella) {
-            echo '<form action="recompensa.php" method="post">';
+            echo '<div class="container">';
+            echo '<div class="card">';
             echo '<h2>Donador Estrella</h2>';
-            echo '<p>Felicidades, Donador ID: ' . htmlspecialchars($this->donadorEstrella) . '! Eres merecedor de una recompensa.</p>';
+            echo '<p>Felicidades, Donador ID: <span id="donador-id">' . htmlspecialchars($this->donadorEstrella) . '</span>! Eres merecedor de una recompensa.</p>';
+            echo '<form action="recompensa.php" method="post">';
             echo '<input type="hidden" name="donador" value="' . htmlspecialchars($this->donadorEstrella) . '">';
-            echo '<button type="submit">Reclamar Recompensa</button>';
+            echo '<button type="submit" class="btn">Reclamar Recompensa</button>';
             echo '</form>';
+            echo '</div>';
+            echo '</div>';
         } else {
-            echo '<p>No hay donadores estrella en este momento.</p>';
+            echo '<div class="container">';
+            echo '<p id="no-donador">No hay donadores estrella en este momento.</p>';
+            echo '</div>';
         }
     }
+    
 }
-?>
-
 
 /* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
