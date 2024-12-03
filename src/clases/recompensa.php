@@ -1,6 +1,5 @@
-<?php
+<?php 
 namespace App\Configuracion;
-
 
 require_once __DIR__ . '/../pago.php';  
 require_once __DIR__ . '/../donacion.php'; 
@@ -9,13 +8,12 @@ use App\Configuracion\donacion;
 use App\Configuracion\Pago;
 use ComposerAutoloaderInitd751713988987e9331980363e24189ce;
 use PDO;
-use php_user_filter;
 
-class recompensa{
+class recompensa {
     private $db;
     private $donacionModel;
     private $pagoModel;
-    private $donadorEstrella;
+    private $donadoresEstrella = []; // Ahora es un array que contiene varios donadores
     private $criterioCantidad = 5; // Número mínimo de donaciones
     private $criterioMonto = 1000; // Monto mínimo total
 
@@ -23,10 +21,11 @@ class recompensa{
         $this->db = $db;
         $this->donacionModel = new donacion($db);
         $this->pagoModel = new Pago($db);
-        $this->donadorEstrella = $this->determinarDonadorEstrella();
+        $this->donadoresEstrella = $this->determinarDonadoresEstrella();
     }
 
-    private function determinarDonadorEstrella() {
+    // Modificación para manejar múltiples donadores estrella
+    private function determinarDonadoresEstrella() {
         $stmtDonaciones = $this->donacionModel->obtenerDonaciones();
         $donadores = [];
 
@@ -53,26 +52,33 @@ class recompensa{
             }
         }
 
-        // Verificar los criterios
+        // Filtrar los donadores estrella
+        $donadoresEstrella = [];
         foreach ($donadores as $donador => $datos) {
             if ($datos['cantidad'] >= $this->criterioCantidad || $datos['total'] >= $this->criterioMonto) {
-                return $donador; // Devuelve el primer donador que cumple los criterios
+                $donadoresEstrella[] = $donador; // Añadir donador a la lista
             }
         }
 
-        return null; // No hay donadores estrella
+        return $donadoresEstrella; // Devolver lista de donadores estrella
     }
+
+    // Mostrar formularios para todos los donadores estrella
     public function mostrarFormulario() {
-        if ($this->donadorEstrella) {
+        if (!empty($this->donadoresEstrella)) {
             echo '<div class="container">';
-            echo '<div class="card">';
-            echo '<h2>Donador Estrella</h2>';
-            echo '<p>Felicidades, Donador ID: <span id="donador-id">' . htmlspecialchars($this->donadorEstrella) . '</span>! Eres merecedor de una recompensa.</p>';
-            echo '<form action="recompensa.php" method="post">';
-            echo '<input type="hidden" name="donador" value="' . htmlspecialchars($this->donadorEstrella) . '">';
-            echo '<button type="submit" class="btn">Reclamar Recompensa</button>';
-            echo '</form>';
-            echo '</div>';
+            
+            foreach ($this->donadoresEstrella as $donadorId) {
+                echo '<div class="card">';
+                echo '<h2>Donador Estrella</h2>';
+                echo '<p>Felicidades, Donador ID: <span id="donador-id">' . htmlspecialchars($donadorId) . '</span>! Eres merecedor de una recompensa.</p>';
+                echo '<form action="recompensa.php" method="post">';
+                echo '<input type="hidden" name="donador" value="' . htmlspecialchars($donadorId) . '">';
+                echo '<button type="submit" class="btn">Reclamar Recompensa</button>';
+                echo '</form>';
+                echo '</div>';
+            }
+
             echo '</div>';
         } else {
             echo '<div class="container">';
@@ -80,7 +86,6 @@ class recompensa{
             echo '</div>';
         }
     }
-    
 }
 
 /* 

@@ -1,22 +1,28 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario Donador Estrella</title>
     <link rel="stylesheet" href="recompensa.css">
-
+</head>
 <body>
     <div class="container">
-        <div class="card">
-            <h2>Donador Estrella</h2>
-            <p>Felicidades, Donador ID: <span id="donador-id">12345</span>! Eres merecedor de una recompensa.</p>
-            <form action="recompensa.php" method="post">
-                <input type="hidden" name="donador" value="12345">
-                <button type="submit" class="btn">Reclamar Recompensa</button>
-            </form>
-        </div>
-        <p id="no-donador" class="hidden">No hay donadores estrella en este momento.</p>
+        <!-- Bucle PHP para mostrar formularios para todos los donadores estrella -->
+        <?php if (!empty($donadoresEstrella)): ?>
+            <?php foreach ($donadoresEstrella as $donadorId): ?>
+                <div class="card">
+                    <h2>Donador Estrella</h2>
+                    <p>Felicidades, Donador ID: <span id="donador-id"><?php echo htmlspecialchars($donadorId); ?></span>! Eres merecedor de una recompensa.</p>
+                    <form action="recompensa.php" method="post">
+                        <input type="hidden" name="donador" value="<?php echo htmlspecialchars($donadorId); ?>">
+                        <button type="submit" class="btn">Reclamar Recompensa</button>
+                    </form>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p id="no-donador">No hay donadores estrella en este momento.</p>
+        <?php endif; ?>
     </div>
 </body>
 </html>

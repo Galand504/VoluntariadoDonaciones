@@ -25,6 +25,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 10px;
     background-color: #ffffff;
+    margin-bottom: 20px; /* Espaciado entre las tarjetas */
 }
 
 .card h2 {
@@ -54,7 +55,13 @@ body {
     background-color: #0056b3;
 }
 
-.no-donador {
+#no-donador {
     font-size: 1.2rem;
     color: #6c757d;
+    display: block; /* Aseguramos que se muestre si no hay donadores */
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none; /* Ocultar cuando no haya donadores */
 }
