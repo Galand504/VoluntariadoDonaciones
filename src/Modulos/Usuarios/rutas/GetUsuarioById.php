@@ -13,7 +13,7 @@ if ($idUsuario) {
     // Instanciar el controlador y procesar la solicitud
     $controller = new GetUsuarioByIdController();
     $response = $controller->getUsuarioById($idUsuario);
-    echo $response;
+    echo json_encode($response);
 } else {
     // Manejar errores
     echo json_encode([

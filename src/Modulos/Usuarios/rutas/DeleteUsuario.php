@@ -6,20 +6,34 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // Incluir el controlador
-use App\Controladores\DeleteUsuarioController;
+use App\Modulos\Usuarios\Controladores\DeleteUsuarioController;
 
 // Verificar que el método sea DELETE
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-    // Obtener el ID del usuario de la URL
-    $url_components = parse_url($_SERVER['REQUEST_URI']);
-    $path = explode('/', $url_components['path']);
-    $idUsuario = end($path); // Obtiene el último segmento de la URL, que debería ser el id_usuario
+    // Obtener datos del body
+    $data = json_decode(file_get_contents("php://input"), true);
+    
+    // Intentar obtener el ID del body primero
+    $idUsuario = isset($data['id_usuario']) ? $data['id_usuario'] : null;
+    
+    // Si no hay ID en el body, intentar obtenerlo de la URL
+    if (!$idUsuario) {
+        $url_components = parse_url($_SERVER['REQUEST_URI']);
+        $path = explode('/', trim($url_components['path'], '/'));
+        
+        for ($i = 0; $i < count($path); $i++) {
+            if ($path[$i] === 'DeleteUsuario' && isset($path[$i + 1])) {
+                $idUsuario = $path[$i + 1];
+                break;
+            }
+        }
+    }
 
     // Validar si se envió el ID del usuario
-    if (!$idUsuario) {
+    if (!$idUsuario || !is_numeric($idUsuario)) {
         echo json_encode([
             'status' => 'error',
-            'message' => 'Falta el ID del usuario a eliminar.'
+            'message' => 'ID de usuario inválido o no proporcionado'
         ]);
         exit;
     }
@@ -29,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
     $response = $controller->deleteUsuario($idUsuario);
 
     // Retornar la respuesta al cliente
-    echo $response;
+    echo json_encode($response);
 } else {
     // Método no permitido
     echo json_encode([

@@ -5,22 +5,36 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 errorlogs::activa_error_logs();
 if (isset($_GET['route'])) {
     
-    $url = explode('/', $_GET['route']);
-    $lista = ['auth', 'user', 'AddUsuario', 'UpdateUsuario', 'DeleteUsuario', 'GetAllUsuarios', 'GetUsuarioById', 'login'];
-    $file = dirname(__DIR__) . '/src/rutas/' . $url[0] . '.php';
-
-    if (!in_array($url[0], $lista)) {
-    echo json_encode(responseHTTP::status400());
-    error_log("Esto es una prueba de un error");
-        exit; // Finalizamos la ejecución si la ruta no es válida
-    }
-
-    if(!file_exists($file) || !is_readable($file)){
-        echo "El archivo no existe o no es legible";
-    }else{
-        require $file;
+    $url = explode('/', trim($_GET['route'], '/'));
+    
+    if (empty($url[0])) {
+        echo json_encode(responseHTTP::status400());
         exit;
     }
+
+    // Detectar automáticamente los módulos disponibles
+    $modulosPath = dirname(__DIR__) . '/src/modulos';
+    $modulos = array_filter(scandir($modulosPath), function($item) use ($modulosPath) {
+        return is_dir($modulosPath . '/' . $item) && !in_array($item, ['.', '..']);
+    });
+
+    // Buscar el archivo de ruta en cada módulo
+    $found = false;
+    foreach ($modulos as $modulo) {
+        $file = $modulosPath . '/' . $modulo . '/rutas/' . $url[0] . '.php';
+        if (file_exists($file) && is_readable($file)) {
+            $found = true;
+            break;
+        }
+    }
+
+    if (!$found) {
+        echo json_encode(responseHTTP::status404("Ruta no encontrada"));
+        exit;
+    }
+
+    require $file;
+    exit;
 
 } else {
 }

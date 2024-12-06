@@ -1,98 +1,92 @@
 <?php
-namespace App\Configuracion; //nombre de espacios
+namespace App\Configuracion;
 
-use Dotenv\Dotenv; //variables de entorno https://github.com/vlucas/phpdotenv 
-use Firebase\JWT\JWT; //para generar nuestro JWT https://github.com/firebase/php-jwt
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 use Exception;
+
 class Security {
-
-    private static $jwt_data;//Propiedad para guardar los datos decodificados del JWT 
-
-    /*METODO para Acceder a la secret key para crear el JWT*/
-    final public static function secretKey()
-    {
-        //cargamos las variables de entorno en el archivo .env
-        $dotenv = Dotenv::createImmutable(dirname(__DIR__,2)); //nuestras variables de entorno estaran en la raiz
-                    // del proyecto (el numero dos son los niveles a lo externo, para llegar al directorio raiz)
-        $dotenv->load(); //cargando las variables de entorno
-        return $_ENV['SECRET_KEY']; //le doy un nombre a nuestra variable de entorno y la retornamos
-        //en realidad lo que sucede aqui es por medio de la superglobal $_ENV creamos una variable de entorno
+    /**
+     * Crea un hash seguro de la contraseña
+     * @param string $password Contraseña en texto plano
+     * @return string Hash de la contraseña
+     */
+    public static function createPassword(string $password): string {
+        return password_hash($password, PASSWORD_DEFAULT);
     }
 
-    /*METODO para Encriptar la contraseña del usuario*/
-    final public static function createPassword(string $pass)
-    {
-        $pass = password_hash($pass,PASSWORD_DEFAULT); //metodo para encriptar mediante hash
-        //recibe 2 parametros el primero el la cadena (pass) y el segundo es el metodo de encriptación (por defecto BCRIPT)
-        return $pass;
+    /**
+     * Obtiene la clave secreta para JWT
+     * @return string
+     */
+    public static function secretKey(): string {
+        return $_ENV['JWT_SECRET_KEY'] ?? 'tu_clave_secreta_por_defecto';
     }
 
-    /*Metodo para Validar que las contraseñas coincidan o sean iguales*/
-    final public static function validatePassword(string $pw , string $pwh)
-    {
-        if (password_verify($pw,$pwh)) {
-            return true;
-        } else {
-            error_log('La contraseña es incorrecta');
-            return false;
-        }       
-    }
-
-    /*MEtodo para crear JWT*/
-    /*PARAM: 1.	SECRET_KEY
-             2.	ARRAY con la data que queremos encriptar*/
-
-    final public static function createTokenJwt(string $key , array $data)
-    {
-        $payload = array ( //Cuerpo del JWT
-            "iat" => time(),  //clave que almacena el tiempo en el que creamos el JWT
-            "exp" => time() + (60*60*6), //clave que almacena el tiempo actual en segundos que expira el JWT
-            //si solo colocamos 10 entonces expirara en 10 segundos
-            "data" => $data //clave que almacena la data encriptada
-        );
+    /**
+     * Genera un nuevo token JWT
+     * @param string $secretKey Clave secreta
+     * @param array $userData Datos del usuario
+     * @return string Token JWT
+     */
+    public static function createTokenJwt(string $secretKey, array $userData): string {
+        $time = time();
         
-        //creamos el JWT recibe varios parametros pero nos interesa el payload y la key en el metodo encode de JWT
-        $jwt = JWT::encode($payload, $key, 'HS256');
-        print_r($jwt);
-        return $jwt;
+        $payload = [
+            'iat' => $time,
+            'exp' => $time + 3600, // 1 hora
+            'data' => $userData
+        ];
+
+        return JWT::encode($payload, $secretKey, 'HS256');
     }
 
-    /*Validamos que el JWT sea correcto*/
-    //recibimos dos parametros uno es un array y otro es la KEY para decifrar nuestro JWT
-    final public static function validateTokenJwt(string $key)
-    {
-        //usaremos el metodo getallheader() el que Recupera todas las cabeceras de petición HTTP
-        //buscaremos la cabecera Autorization, sino existe la detiene y manda un mensaje de error
-        if (!isset(getallheaders()['Authorization'])) {
-            //echo "El token de acceso en requerido";
-            die(json_encode(ResponseHttp::status400()));            
-        }
+    /**
+     * Valida y decodifica un token JWT
+     * @param string $secretKey Clave secreta
+     * @return bool
+     */
+    public static function validateTokenJwt(string $secretKey): bool {
         try {
-            //recibimos el token de acceso y creamos el array 
-            //se veria mas o menos asi 
-            // $token = "Bearer token"; posicion 0 y posicion 1
-            $jwt = explode(" " ,getallheaders()['Authorization']);
-            $data = JWT::decode($jwt[1], $key(), ['HS256']); //param1: token, param2: clave, param3: metodo por defecto de encriptacion 
+            $token = self::getTokenFromHeader();
+            if (!$token) {
+                return false;
+            }
 
-            self::$jwt_data = $data; //le pasamos el jwt decodificado y lo retornamos
-            return $data;
-        } catch (Exception $e) {
-            error_log('Token invalido o expiro'. $e);
-            die(json_encode(ResponseHttp::status401())); //funcion que manda un mj y termina ejecucion 
+            JWT::decode($token, new Key($secretKey, 'HS256'));
+            return true;
+
+        } catch (\Exception $e) {
+            error_log("Error validando token: " . $e->getMessage());
+            return false;
         }
     }
 
-    /*Devolver los datos del JWT decodificados en un array asociativo*/
-    final public static function getDataJwt()
-    {
-        $jwt_decoded_array = json_decode(json_encode(self::$jwt_data),true);
-        return $jwt_decoded_array['data'];
+    /**
+     * Obtiene el token del header Authorization
+     */
+    private static function getTokenFromHeader(): ?string {
+        $headers = getallheaders();
+        $authHeader = $headers['Authorization'] ?? '';
+
+        if (empty($authHeader)) {
+            return null;
+        }
+
+        return str_replace('Bearer ', '', $authHeader);
     }
 
+    /**
+     * Verifica si un usuario tiene permiso para acceder a un recurso
+     * @param array $tokenData Datos del token
+     * @param string $requiredRole Rol requerido
+     * @return bool
+     */
+    public static function hasPermission(array $tokenData, string $requiredRole): bool {
+        return isset($tokenData['user_data']['role']) && 
+               $tokenData['user_data']['role'] === $requiredRole;
+    }
 }
-    /* TERMINA LA CLASE SECURITY */
-
-
 
 
 

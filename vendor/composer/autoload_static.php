@@ -160,15 +160,17 @@ class ComposerStaticInitd751713988987e9331980363e24189ce
 
     public static $classMap = array (
         'App\\Base\\Database' => __DIR__ . '/../..' . '/src/Base/Database.php',
+        'App\\Base\\sql' => __DIR__ . '/../..' . '/src/Base/sql.php',
         'App\\Configuracion\\Security' => __DIR__ . '/../..' . '/src/Configuracion/Security.php',
         'App\\Configuracion\\errorlogs' => __DIR__ . '/../..' . '/src/Configuracion/errorlogs.php',
         'App\\Configuracion\\responseHTTP' => __DIR__ . '/../..' . '/src/Configuracion/responseHTTP.php',
         'App\\Controladores\\AddUsuarioController' => __DIR__ . '/../..' . '/src/Controladores/AddUsuarioController.php',
         'App\\Controladores\\DeleteUsuarioController' => __DIR__ . '/../..' . '/src/Controladores/DeleteUsuarioController.php',
+        'App\\Controladores\\DonacionController' => __DIR__ . '/../..' . '/src/Controladores/DonacionController.php',
         'App\\Controladores\\GetAllUsuariosController' => __DIR__ . '/../..' . '/src/Controladores/GetAllUsuariosController.php',
         'App\\Controladores\\GetUsuarioByIdController' => __DIR__ . '/../..' . '/src/Controladores/GetUsuarioByIdController.php',
-        'App\\Controladores\\LoginController' => __DIR__ . '/../..' . '/src/Controladores/LoginController.php',
         'App\\Controladores\\UpdateUsuarioController' => __DIR__ . '/../..' . '/src/Controladores/UpdateUsuarioController.php',
+        'App\\Controladores\\VoluntarioController' => __DIR__ . '/../..' . '/src/Controladores/VoluntarioController.php',
         'App\\clases\\donacion' => __DIR__ . '/../..' . '/src/clases/donacion.php',
         'App\\clases\\usuario' => __DIR__ . '/../..' . '/src/clases/usuario.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

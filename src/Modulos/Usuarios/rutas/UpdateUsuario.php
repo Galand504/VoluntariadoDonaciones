@@ -6,7 +6,7 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // Incluir el controlador
-use App\Controladores\UpdateUsuarioController;
+use App\Modulos\Usuarios\Controladores\UpdateUsuarioController;
 use App\Configuracion\responseHTTP;
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {

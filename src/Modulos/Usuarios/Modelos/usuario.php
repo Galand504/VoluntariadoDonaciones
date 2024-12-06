@@ -1,5 +1,5 @@
 <?php
-namespace App\clases;
+namespace App\Modulos\Usuarios\Modelos;
 
 use App\Base\Database;
 use App\Configuracion\Security;
@@ -7,36 +7,64 @@ use PDO;
 use PDOException;
 
 class usuario {
-
-    public static function getUsuarioByEmail($email) {
-        // Obtener la conexión a la base de datos
-        $con = Database::getConnection();
-    
-        try {
-            // Preparar la consulta para obtener el usuario, incluyendo el campo 'tipo'
-            $stmt = $con->prepare("SELECT id_usuario, email, rol, contraseña, tipo FROM usuario WHERE email = ?");
-    
-            // Ejecutar la consulta
-            $stmt->execute([$email]);
-    
-            // Obtener el resultado
-            $usuario = $stmt->fetch();
-    
-            // Si no se encuentra el usuario, devolver null
-            if (!$usuario) {
-                return null;
+    public static function emailExists($email)
+        {
+            try {
+                $conexion = Database::getConnection();
+                $query = "SELECT COUNT(*) FROM usuario WHERE email = :email";
+                $stmt = $conexion->prepare($query);
+                $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                $stmt->execute();
+                
+                return $stmt->fetchColumn() > 0;
+            } catch (PDOException $e) {
+                // Manejar el error de manera apropiada
+                error_log("Error al verificar email: " . $e->getMessage());
+                return false;
             }
-    
-            // Si el usuario existe, devolver los datos incluyendo el tipo (persona o empresa)
-            return $usuario;
-    
-        } catch (PDOException $e) {
-            // Manejo de excepciones y error logging
-            error_log("Error al obtener el usuario: " . $e->getMessage());
-            return null;
         }
-        
-    }
+
+        public static function login($email, $contraseña) {
+            try {
+                $con = Database::getConnection();
+                
+                // Primero obtener el usuario
+                $stmt = $con->prepare("SELECT * FROM usuario WHERE email = ?");
+                $stmt->execute([$email]);
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                
+                // Verificar si existe el usuario y la contraseña es correcta
+                if ($result && password_verify($contraseña, $result['contraseña'])) {
+                    // Preparar datos para el token
+                    $userData = [
+                        'id' => $result['id_usuario'],
+                        'email' => $result['email'],
+                        'rol' => $result['rol']
+                    ];
+                    
+                    // Generar token
+                    $token = Security::createTokenJwt(Security::secretKey(), $userData);
+                    
+                    return [
+                        'status' => true,
+                        'token' => $token,
+                        'usuario' => $userData
+                    ];
+                }
+                
+                return [
+                    'status' => false,
+                    'message' => 'Credenciales inválidas'
+                ];
+                
+            } catch (PDOException $e) {
+                error_log("Error en login: " . $e->getMessage());
+                return [
+                    'status' => false,
+                    'message' => 'Error en el inicio de sesión'
+                ];
+            }
+        }
     
 
 
@@ -73,7 +101,7 @@ class usuario {
         return $p_id_usuario ? true : false; // Retorna true si la operación fue exitosa, false de lo contrario
     }
          // Ejecuta el procedimiento almacenado UpdateUsuario
-         public static function updateUsuario($id_usuario, $nombre, $apellido, $email, $contraseña, $telefono, $dni, $edad,  &$p_id_usuario, $rol = null, $tipo = null, $nombreEmpresa = null, $razonSocial = null, $telefonoEmpresa = null, $direccion = null, $registroFiscal = null) {
+         public static function updateUsuario($id_usuario, $nombre, $apellido, $email, $contraseña, $telefono, $dni, $edad,  &$p_id_usuario, $rol = null, $tipo = null, $nombreEmpresa = null, $razonSocial = null, $telefonoEmpresa = null, $direccion = null, $registroFiscal = null): bool {
             $con = Database::getConnection(); // Llamamos al Singleton para obtener la conexión
         
             // Hash de la contraseña utilizando Security
@@ -156,5 +184,8 @@ class usuario {
                 return false; // Retornar false en caso de error
             }
         }
+
+       
+
     }     
        

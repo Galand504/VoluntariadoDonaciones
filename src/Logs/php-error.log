@@ -7993,3 +7993,452 @@ Stack trace:
 [24-Nov-2024 23:14:20 America/Tegucigalpa] Conexión exitosa
 [24-Nov-2024 23:16:50 America/Tegucigalpa] Conexión exitosa
 [24-Nov-2024 23:18:42 America/Tegucigalpa] Conexión exitosa
+[04-Dec-2024 16:00:20 America/Tegucigalpa] Conexión exitosa
+[04-Dec-2024 20:12:17 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:12:39 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:12:40 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:12:40 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:12:41 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:12:41 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:12:41 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:12:41 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:12:56 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:12:57 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:13:58 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:13:58 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:13:59 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:13:59 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:13:59 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 13 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(13): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:15:52 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 14 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(14): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:15:52 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php on line 14 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\AddUsuarioController.php(14): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\AddUsuario.php(42): App\Controladores\AddUsuarioController->addUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[04-Dec-2024 20:22:48 America/Tegucigalpa] Conexión exitosa
+[04-Dec-2024 20:22:48 America/Tegucigalpa] Conexión exitosa
+[04-Dec-2024 20:34:34 America/Tegucigalpa] Conexión exitosa
+[04-Dec-2024 20:34:34 America/Tegucigalpa] Error en login: SQLSTATE[45000]: <<Unknown error>>: 1644 Contraseña incorrecta.
+[04-Dec-2024 20:38:34 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:12:07 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:12:07 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:12:18 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:12:18 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:12:37 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:12:38 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:12:38 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:12:38 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:12:38 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:15:37 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:16:46 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:16:47 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:17:21 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:17:22 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:17:22 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:17:22 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:17:22 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:17:22 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:17:23 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:17:23 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($key) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php on line 17 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\DeleteUsuarioController.php(17): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php(29): App\Controladores\DeleteUsuarioController->deleteUsuario('DeleteUsuario')
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 60
+[05-Dec-2024 20:18:25 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:18:25 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php on line 32
+[05-Dec-2024 20:18:47 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:18:47 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php on line 32
+[05-Dec-2024 20:18:47 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:18:48 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php on line 32
+[05-Dec-2024 20:18:54 America/Tegucigalpa] Token inválido o expirado: Wrong number of segments
+[05-Dec-2024 20:19:07 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:19:07 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php on line 32
+[05-Dec-2024 20:21:22 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:21:22 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php on line 32
+[05-Dec-2024 20:23:46 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:23:46 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php on line 32
+[05-Dec-2024 20:24:22 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:24:22 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php on line 32
+[05-Dec-2024 20:24:39 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php on line 32
+[05-Dec-2024 20:24:40 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\DeleteUsuario.php on line 32
+[05-Dec-2024 20:27:51 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:29:07 America/Tegucigalpa] ID de usuario a eliminar: DeleteUsuario
+[05-Dec-2024 20:29:07 America/Tegucigalpa] Token recibido: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzM0NTEzMzgsImV4cCI6MTczMzQ3MjkzOCwiZGF0YSI6eyJpZF91c3VhcmlvIjo2Miwicm9sIjoiQWRtaW5pc3RyYWRvciIsImVtYWlsIjoianVhbi5wZXJlekBlamVtcGxvLmNvbSJ9fQ.Vt3VLpWmFcyODGycW_vKJc-5mdQMcSN7vtmQ7p7-vDM
+[05-Dec-2024 20:29:17 America/Tegucigalpa] ID de usuario a eliminar: DeleteUsuario
+[05-Dec-2024 20:29:17 America/Tegucigalpa] Token recibido: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzM0NTEzMzgsImV4cCI6MTczMzQ3MjkzOCwiZGF0YSI6eyJpZF91c3VhcmlvIjo2Miwicm9sIjoiQWRtaW5pc3RyYWRvciIsImVtYWlsIjoianVhbi5wZXJlekBlamVtcGxvLmNvbSJ9fQ.Vt3VLpWmFcyODGycW_vKJc-5mdQMcSN7vtmQ7p7-vDM
+[05-Dec-2024 20:31:02 America/Tegucigalpa] ID de usuario a eliminar: 61
+[05-Dec-2024 20:31:02 America/Tegucigalpa] Token recibido: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzM0NTEzMzgsImV4cCI6MTczMzQ3MjkzOCwiZGF0YSI6eyJpZF91c3VhcmlvIjo2Miwicm9sIjoiQWRtaW5pc3RyYWRvciIsImVtYWlsIjoianVhbi5wZXJlekBlamVtcGxvLmNvbSJ9fQ.Vt3VLpWmFcyODGycW_vKJc-5mdQMcSN7vtmQ7p7-vDM
+[05-Dec-2024 20:31:02 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:31:02 America/Tegucigalpa] Resultado de eliminación: true
+[05-Dec-2024 20:32:29 America/Tegucigalpa] ID de usuario a eliminar: 59
+[05-Dec-2024 20:32:29 America/Tegucigalpa] Token recibido: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzM0NTEzMzgsImV4cCI6MTczMzQ3MjkzOCwiZGF0YSI6eyJpZF91c3VhcmlvIjo2Miwicm9sIjoiQWRtaW5pc3RyYWRvciIsImVtYWlsIjoianVhbi5wZXJlekBlamVtcGxvLmNvbSJ9fQ.Vt3VLpWmFcyODGycW_vKJc-5mdQMcSN7vtmQ7p7-vDM
+[05-Dec-2024 20:32:29 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:32:29 America/Tegucigalpa] Resultado de eliminación: true
+[05-Dec-2024 20:33:26 America/Tegucigalpa] Token inválido o expirado: Wrong number of segments
+[05-Dec-2024 20:33:52 America/Tegucigalpa] Token inválido o expirado: Wrong number of segments
+[05-Dec-2024 20:34:00 America/Tegucigalpa] Token inválido o expirado: Wrong number of segments
+[05-Dec-2024 20:34:01 America/Tegucigalpa] Token inválido o expirado: Wrong number of segments
+[05-Dec-2024 20:35:12 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:35:41 America/Tegucigalpa] Token inválido o expirado: Wrong number of segments
+[05-Dec-2024 20:35:42 America/Tegucigalpa] Token inválido o expirado: Wrong number of segments
+[05-Dec-2024 20:37:52 America/Tegucigalpa] Headers completos: Array
+(
+    [accept-encoding] => gzip, deflate, br
+    [Accept] => */*
+    [User-Agent] => Thunder Client (https://www.thunderclient.com)
+    [Authorization] => Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzM0NTI1MTIsImV4cCI6MTczMzQ3NDExMiwiZGF0YSI6eyJpZF91c3VhcmlvIjo2Miwicm9sIjoiQWRtaW5pc3RyYWRvciIsImVtYWlsIjoianVhbi5wZXJlekBlamVtcGxvLmNvbSJ9fQ.Oil8GftZku5OvNB9eLKYOPbS6tsnY7d8GDj6A2cRkAM
+    [Host] => localhost
+    [Connection] => keep-alive
+)
+
+[05-Dec-2024 20:37:52 America/Tegucigalpa] Token antes de procesar: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzM0NTI1MTIsImV4cCI6MTczMzQ3NDExMiwiZGF0YSI6eyJpZF91c3VhcmlvIjo2Miwicm9sIjoiQWRtaW5pc3RyYWRvciIsImVtYWlsIjoianVhbi5wZXJlekBlamVtcGxvLmNvbSJ9fQ.Oil8GftZku5OvNB9eLKYOPbS6tsnY7d8GDj6A2cRkAM
+[05-Dec-2024 20:37:52 America/Tegucigalpa] Token después de procesar: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzM0NTI1MTIsImV4cCI6MTczMzQ3NDExMiwiZGF0YSI6eyJpZF91c3VhcmlvIjo2Miwicm9sIjoiQWRtaW5pc3RyYWRvciIsImVtYWlsIjoianVhbi5wZXJlekBlamVtcGxvLmNvbSJ9fQ.Oil8GftZku5OvNB9eLKYOPbS6tsnY7d8GDj6A2cRkAM
+[05-Dec-2024 20:37:52 America/Tegucigalpa] Resultado de validación: stdClass Object
+(
+    [iat] => 1733452512
+    [exp] => 1733474112
+    [data] => stdClass Object
+        (
+            [id_usuario] => 62
+            [rol] => Administrador
+            [email] => juan.perez@ejemplo.com
+        )
+
+)
+
+[05-Dec-2024 20:37:52 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:37:52 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\GetAllUsuarios.php on line 13
+[05-Dec-2024 20:38:08 America/Tegucigalpa] Headers completos: Array
+(
+    [accept-encoding] => gzip, deflate, br
+    [Accept] => */*
+    [User-Agent] => Thunder Client (https://www.thunderclient.com)
+    [Authorization] => Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzM0NTI1MTIsImV4cCI6MTczMzQ3NDExMiwiZGF0YSI6eyJpZF91c3VhcmlvIjo2Miwicm9sIjoiQWRtaW5pc3RyYWRvciIsImVtYWlsIjoianVhbi5wZXJlekBlamVtcGxvLmNvbSJ9fQ.Oil8GftZku5OvNB9eLKYOPbS6tsnY7d8GDj6A2cRkAM
+    [Host] => localhost
+    [Connection] => keep-alive
+)
+
+[05-Dec-2024 20:38:08 America/Tegucigalpa] Token antes de procesar: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzM0NTI1MTIsImV4cCI6MTczMzQ3NDExMiwiZGF0YSI6eyJpZF91c3VhcmlvIjo2Miwicm9sIjoiQWRtaW5pc3RyYWRvciIsImVtYWlsIjoianVhbi5wZXJlekBlamVtcGxvLmNvbSJ9fQ.Oil8GftZku5OvNB9eLKYOPbS6tsnY7d8GDj6A2cRkAM
+[05-Dec-2024 20:38:08 America/Tegucigalpa] Token después de procesar: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzM0NTI1MTIsImV4cCI6MTczMzQ3NDExMiwiZGF0YSI6eyJpZF91c3VhcmlvIjo2Miwicm9sIjoiQWRtaW5pc3RyYWRvciIsImVtYWlsIjoianVhbi5wZXJlekBlamVtcGxvLmNvbSJ9fQ.Oil8GftZku5OvNB9eLKYOPbS6tsnY7d8GDj6A2cRkAM
+[05-Dec-2024 20:38:08 America/Tegucigalpa] Resultado de validación: stdClass Object
+(
+    [iat] => 1733452512
+    [exp] => 1733474112
+    [data] => stdClass Object
+        (
+            [id_usuario] => 62
+            [rol] => Administrador
+            [email] => juan.perez@ejemplo.com
+        )
+
+)
+
+[05-Dec-2024 20:38:08 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:46:45 America/Tegucigalpa] Firma del token inválida: Signature verification failed
+[05-Dec-2024 20:46:45 America/Tegucigalpa] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Crowdfunding\src\Rutas\GetUsuarioById.php on line 16
+[05-Dec-2024 20:47:33 America/Tegucigalpa] Firma del token inválida: Signature verification failed
+[05-Dec-2024 20:48:35 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:48:35 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Call to undefined method App\Configuracion\Security::createTokenJwt() in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:48
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php(24): App\clases\Usuario::login('juan.perez@ejem...', 'Contrase\xC3\xB1a123!')
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php(32): App\Controladores\LoginController->login(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 48
+[05-Dec-2024 20:48:36 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:48:36 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Call to undefined method App\Configuracion\Security::createTokenJwt() in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:48
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php(24): App\clases\Usuario::login('juan.perez@ejem...', 'Contrase\xC3\xB1a123!')
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php(32): App\Controladores\LoginController->login(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 48
+[05-Dec-2024 20:48:55 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 20:48:55 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Call to undefined method App\Configuracion\Security::createTokenJwt() in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php:48
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php(24): App\clases\Usuario::login('juan.perez@ejem...', 'Contrase\xC3\xB1a123!')
+#1 C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php(32): App\Controladores\LoginController->login(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 48
+[05-Dec-2024 20:58:16 America/Tegucigalpa] Error validando token: Signature verification failed
+[05-Dec-2024 20:58:16 America/Tegucigalpa] Error validando token: Signature verification failed
+[05-Dec-2024 20:58:17 America/Tegucigalpa] Error validando token: Signature verification failed
+[05-Dec-2024 20:58:17 America/Tegucigalpa] Error validando token: Signature verification failed
+[05-Dec-2024 20:58:17 America/Tegucigalpa] Error validando token: Signature verification failed
+[05-Dec-2024 20:58:17 America/Tegucigalpa] Error validando token: Signature verification failed
+[05-Dec-2024 20:58:31 America/Tegucigalpa] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Controladores\LoginController::login(), 1 passed in C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php on line 32 and exactly 2 expected in C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php:11
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php(32): App\Controladores\LoginController->login(Array)
+#1 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php on line 11
+[05-Dec-2024 20:58:31 America/Tegucigalpa] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Controladores\LoginController::login(), 1 passed in C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php on line 32 and exactly 2 expected in C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php:11
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php(32): App\Controladores\LoginController->login(Array)
+#1 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php on line 11
+[05-Dec-2024 20:58:31 America/Tegucigalpa] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Controladores\LoginController::login(), 1 passed in C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php on line 32 and exactly 2 expected in C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php:11
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php(32): App\Controladores\LoginController->login(Array)
+#1 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php on line 11
+[05-Dec-2024 20:58:32 America/Tegucigalpa] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Controladores\LoginController::login(), 1 passed in C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php on line 32 and exactly 2 expected in C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php:11
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php(32): App\Controladores\LoginController->login(Array)
+#1 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php on line 11
+[05-Dec-2024 20:58:44 America/Tegucigalpa] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Controladores\LoginController::login(), 1 passed in C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php on line 32 and exactly 2 expected in C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php:11
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Rutas\login.php(32): App\Controladores\LoginController->login(Array)
+#1 C:\xampp\htdocs\Crowdfunding\public\index.php(21): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Controladores\LoginController.php on line 11
+[05-Dec-2024 21:01:58 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 21:01:58 America/Tegucigalpa] PHP Warning:  Undefined array key "rol" in C:\xampp\htdocs\Crowdfunding\src\clases\usuario.php on line 42
+[05-Dec-2024 21:02:11 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 21:37:22 America/Tegucigalpa] Intentando acceder a: C:\xampp\htdocs\Crowdfunding/src/modulos/login/rutas/login.php
+[05-Dec-2024 21:37:24 America/Tegucigalpa] Intentando acceder a: C:\xampp\htdocs\Crowdfunding/src/modulos/login/rutas/login.php
+[05-Dec-2024 21:40:49 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Class "App\Controladores\LoginController" not found in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php:31
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php on line 31
+[05-Dec-2024 21:40:50 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Class "App\Controladores\LoginController" not found in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php:31
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php on line 31
+[05-Dec-2024 21:40:50 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Class "App\Controladores\LoginController" not found in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php:31
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php on line 31
+[05-Dec-2024 21:40:50 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Class "App\Controladores\LoginController" not found in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php:31
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php on line 31
+[05-Dec-2024 21:41:51 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Class "App\Controladores\LoginController" not found in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php:31
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php on line 31
+[05-Dec-2024 21:41:52 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Class "App\Controladores\LoginController" not found in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php:31
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php on line 31
+[05-Dec-2024 21:42:45 America/Tegucigalpa] Conexión exitosa
+[05-Dec-2024 21:42:45 America/Tegucigalpa] PHP Warning:  Undefined array key "rol" in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Modelos\usuario.php on line 42

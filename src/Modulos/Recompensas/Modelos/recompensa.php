@@ -1,12 +1,9 @@
 <?php
 
-namespace App\Configuracion;
+namespace App\clases;
 
-require_once __DIR__ . '/../pago.php';  
-require_once __DIR__ . '/../donacion.php'; 
-
-use App\Configuracion\donacion;
-use App\Configuracion\Pago;
+use App\clases\donacion;
+use App\clases\pago;
 use PDO;
 
 class recompensa{
@@ -20,7 +17,7 @@ class recompensa{
     public function __construct(PDO $db) {
         $this->db = $db;
         $this->donacionModel = new donacion($db);
-        $this->pagoModel = new Pago($db);
+        $this->pagoModel = new pago($db);
         $this->donadorEstrella = $this->determinarDonadorEstrella();
     }
 

@@ -6,7 +6,7 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // Incluir el controlador
-use App\Controladores\AddUsuarioController;
+use App\Modulos\Usuarios\Controladores\AddUsuarioController;
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     // Solo responder con un código 200 a las solicitudes OPTIONS
