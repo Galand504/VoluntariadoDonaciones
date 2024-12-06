@@ -1,81 +1,97 @@
 <?php
 
-namespace App\clases;
+namespace App\Modulos\Recompensas\Modelos;
 
-use App\clases\donacion;
-use App\clases\pago;
+use App\Base\Database;
 use PDO;
+use PDOException;
 
-class recompensa{
-    private $db;
-    private $donacionModel;
-    private $pagoModel;
-    private $donadorEstrella;
-    private $criterioCantidad = 5; // Número mínimo de donaciones
-    private $criterioMonto = 1000; // Monto mínimo total
+class recompensa {
+    private static int $criterioCantidad = 5;
+    private static int $criterioMonto = 1000;
 
-    public function __construct(PDO $db) {
-        $this->db = $db;
-        $this->donacionModel = new donacion($db);
-        $this->pagoModel = new pago($db);
-        $this->donadorEstrella = $this->determinarDonadorEstrella();
+    public static function obtenerDonadoresEstrella() {
+        try {
+            $con = Database::getConnection();
+            
+            $sql = "SELECT u.id_usuario, 
+                           COUNT(d.idDonacion) as cantidad_donaciones,
+                           SUM(d.monto) as monto_total
+                    FROM usuarios u
+                    JOIN donaciones d ON u.id_usuario = d.id_usuario
+                    JOIN pagos p ON d.idDonacion = p.idDonacion
+                    WHERE p.estado = 'Completado'
+                    GROUP BY u.id_usuario
+                    HAVING cantidad_donaciones >= :criterio_cantidad 
+                       OR monto_total >= :criterio_monto";
+
+            $stmt = $con->prepare($sql);
+            $stmt->execute([
+                ':criterio_cantidad' => self::$criterioCantidad,
+                ':criterio_monto' => self::$criterioMonto
+            ]);
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Error al obtener donadores estrella: " . $e->getMessage());
+            return [];
+        }
     }
 
-    private function determinarDonadorEstrella() {
-        $stmtDonaciones = $this->donacionModel->obtenerDonaciones();
-        $donadores = [];
-
-        while ($donacion = $stmtDonaciones->fetch(PDO::FETCH_ASSOC)) {
-            $idDonacion = $donacion['idDonacion'];
-            $idUsuario = $donacion['id_usuario'];
-            $montoDonacion = $donacion['monto'];
-
-            // Validar los pagos asociados a la donación
-            $pagos = $this->pagoModel->obtenerPagos(['idDonacion' => $idDonacion, 'estado' => 'Completado']);
-            $montoPagosValidados = 0;
-
-            foreach ($pagos as $pago) {
-                $montoPagosValidados += $pago['monto'];
-            }
-
-            // Solo procesar donaciones con pagos válidos
-            if ($montoPagosValidados >= $montoDonacion) {
-                if (!isset($donadores[$idUsuario])) {
-                    $donadores[$idUsuario] = ['cantidad' => 0, 'total' => 0];
-                }
-                $donadores[$idUsuario]['cantidad']++;
-                $donadores[$idUsuario]['total'] += $montoDonacion;
-            }
+    public static function registrarRecompensa($idUsuario, $tipoRecompensa) {
+        try {
+            $con = Database::getConnection();
+            
+            $stmt = $con->prepare("CALL RegistrarRecompensa(?, ?)");
+            $stmt->execute([$idUsuario, $tipoRecompensa]);
+            
+            return true;
+        } catch (PDOException $e) {
+            error_log("Error al registrar recompensa: " . $e->getMessage());
+            return false;
         }
-
-        // Verificar los criterios
-        foreach ($donadores as $donador => $datos) {
-            if ($datos['cantidad'] >= $this->criterioCantidad || $datos['total'] >= $this->criterioMonto) {
-                return $donador; // Devuelve el primer donador que cumple los criterios
-            }
-        }
-
-        return null; // No hay donadores estrella
     }
 
-    public function mostrarFormulario() {
-        if ($this->donadorEstrella) {
-            echo '<form action="recompensa.php" method="post">';
-            echo '<h2>Donador Estrella</h2>';
-            echo '<p>Felicidades, Donador ID: ' . htmlspecialchars($this->donadorEstrella) . '! Eres merecedor de una recompensa.</p>';
-            echo '<input type="hidden" name="donador" value="' . htmlspecialchars($this->donadorEstrella) . '">';
-            echo '<button type="submit">Reclamar Recompensa</button>';
-            echo '</form>';
-        } else {
-            echo '<p>No hay donadores estrella en este momento.</p>';
+    public static function obtenerRecompensasPorUsuario($idUsuario) {
+        try {
+            $con = Database::getConnection();
+            
+            $stmt = $con->prepare("SELECT * FROM recompensas WHERE id_usuario = ?");
+            $stmt->execute([$idUsuario]);
+            
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Error al obtener recompensas del usuario: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public static function verificarElegibilidad($idUsuario) {
+        try {
+            $con = Database::getConnection();
+            
+            $sql = "SELECT COUNT(d.idDonacion) as cantidad_donaciones,
+                           SUM(d.monto) as monto_total
+                    FROM donaciones d
+                    JOIN pagos p ON d.idDonacion = p.idDonacion
+                    WHERE d.id_usuario = :id_usuario
+                    AND p.estado = 'Completado'";
+
+            $stmt = $con->prepare($sql);
+            $stmt->execute([':id_usuario' => $idUsuario]);
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return [
+                'elegible' => ($resultado['cantidad_donaciones'] >= self::$criterioCantidad || 
+                              $resultado['monto_total'] >= self::$criterioMonto),
+                'estadisticas' => [
+                    'cantidad_donaciones' => $resultado['cantidad_donaciones'],
+                    'monto_total' => $resultado['monto_total']
+                ]
+            ];
+        } catch (PDOException $e) {
+            error_log("Error al verificar elegibilidad: " . $e->getMessage());
+            return false;
         }
     }
 }
-?>
-
-
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
-
