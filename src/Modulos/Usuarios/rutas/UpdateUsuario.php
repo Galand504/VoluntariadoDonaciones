@@ -1,61 +1,100 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: http://localhost:3000");
 header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST, PUT, OPTIONS");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+header("Access-Control-Allow-Credentials: true");
 
 // Incluir el controlador
 use App\Modulos\Usuarios\Controladores\UpdateUsuarioController;
 use App\Configuracion\responseHTTP;
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    // Solo responder con un código 200 a las solicitudes OPTIONS
     header('HTTP/1.1 200 OK');
-    header('Access-Control-Allow-Methods: POST, PUT, OPTIONS');
-    header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
     exit;
 }
-// Verificar que el método sea POST
-if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-    // Obtener los datos enviados en el cuerpo de la solicitud
-    $data = json_decode(file_get_contents("php://input"), true);
 
-    // Validar si hay datos
-    if (!$data) {
-        echo json_encode([
-            'status' => 'error',
-            'message' => 'No se enviaron datos.'
-        ]);
-        exit;
-    }
+try {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Obtener y decodificar los datos
+        $inputData = file_get_contents("php://input");
+        $data = json_decode($inputData, true);
 
-    // Validar los campos necesarios según el tipo
-    if (isset($data['tipo']) && $data['tipo'] === 'Persona') {
-        if (empty($data['nombre'])) {
+        // Log para depuración
+        error_log("Datos recibidos: " . print_r($data, true));
+
+        // Validar si hay datos
+        if (!$data) {
             echo json_encode([
                 'status' => 'error',
-                'message' => 'El campo "nombre" es obligatorio para tipo Persona.'
+                'message' => 'No se enviaron datos o el formato JSON es inválido.',
+                'debug' => json_last_error_msg()
             ]);
             exit;
         }
-    } elseif (isset($data['tipo']) && $data['tipo'] === 'Empresa') {
-        if (empty($data['nombreEmpresa'])) {
+
+        // Validar ID de usuario
+        if (empty($data['id_usuario'])) {
             echo json_encode([
                 'status' => 'error',
-                'message' => 'El campo "nombreEmpresa" es obligatorio para tipo Empresa.'
+                'message' => 'El ID de usuario es obligatorio.'
             ]);
             exit;
         }
+
+        // Validar tipo de usuario
+        if (empty($data['tipo'])) {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'El tipo de usuario es obligatorio.'
+            ]);
+            exit;
+        }
+
+        // Validar campos específicos según el tipo
+        if ($data['tipo'] === 'Persona') {
+            if (empty($data['nombre'])) {
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'El campo "nombre" es obligatorio para tipo Persona.'
+                ]);
+                exit;
+            }
+        } elseif ($data['tipo'] === 'Empresa') {
+            if (empty($data['nombreEmpresa'])) {
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'El campo "nombreEmpresa" es obligatorio para tipo Empresa.'
+                ]);
+                exit;
+            }
+        } else {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Tipo de usuario no válido.'
+            ]);
+            exit;
+        }
+
+        // Instanciar el controlador y procesar la solicitud
+        $controller = new UpdateUsuarioController();
+        $response = $controller->updateUsuario($data);
+
+        // Asegurarse de que la respuesta sea un JSON válido
+        if (!is_string($response)) {
+            $response = json_encode($response);
+        }
+
+        echo $response;
+    } else {
+        echo json_encode(responseHTTP::status400('Método no permitido'));
     }
-
-    // Instanciar el controlador y procesar la solicitud
-    $controller = new UpdateUsuarioController();
-    $response = $controller->updateUsuario($data);
-
-    // Retornar la respuesta al cliente
-    echo $response;
-} else {
-    // Método no permitido
-    echo json_encode(responseHTTP::status400());
+} catch (Exception $e) {
+    error_log("Error en UpdateUsuario.php: " . $e->getMessage());
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Error interno del servidor',
+        'debug' => $e->getMessage()
+    ]);
 }

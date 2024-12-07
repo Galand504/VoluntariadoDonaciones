@@ -5,6 +5,7 @@ use App\Base\Database;
 use App\Configuracion\Security;
 use PDO;
 use PDOException;
+use Exception;
 
 class usuario {
     public static function emailExists($email)
@@ -39,16 +40,17 @@ class usuario {
                     $userData = [
                         'id' => $result['id_usuario'],
                         'email' => $result['email'],
-                        'rol' => $result['rol']
+                        'rol' => $result['Rol']
                     ];
                     
                     // Generar token
                     $token = Security::createTokenJwt(Security::secretKey(), $userData);
                     
                     return [
-                        'status' => true,
+                        'status' => 200,
+                        'message' => 'Login exitoso',
                         'token' => $token,
-                        'usuario' => $userData
+                        'user' => $userData
                     ];
                 }
                 
@@ -69,7 +71,7 @@ class usuario {
 
 
     // Ejecuta el procedimiento almacenado AddUsuario
-    public static function addusuario($email, $contraseña, $rol, $Tipo, $nombre, $apellido, $dni, $edad, $telefono, &$p_id_usuario, $nombreEmpresa = null, $direccion = null, $telefonoEmpresa = null, $razonSocial = null, $registroFiscal = null) {
+    public static function addusuario($email, $contraseña, $Rol, $Tipo, $nombre, $apellido, $dni, $edad, $telefono, &$p_id_usuario, $nombreEmpresa = null, $direccion = null, $telefonoEmpresa = null, $razonSocial = null, $registroFiscal = null) {
         $con = Database::getConnection(); // Llamamos al Singleton para obtener la conexión
     
         // Hash de la contraseña utilizando Security
@@ -80,7 +82,7 @@ class usuario {
         $stmt->execute([
             $email,
             $hashed_password, // Se utiliza la contraseña hasheada
-            $rol,
+            $Rol,
             $Tipo,
             $nombre ?? null,
             $apellido ?? null,
@@ -101,34 +103,87 @@ class usuario {
         return $p_id_usuario ? true : false; // Retorna true si la operación fue exitosa, false de lo contrario
     }
          // Ejecuta el procedimiento almacenado UpdateUsuario
-         public static function updateUsuario($id_usuario, $nombre, $apellido, $email, $contraseña, $telefono, $dni, $edad,  &$p_id_usuario, $rol = null, $tipo = null, $nombreEmpresa = null, $razonSocial = null, $telefonoEmpresa = null, $direccion = null, $registroFiscal = null): bool {
-            $con = Database::getConnection(); // Llamamos al Singleton para obtener la conexión
-        
-            // Hash de la contraseña utilizando Security
-            $hashed_password = Security::createPassword($contraseña);
-        
-            // Preparar y ejecutar el procedimiento almacenado
-            $stmt = $con->prepare("CALL UpdateUsuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([
-                $id_usuario, // Este valor no se modifica
-                $nombre ?? null,
-                $apellido ?? null,
-                $email,
-                $hashed_password, // Contraseña hasheada
-                $telefono ?? null,
-                $dni ?? null,
-                $edad ?? null,
-                $rol ?? null,
-                $tipo ?? null,
-                $nombreEmpresa ?? null,
-                $telefonoEmpresa ?? null,
-                $razonSocial ?? null,
-                $direccion ?? null,
-                $registroFiscal ?? null,
-            ]);
-        
-            // Comprobar si se actualizó correctamente
-            return $stmt->rowCount() > 0;
+         public static function updateUsuario($id_usuario, $nombre, $apellido, $email, $contraseña, $telefono, $dni, $edad, &$p_id_usuario, $rol = null, $tipo = null, $nombreEmpresa = null, $razonSocial = null, $telefonoEmpresa = null, $direccion = null, $registroFiscal = null): bool {
+            try {
+                $con = Database::getConnection();
+                
+                // Log para depuración
+                error_log("Iniciando actualización con datos: " . print_r([
+                    'id_usuario' => $id_usuario,
+                    'email' => $email,
+                    'tipo' => $tipo
+                ], true));
+
+                // Iniciar transacción
+                $con->beginTransaction();
+
+                try {
+                    // Actualizar tabla usuario primero
+                    $stmtUsuario = $con->prepare("UPDATE usuario SET 
+                        email = ?,
+                        tipo = ?
+                        WHERE id_usuario = ?");
+
+                    $resultUsuario = $stmtUsuario->execute([
+                        $email,
+                        $tipo,
+                        $id_usuario
+                    ]);
+
+                    // Actualizar tabla específica según el tipo
+                    if ($tipo === 'Empresa') {
+                        $stmtEmpresa = $con->prepare("UPDATE empresa SET 
+                            nombreEmpresa = ?,
+                            razonSocial = ?,
+                            telefonoEmpresa = ?,
+                            direccion = ?,
+                            registroFiscal = ?
+                            WHERE id_usuario = ?");
+
+                        $resultEmpresa = $stmtEmpresa->execute([
+                            $nombreEmpresa,
+                            $razonSocial,
+                            $telefonoEmpresa,
+                            $direccion,
+                            $registroFiscal,
+                            $id_usuario
+                        ]);
+                    } else {
+                        // Para usuarios tipo Persona
+                        $stmtPersona = $con->prepare("UPDATE persona SET 
+                            nombre = ?,
+                            apellido = ?,
+                            dni = ?,
+                            edad = ?,
+                            telefono = ?
+                            WHERE id_usuario = ?");
+
+                        $resultPersona = $stmtPersona->execute([
+                            $nombre,
+                            $apellido,
+                            $dni,
+                            $edad,
+                            $telefono,
+                            $id_usuario
+                        ]);
+                    }
+
+                    // Si todo salió bien, confirmar la transacción
+                    $con->commit();
+                    $p_id_usuario = $id_usuario;
+                    return true;
+
+                } catch (Exception $e) {
+                    // Si algo salió mal, revertir los cambios
+                    $con->rollBack();
+                    error_log("Error en la transacción: " . $e->getMessage());
+                    throw $e;
+                }
+
+            } catch (PDOException $e) {
+                error_log("Error en updateUsuario: " . $e->getMessage());
+                throw new Exception("Error al actualizar el usuario: " . $e->getMessage());
+            }
         }
         
         
@@ -184,8 +239,5 @@ class usuario {
                 return false; // Retornar false en caso de error
             }
         }
-
-       
-
-    }     
+    }
        

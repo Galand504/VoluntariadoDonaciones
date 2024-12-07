@@ -1,62 +1,79 @@
-function toggleForm() {
-    const tipo = document.getElementById("Tipo").value;
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('formulario');
 
-    // Mostrar/ocultar formularios dinámicamente
-    document.getElementById("form_persona").style.display = tipo === "Persona" ? "block" : "none";
-    document.getElementById("form_empresa").style.display = tipo === "Empresa" ? "block" : "none";
-}
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
 
-// Asociar el evento también usando el atributo onchange en el HTML
-document.getElementById("Tipo").addEventListener("change", toggleForm);
+        let tipoUsuario = document.getElementById('Tipo').value;
+        const email = document.getElementById('email').value.trim();
+        const contraseña = document.getElementById('contraseña').value.trim();
+        const Rol = document.getElementById('Rol').value.trim();
 
-// Manejar el envío del formulario con AJAX
-document.getElementById("formulario").addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar el envío tradicional del formulario
+        let userData = {
+            email,
+            contraseña,
+            Rol,
+            Tipo: tipoUsuario
+        };
 
-    // Crear un objeto con todos los datos del formulario
-    const formData = new FormData(this);
-    const data = {};
-    
-    formData.forEach((value, key) => {
-        data[key] = value; // Convertir FormData a un objeto regular
-    });
+        if (tipoUsuario === 'Persona') {
+            userData = {
+                ...userData,
+                nombre: document.getElementById('nombre').value.trim(),
+                apellido: document.getElementById('apellido').value.trim(),
+                dni: document.getElementById('dni').value.trim(),
+                edad: document.getElementById('edad').value.trim(),
+                telefono: document.getElementById('telefono').value.trim()
+            };
+        } else if (tipoUsuario === 'Empresa') {
+            userData = {
+                ...userData,
+                nombreEmpresa: document.getElementById('nombreEmpresa').value.trim(),
+                razonSocial: document.getElementById('razonSocial').value.trim(),
+                registroFiscal: document.getElementById('registroFiscal').value.trim(),
+                telefonoEmpresa: document.getElementById('telefonoEmpresa').value.trim(),
+                direccion: document.getElementById('direccion').value.trim()
+            };
+        }
 
-    // Añadir manualmente el tipo de usuario (Persona o Empresa)
-    const tipoUsuario = document.getElementById("Tipo").value;
-    data["Tipo"] = tipoUsuario;
-    
+        console.log('Datos a enviar:', JSON.stringify(userData, null, 2));
 
-    // URL del servidor donde se procesará la solicitud
-    const apiUrl = "http://localhost/Crowdfunding/public/AddUsuario";
+        try {
+            const response = await fetch('http://localhost/Crowdfunding/public/AddUsuario', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            });
 
-    // Realizar la solicitud AJAX con fetch
-    fetch(apiUrl, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json", // Enviar los datos como JSON
-            "Accept": "application/json" // Aceptar respuestas en formato JSON
-        },
-        body: JSON.stringify(data) // Convertir el objeto a JSON antes de enviarlo
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Error en la solicitud, código: " + response.status);
-            }
-            return response.json(); // Convertir la respuesta a JSON
-        })
-        .then(data => {
-            if (data.status === "success") {
-                alert("Usuario registrado correctamente.");
-                document.getElementById("formulario").reset(); // Limpiar formulario
-                // Ocultar los formularios dinámicos tras limpiar
-                document.getElementById("form_persona").style.display = "none";
-                document.getElementById("form_empresa").style.display = "none";
+            const data = await response.json();
+            console.log('Respuesta del servidor:', data);
+
+            if (data.status === 'success' || data.status === 200) {
+                alert('Usuario creado exitosamente');
+                window.location.href = 'crud.html';
             } else {
-                alert("Error al registrar usuario: " + data.message);
+                alert(data.message || 'Error al crear el usuario');
             }
-        })
-        .catch(error => {
-            console.error("Error en la solicitud:", error);
-            alert("Hubo un problema al procesar tu solicitud. Inténtalo nuevamente.");
-        });
+        } catch (error) {
+            console.error('Error en la solicitud:', error);
+            alert('Error al crear el usuario. Por favor, intente nuevamente.');
+        }
+    });
 });
+
+function toggleForm() {
+    const tipoUsuario = document.getElementById('Tipo').value;
+    const personaFields = document.getElementById('form_persona');
+    const empresaFields = document.getElementById('form_empresa');
+
+    if (tipoUsuario === 'Persona') {
+        personaFields.style.display = 'block';
+        empresaFields.style.display = 'none';
+    } else {
+        personaFields.style.display = 'none';
+        empresaFields.style.display = 'block';
+    }
+}
