@@ -3,41 +3,44 @@
 namespace App\Modulos\Usuarios\Controladores;
 
 use App\Modulos\Usuarios\Modelos\usuario;
-use App\Configuracion\ResponseHTTP;
-use App\Configuracion\Security;
+use Exception;
 
 class LoginController 
 {
-    public function login($correo, $password): array {
+    public function login($data) {
         try {
-            // Validar que los campos no estén vacíos
-            if (empty($correo) || empty($password)) {
-                return ResponseHTTP::status400('El correo y la contraseña son requeridos.');
+            if (!isset($data['email']) || !isset($data['contraseña'])) {
+                return [
+                    'status' => 400,
+                    'message' => 'Email y contraseña son requeridos'
+                ];
             }
 
-            // Validar formato de correo
-            if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-                return ResponseHTTP::status400('Formato de correo electrónico inválido.');
+            $email = $data['email'];
+            $contraseña = $data['contraseña'];
+
+            $resultado = Usuario::login($email, $contraseña);
+
+            if ($resultado['status'] === 200) {
+                return [
+                    'status' => 200,
+                    'message' => 'Login exitoso',
+                    'token' => $resultado['token'],
+                    'user' => $resultado['user']
+                ];
             }
 
-            // Intentar login con las credenciales
-            $usuario = new Usuario();
-            $resultado = $usuario->login($correo, $password);
-            
-            if (!$resultado['status']) {
-                return ResponseHTTP::status401($resultado['message']);
-            }
-
-            // El token ya viene generado desde el método login de usuario
             return [
-                'status' => 200,
-                'message' => 'Login exitoso',
-                'token' => $resultado['token'],
-                'user' => $resultado['usuario']
+                'status' => 401,
+                'message' => $resultado['message'] ?? 'Credenciales inválidas'
             ];
 
-        } catch (\Exception $e) {
-            return ResponseHTTP::status500('Error en el servidor: ' . $e->getMessage());
+        } catch (Exception $e) {
+            error_log("Error en LoginController->login: " . $e->getMessage());
+            return [
+                'status' => 500,
+                'message' => 'Error interno del servidor'
+            ];
         }
     }
 }     

@@ -92,7 +92,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="box">
-                        <h1>2194</h1>
+                        <h1>0</h1>
                         <h3>Personas</h3>
                     </div>
                     <div class="icon-case">
@@ -101,7 +101,7 @@
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>2194</h1>
+                        <h1>0</h1>
                         <h3>Empresas</h3>
                     </div>
                     <div class="icon-case">
@@ -110,7 +110,7 @@
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>2194</h1>
+                        <h1>0</h1>
                         <h3>Voluntariados</h3>
                     </div>
                     <div class="icon-case">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>2194</h1>
+                        <h1>0</h1>
                         <h3>Beneficencias</h3>
                     </div>
                     <div class="icon-case">
@@ -131,38 +131,34 @@
                 <!-- Sección para el gráfico -->
                 <div class="recent-payments">
                     <div class="tittle">
-                        <h2>Gráfico de Pagos Recientes</h2>
+                        <h2>Gráfico de Registros Recientes</h2>
                     </div>
                     <div id="chart-container">
                         <canvas id="userChart"></canvas>
                     </div>                    
                 </div>
-            
-                <!-- Sección para el To-Do List (esto sigue igual) -->
-                <div class="activity-list-container">
-                    <h2>Actividades</h2>
-                    <div class="button-container">
-                        <button class="filter-button" onclick="filterActivities('beneficencia')">Beneficencia</button>
-                        <button class="filter-button" onclick="filterActivities('voluntariado')">Voluntariado</button>
+
+                <!-- Sección para las Actividades con su propio contenedor -->
+                <div class="recent-activity">
+                    <div class="activity">
+                        <div class="title">
+                            <h2>Actividades Recientes</h2>
+                        </div>
+
+                        <!-- Botones de filtro -->
+                        <div class="activity-filters">
+                            <button class="filter-button" data-filter="all">Todos</button>
+                            <button class="filter-button" data-filter="voluntariado">Voluntariado</button>
+                            <button class="filter-button" data-filter="donacion">Donación</button>
+                        </div>
+
+                        <!-- Lista de actividades -->
+                        <div class="activity-data">
+                            <ul class="activity-list">
+                                <!-- Las actividades se cargarán aquí dinámicamente desde JavaScript -->
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="activity-list">
-                        <li class="activity-item current" data-type="beneficencia">
-                            <div class="date">2024-11-12</div>
-                            <div class="description">Desarrollo del proyecto de beneficencia</div>
-                        </li>
-                        <li class="activity-item past" data-type="voluntariado">
-                            <div class="date">2024-11-01</div>
-                            <div class="description">Reunión de voluntarios</div>
-                        </li>
-                        <li class="activity-item upcoming" data-type="beneficencia">
-                            <div class="date">2024-11-20</div>
-                            <div class="description">Revisión de donaciones</div>
-                        </li>
-                        <li class="activity-item upcoming" data-type="voluntariado">
-                            <div class="date">2024-11-25</div>
-                            <div class="description">Capacitación de nuevos voluntarios</div>
-                        </li>
-                    </ul>
                 </div>
             </div>    
         </div>

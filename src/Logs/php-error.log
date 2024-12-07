@@ -8442,3 +8442,1091 @@ Stack trace:
   thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\login.php on line 31
 [05-Dec-2024 21:42:45 America/Tegucigalpa] Conexión exitosa
 [05-Dec-2024 21:42:45 America/Tegucigalpa] PHP Warning:  Undefined array key "rol" in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Modelos\usuario.php on line 42
+[06-Dec-2024 12:12:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:12:06 America/Tegucigalpa] PHP Warning:  Undefined array key "rol" in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Modelos\usuario.php on line 42
+[06-Dec-2024 12:27:44 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:27:44 America/Tegucigalpa] PHP Warning:  Undefined array key "rol" in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Modelos\usuario.php on line 42
+[06-Dec-2024 12:29:19 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:29:19 America/Tegucigalpa] PHP Warning:  Undefined array key "rol" in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Modelos\usuario.php on line 42
+[06-Dec-2024 12:34:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:34:30 America/Tegucigalpa] PHP Warning:  Undefined array key "rol" in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Modelos\usuario.php on line 42
+[06-Dec-2024 12:36:05 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:36:05 America/Tegucigalpa] PHP Warning:  Undefined array key "rol" in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Modelos\usuario.php on line 42
+[06-Dec-2024 12:39:26 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:39:27 America/Tegucigalpa] PHP Warning:  Undefined array key "usuario" in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\LoginController.php on line 35
+[06-Dec-2024 12:46:34 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 12:46:34 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:48:09 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 12:48:09 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:50:03 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:52:18 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:54:32 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:54:37 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:54:52 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:56:47 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:56:52 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:56:57 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:58:15 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 12:59:12 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:00:17 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:00:17 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:01:44 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:01:52 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:01:53 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:04:03 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:14:40 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:16:23 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:17:38 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:20:00 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:20:22 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:23:11 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:23:11 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:23:16 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:26:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:31:16 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:33:19 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:33:22 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:34:49 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:34:54 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:35:16 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($secretKey) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\UpdateUsuarioController.php on line 18 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\UpdateUsuarioController.php(18): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\UpdateUsuario.php(54): App\Modulos\Usuarios\Controladores\UpdateUsuarioController->updateUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 49
+[06-Dec-2024 13:39:24 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:39:29 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:39:43 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => empresa
+    [nombreEmpresa] => Locos S.A
+    [razonSocial] => S. A
+    [registroFiscal] => uicwweuihduhweudhwe
+    [telefonoEmpresa] => 1234567890
+    [direccion] => Calle La Concordia
+)
+
+[06-Dec-2024 13:41:44 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:42:00 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:42:15 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => Locos S.A
+    [razonSocial] => S. A
+    [registroFiscal] => fioeiorjfioero
+    [telefonoEmpresa] => 1234567890
+    [direccion] => Calle La Concordia
+)
+
+[06-Dec-2024 13:42:15 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($secretKey) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\UpdateUsuarioController.php on line 21 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\UpdateUsuarioController.php(21): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\UpdateUsuario.php(82): App\Modulos\Usuarios\Controladores\UpdateUsuarioController->updateUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 49
+[06-Dec-2024 13:42:28 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => Locos S.A
+    [razonSocial] => S. A
+    [registroFiscal] => fioeiorjfioero
+    [telefonoEmpresa] => 1234567890
+    [direccion] => Calle La Concordia
+)
+
+[06-Dec-2024 13:42:28 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($secretKey) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\UpdateUsuarioController.php on line 21 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\UpdateUsuarioController.php(21): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\UpdateUsuario.php(82): App\Modulos\Usuarios\Controladores\UpdateUsuarioController->updateUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 49
+[06-Dec-2024 13:43:41 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 13:43:41 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:43:44 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:43:46 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:44:07 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => Locos S.A
+    [razonSocial] => S. A
+    [registroFiscal] => fweferferrf
+    [telefonoEmpresa] => 1234567890
+    [direccion] => Calle La Concordia
+)
+
+[06-Dec-2024 13:44:07 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\Security::validateTokenJwt(): Argument #1 ($secretKey) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\UpdateUsuarioController.php on line 21 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\UpdateUsuarioController.php(21): App\Configuracion\Security::validateTokenJwt(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\UpdateUsuario.php(82): App\Modulos\Usuarios\Controladores\UpdateUsuarioController->updateUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\Security.php on line 49
+[06-Dec-2024 13:51:53 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:51:58 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:52:11 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => Locos S.A
+    [razonSocial] => S. A
+    [registroFiscal] => weuihdweihidhwei
+    [telefonoEmpresa] => 1234567890
+    [direccion] => Calle La Concordia
+)
+
+[06-Dec-2024 13:52:11 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 13:52:11 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 57
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 13:52:11 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:52:11 America/Tegucigalpa] Error en updateUsuario: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'telefono' in 'field list'
+[06-Dec-2024 13:52:11 America/Tegucigalpa] La actualización falló sin lanzar excepción
+[06-Dec-2024 13:55:02 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:55:07 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:55:29 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => Locos S.A
+    [razonSocial] => S. A
+    [registroFiscal] => wjkdwedohweohodi
+    [telefonoEmpresa] => 1234567890
+    [direccion] => Calle La Concordia
+)
+
+[06-Dec-2024 13:55:29 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 13:55:29 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 57
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 13:55:29 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:55:29 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => Locos S.A
+)
+
+[06-Dec-2024 13:55:29 America/Tegucigalpa] Error en updateUsuario: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[06-Dec-2024 13:55:29 America/Tegucigalpa] Error en UpdateUsuarioController: Error al actualizar el usuario: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[06-Dec-2024 13:55:29 America/Tegucigalpa] Stack trace: #0 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\UpdateUsuarioController.php(57): App\Modulos\Usuarios\Modelos\usuario::updateUsuario(57, NULL, NULL, 'laura23@gmail.c...', NULL, NULL, NULL, NULL, 0, NULL, 'Empresa', 'Locos S.A', 'S. A', '1234567890', 'Calle La Concor...', 'wjkdwedohweohod...')
+#1 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\UpdateUsuario.php(82): App\Modulos\Usuarios\Controladores\UpdateUsuarioController->updateUsuario(Array)
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require('C:\\xampp\\htdocs...')
+#3 {main}
+[06-Dec-2024 13:57:45 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:57:48 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:57:51 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:58:10 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => Locos S.A
+    [razonSocial] => S. A
+    [registroFiscal] => lkjhgfdsertyup
+    [telefonoEmpresa] => 0987654321
+    [direccion] => Calle La Concordia
+)
+
+[06-Dec-2024 13:58:10 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 13:58:10 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 57
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 13:58:10 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:58:10 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 13:58:15 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:58:42 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:59:50 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 13:59:54 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:00:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:03:16 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:03:22 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:03:28 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:04:43 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:04:46 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:04:50 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:05:36 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 63
+    [email] => gerardozuniga2003@gmail.com
+    [tipo] => persona
+    [nombreEmpresa] => 
+    [razonSocial] => 
+    [registroFiscal] => 
+    [telefonoEmpresa] => 
+    [direccion] => 
+)
+
+[06-Dec-2024 14:07:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:07:07 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:07:39 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 63
+    [email] => gerardozuniga2203@gmail.com
+    [tipo] => persona
+    [nombre] => Gerardo Josué
+    [apellido] => Zúniga López
+    [dni] => 0712200300134
+    [edad] => 21
+    [telefono] => 1234567890
+)
+
+[06-Dec-2024 14:08:43 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:08:46 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:08:58 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 63
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Persona
+    [nombre] => Gerardo
+    [apellido] => Zúniga
+    [dni] => 12345678
+    [edad] => 
+    [telefono] => 1234567890
+)
+
+[06-Dec-2024 14:08:58 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 14:08:58 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 63
+    [tipo] => Persona
+    [rol] => 
+)
+
+[06-Dec-2024 14:08:58 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:08:58 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 63
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Persona
+)
+
+[06-Dec-2024 14:09:04 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:10:32 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:10:38 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:10:47 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 63
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Persona
+    [rol] => 
+    [nombre] => Gerardo
+    [apellido] => Zúniga
+    [dni] => 534523242352
+    [telefono] => 1234567890
+)
+
+[06-Dec-2024 14:10:47 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 14:10:47 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 63
+    [tipo] => Persona
+    [rol] => 
+)
+
+[06-Dec-2024 14:10:47 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:10:48 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 63
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Persona
+)
+
+[06-Dec-2024 14:10:51 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:12:07 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:12:11 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:12:28 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 63
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Persona
+    [nombre] => Gerardo
+    [apellido] => Zúniga
+    [dni] => 12345678
+    [telefono] => 1234567890
+    [contraseña] => *Galand504*
+)
+
+[06-Dec-2024 14:12:28 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 14:12:28 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 63
+    [tipo] => Persona
+    [rol] => 
+)
+
+[06-Dec-2024 14:12:28 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:12:28 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 63
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Persona
+)
+
+[06-Dec-2024 14:12:31 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:13:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:24:39 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:24:44 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:24:52 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 63
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Persona
+    [rol] => 
+    [nombre] => Gerardo
+    [apellido] => Zúniga
+    [dni] => 534523242352
+    [telefono] => 1234567890
+)
+
+[06-Dec-2024 14:24:52 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 14:24:52 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 63
+    [tipo] => Persona
+    [rol] => 
+)
+
+[06-Dec-2024 14:24:52 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:24:52 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 63
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Persona
+)
+
+[06-Dec-2024 14:24:55 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:26:02 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:26:11 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:26:18 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:26:18 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:26:20 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:28:36 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:29:40 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:29:40 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:29:42 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:35:29 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:35:39 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:35:40 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:35:45 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:35:47 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:35:48 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:35:50 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:54:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:54:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:54:03 America/Tegucigalpa] Error validando token: Expired token
+[06-Dec-2024 14:54:18 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 14:54:18 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 14:54:23 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:07:05 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:07:05 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:07:07 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:07:47 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:07:47 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:07:49 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:15:25 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:15:39 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:15:39 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:15:41 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:22:25 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:22:49 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => Empresa
+    [rol] => Voluntario
+    [nombreEmpresa] => gfdfferferfeer
+    [razonSocial] => w2132
+    [registroFiscal] => coiejodijiowejiodj
+    [telefonoEmpresa] => 1234567899
+    [direccion] => dfgdfgdfg
+    [contraseña] => abeja123
+)
+
+[06-Dec-2024 15:22:49 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 15:22:49 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 57
+    [tipo] => Empresa
+    [rol] => Voluntario
+)
+
+[06-Dec-2024 15:22:49 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:22:49 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 57
+    [email] => laura23@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 15:22:52 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:23:22 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:23:39 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 68
+    [email] => erasmo@gmail.com
+    [rol] => 
+    [tipo] => empresa
+    [contraseña] => sdfdsfdsf
+)
+
+[06-Dec-2024 15:23:46 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 68
+    [email] => erasmo@gmail.com
+    [rol] => 
+    [tipo] => empresa
+    [contraseña] => sdfdsfdsf
+)
+
+[06-Dec-2024 15:32:13 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:32:21 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:32:37 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 68
+    [email] => erasmo@gmail.com
+    [rol] => 
+    [tipo] => empresa
+    [contraseña] => rwerewrewrew
+)
+
+[06-Dec-2024 15:39:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:49:17 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:49:30 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 68
+    [email] => erasmo@gmail.com
+    [rol] => 
+    [tipo] => Empresa
+    [contraseña] => dewdsfsd
+    [nombreEmpresa] => rwerwerew
+    [razonSocial] => rwerwerwe
+    [registroFiscal] => werwerwerwerr
+    [telefonoEmpresa] => 3424324232
+    [direccion] => werwerwerwrwer
+)
+
+[06-Dec-2024 15:49:30 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 15:49:30 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 68
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 15:49:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:49:30 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 68
+    [email] => erasmo@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 15:49:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:49:47 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:50:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:50:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:50:31 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:51:29 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:51:38 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:51:38 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 15:51:39 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:05:17 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:05:17 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:05:20 America/Tegucigalpa] Error validando token: Expired token
+[06-Dec-2024 16:05:35 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 16:05:35 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:05:42 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:07:57 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 16:07:57 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:03 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:08 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:09 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:16 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:17 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:27 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:28 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:31 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:53 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:54 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:56 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:08:57 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:09:19 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:09:42 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:09:42 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:09:43 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:11:18 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:11:21 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:11:22 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:11:37 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:11:37 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:11:38 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:12:09 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:12:18 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 74
+    [email] => gerardozuniga2003@gmail.com
+    [tipo] => Persona
+    [nombre] => Gerardo
+    [apellido] => Zúniga
+    [dni] => 12345678
+    [edad] => 43
+    [telefono] => 1443234234
+    [contraseña] => erwerwer
+)
+
+[06-Dec-2024 16:12:18 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:12:18 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 74
+    [tipo] => Persona
+    [rol] => 
+)
+
+[06-Dec-2024 16:12:18 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:12:18 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 74
+    [email] => gerardozuniga2003@gmail.com
+    [tipo] => Persona
+)
+
+[06-Dec-2024 16:12:20 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:12:46 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:12:46 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:12:47 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:12:59 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:13:08 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => dfsfdsf
+    [razonSocial] => fsfsdfdsfds
+    [registroFiscal] => ewrewrewrwerew
+    [telefonoEmpresa] => 0987654321
+    [direccion] => rewrewrwe
+)
+
+[06-Dec-2024 16:13:08 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:13:08 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 75
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 16:13:08 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:13:08 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 16:13:11 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:16:05 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:16:08 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:16:25 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => etertert
+    [razonSocial] => ertreterter
+    [registroFiscal] => gddfgdfgfdg
+    [telefonoEmpresa] => 1234567657
+    [direccion] => Calle La Concordia
+)
+
+[06-Dec-2024 16:16:25 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:16:25 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 75
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 16:16:25 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:16:25 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 16:16:31 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:17:13 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:17:15 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:17:23 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 74
+    [email] => gerardozuniga2003@gmail.com
+    [tipo] => Persona
+    [nombre] => Gerardo
+    [apellido] => Zúniga
+    [dni] => 43434343
+    [edad] => 43
+    [telefono] => 1443234234
+)
+
+[06-Dec-2024 16:17:23 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:17:23 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 74
+    [tipo] => Persona
+    [rol] => 
+)
+
+[06-Dec-2024 16:17:23 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:17:23 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 74
+    [email] => gerardozuniga2003@gmail.com
+    [tipo] => Persona
+)
+
+[06-Dec-2024 16:17:26 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:19:27 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:19:29 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:19:43 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => fsdfdsfds
+    [razonSocial] => drterter
+    [registroFiscal] => dfgdfgfdgfgfdg
+    [telefonoEmpresa] => 5434534554
+    [direccion] => rterfgfdg
+    [contraseña] => 5454545454
+)
+
+[06-Dec-2024 16:19:43 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:19:43 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 75
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 16:19:43 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:19:43 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 16:19:49 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:21:36 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:21:37 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:21:39 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => 
+    [razonSocial] => 
+    [registroFiscal] => 
+    [telefonoEmpresa] => 
+    [direccion] => 
+)
+
+[06-Dec-2024 16:21:52 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => rteert
+    [razonSocial] => ertretert
+    [registroFiscal] => retertreter
+    [telefonoEmpresa] => 3834588543
+    [direccion] => etertert
+)
+
+[06-Dec-2024 16:21:52 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:21:52 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 75
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 16:21:52 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:21:52 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 16:21:54 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:23:25 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:23:27 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:23:34 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => bvcbgffg
+    [razonSocial] => hgfhgfhgf
+    [registroFiscal] => gfhfghfghf
+    [telefonoEmpresa] => 
+    [direccion] => hfghgfhfg
+)
+
+[06-Dec-2024 16:23:34 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:23:34 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 75
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 16:23:34 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:23:34 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 16:23:40 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:25:51 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:25:54 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:26:06 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => trtr
+    [razonSocial] => ytrytryrt
+    [registroFiscal] => rtytrytrytr
+    [telefonoEmpresa] => 5354345443
+    [direccion] => ytrytrytr
+)
+
+[06-Dec-2024 16:26:06 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:26:06 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 75
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 16:26:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:26:06 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 16:26:11 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:27:16 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:27:29 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:27:44 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => gfgfhf
+    [razonSocial] => ghfghgf
+    [registroFiscal] => dfgfdgdfgdf
+    [telefonoEmpresa] => 7894561231
+    [direccion] => gdfgfdg
+)
+
+[06-Dec-2024 16:27:44 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:27:44 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 75
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 16:27:44 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:27:44 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 16:27:48 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+    [nombreEmpresa] => gfgfhf
+    [razonSocial] => ghfghgf
+    [registroFiscal] => dfgfdgdfgdf
+    [telefonoEmpresa] => 7894561231
+    [direccion] => gdfgfdg
+)
+
+[06-Dec-2024 16:27:48 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:27:48 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 75
+    [tipo] => Empresa
+    [rol] => 
+)
+
+[06-Dec-2024 16:27:48 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:27:48 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 75
+    [email] => zunigagerardo541@gmail.com
+    [tipo] => Empresa
+)
+
+[06-Dec-2024 16:27:58 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:28:34 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:28:38 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:28:48 America/Tegucigalpa] Datos recibidos: Array
+(
+    [id_usuario] => 71
+    [email] => lola@ejemplo.com
+    [tipo] => Persona
+    [nombre] => gfdgfdgdf
+    [apellido] => gfdgfdg
+    [dni] => 87978987
+    [edad] => 43
+    [telefono] => 3232323232
+)
+
+[06-Dec-2024 16:28:48 America/Tegucigalpa] Error validando token: Signature verification failed
+[06-Dec-2024 16:28:48 America/Tegucigalpa] Datos antes de la actualización: Array
+(
+    [id_usuario] => 71
+    [tipo] => Persona
+    [rol] => 
+)
+
+[06-Dec-2024 16:28:48 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:28:48 America/Tegucigalpa] Iniciando actualización con datos: Array
+(
+    [id_usuario] => 71
+    [email] => lola@ejemplo.com
+    [tipo] => Persona
+)
+
+[06-Dec-2024 16:28:51 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:29:08 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:29:57 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 16:29:57 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:30:17 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 16:30:17 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:30:55 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 16:30:55 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:31:15 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 16:31:15 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:31:21 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:31:38 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:31:39 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:57:18 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 16:59:37 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:00:38 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:01:38 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:02:32 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:03:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:04:33 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Call to undefined method App\Modulos\Usuarios\Modelos\usuario::getDashboardCounts() in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\DashboardController.php:15
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\rutas\GetDashboardCounts.php(21): App\Modulos\Usuarios\Controladores\DashboardController->getDashboardCounts()
+#1 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Usuarios\Controladores\DashboardController.php on line 15
+[06-Dec-2024 17:05:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:06:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:07:47 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:08:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:10:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:12:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:13:16 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:13:16 America/Tegucigalpa] Error en ConteoyFechas::getRegistrosPorFecha: SQLSTATE[42000]: Syntax error or access violation: 1305 PROCEDURE voluntariadodonaciones.sp_get_registros_por_fecha does not exist
+[06-Dec-2024 17:13:17 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:13:17 America/Tegucigalpa] Error en ConteoyFechas::getRegistrosPorFecha: SQLSTATE[42000]: Syntax error or access violation: 1305 PROCEDURE voluntariadodonaciones.sp_get_registros_por_fecha does not exist
+[06-Dec-2024 17:14:21 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:14:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:16:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:17:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:19:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:21:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:23:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:25:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:25:32 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:25:32 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:30:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:30:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:35:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:35:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:35:44 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:40:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:40:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:41:22 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:41:22 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:41:23 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:42:46 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:42:46 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:42:46 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:42:48 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:42:48 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:42:48 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:43:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:43:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:43:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:48:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:48:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:48:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:53:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:53:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:53:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:58:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:58:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 17:58:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:03:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:03:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:03:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:08:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:08:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:08:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:13:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:13:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:13:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:18:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:18:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:18:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:23:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:23:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:23:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:28:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:28:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:28:01 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:33:02 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:33:02 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:33:02 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:38:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:38:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:38:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:43:02 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:43:02 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:43:02 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:48:31 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:48:31 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:48:31 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:53:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:53:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:53:33 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:58:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:58:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 18:58:30 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:01:50 America/Tegucigalpa] Error validando token: Expired token
+[06-Dec-2024 19:02:06 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[06-Dec-2024 19:02:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:02:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:02:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:02:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:07:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:07:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:07:07 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:12:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:12:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:12:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:17:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:17:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:17:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:22:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:22:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:22:06 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:24:03 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:24:03 America/Tegucigalpa] Conexión exitosa
+[06-Dec-2024 19:24:03 America/Tegucigalpa] Conexión exitosa

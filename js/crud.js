@@ -1,266 +1,329 @@
-// Llamar a la función para cargar los usuarios al cargar la página
-document.addEventListener("DOMContentLoaded", function () {
-    getAllUsuarios();
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Asumiendo que tienes un botón de eliminar en cada fila de la tabla
-    // y el botón tiene el atributo `data-id` con el id del usuario.
-    const eliminarButtons = document.querySelectorAll('.btnEliminar');
+function renderUsuarios(data) {
+    console.log('Iniciando renderizado con datos:', data);
+
+    // Renderizar usuarios tipo persona
+    const tbodyPersonas = document.querySelector('#tabla-usuarios-personas');
+    console.log('Elemento tbody personas encontrado:', tbodyPersonas);
     
-    eliminarButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const id_usuario = button.getAttribute('data-id');
-            eliminarUsuario(id_usuario);  // Llamamos a la función para eliminar el usuario
-        });
-    });
-});
-
-// Función para eliminar un usuario
-function eliminarUsuario(id_usuario) {
-    // Confirmar la eliminación antes de hacer la solicitud
-    const confirmar = confirm("¿Estás seguro de que deseas eliminar este usuario?");
-    if (!confirmar) return;
-
-    // Hacer la solicitud DELETE para eliminar el usuario
-    fetch(`http://localhost/Crowdfunding/public/DeleteUsuario/${id_usuario}`, {
-        method: 'DELETE',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-            alert(data.message);  // Mostrar el mensaje de éxito
-            getAllUsuarios();  // Refrescar la lista de usuarios
+    if (tbodyPersonas) {
+        tbodyPersonas.innerHTML = '';
+        if (data.persona && Array.isArray(data.persona)) {
+            console.log(`Renderizando ${data.persona.length} personas`);
+            data.persona.forEach((persona, index) => {
+                console.log(`Renderizando persona ${index + 1}:`, persona);
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${persona.id_usuario || ''}</td>
+                    <td>${persona.DNI || ''}</td>
+                    <td>${persona.Nombre || ''}</td>
+                    <td>${persona.Apellido || ''}</td>
+                    <td>${persona.email || ''}</td>
+                    <td>${persona.contraseña || ''}</td>
+                    <td>${persona.Edad || ''}</td>
+                    <td>${persona.Telefono || ''}</td>
+                    <td>${persona.Rol || ''}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="editarUsuario(${persona.id_usuario}, 'persona')">
+                            <i class="fas fa-edit"></i> Editar
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="eliminarUsuario(${persona.id_usuario})">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                    </td>
+                `;
+                tbodyPersonas.appendChild(tr);
+                console.log('Fila agregada para persona:', tr.innerHTML);
+            });
         } else {
-            alert(data.message);  // Mostrar el mensaje de error
+            console.log('No hay datos de personas o no es un array:', data.persona);
         }
-    })
-    .catch(error => {
-        console.error('Error al eliminar el usuario:', error);
-        alert('Hubo un problema al eliminar el usuario.');
-    });
+    } else {
+        console.error('No se encontró el elemento tbody para personas');
+    }
+
+    // Renderizar usuarios tipo empresa
+    const tbodyEmpresas = document.querySelector('#tabla-usuarios-empresas');
+    console.log('Elemento tbody empresas encontrado:', tbodyEmpresas);
+    
+    if (tbodyEmpresas) {
+        tbodyEmpresas.innerHTML = '';
+        if (data.empresa && Array.isArray(data.empresa)) {
+            console.log(`Renderizando ${data.empresa.length} empresas`);
+            data.empresa.forEach((empresa, index) => {
+                console.log(`Renderizando empresa ${index + 1}:`, empresa);
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${empresa.id_usuario || ''}</td>
+                    <td>${empresa.nombreEmpresa || ''}</td>
+                    <td>${empresa.email || ''}</td>
+                    <td>${empresa.contraseña || ''}</td>
+                    <td>${empresa.razonSocial || ''}</td>
+                    <td>${empresa.registroFiscal || ''}</td>
+                    <td>${empresa.telefonoEmpresa || ''}</td>
+                    <td>${empresa.direccion || ''}</td>
+                    <td>${empresa.Rol || ''}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="editarUsuario(${empresa.id_usuario}, 'empresa')">
+                            <i class="fas fa-edit"></i> Editar
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="eliminarUsuario(${empresa.id_usuario})">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                    </td>
+                `;
+                tbodyEmpresas.appendChild(tr);
+                console.log('Fila agregada para empresa:', tr.innerHTML);
+            });
+        } else {
+            console.log('No hay datos de empresas o no es un array:', data.empresa);
+        }
+    } else {
+        console.error('No se encontró el elemento tbody para empresas');
+    }
 }
 
-
-// Función para obtener todos los usuarios y renderizar las tablas
 function getAllUsuarios() {
+    console.log('Iniciando getAllUsuarios');
     const apiUrl = "http://localhost/Crowdfunding/public/GetAllUsuarios";
+    const token = localStorage.getItem('jwt_token');
 
     fetch(apiUrl, {
         method: "GET",
         headers: {
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         }
     })
     .then(response => {
+        console.log('Respuesta recibida:', response);
         if (!response.ok) {
-            throw new Error("Error en la solicitud, código: " + response.status);
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
     })
     .then(data => {
-        if (data.status === "success") {
-            const personas = data.persona || [];
-            const empresas = data.empresa || [];
-            renderUsuarios(personas, empresas); // Renderizar ambas tablas
+        console.log("Datos recibidos del servidor:", data);
+        if (data.status === 200) {
+            console.log("Llamando a renderUsuarios con:", data.data.data);
+            renderUsuarios(data.data.data);
         } else {
+            console.error("Error en la respuesta:", data.message);
             alert("Error al obtener los usuarios: " + data.message);
         }
     })
     .catch(error => {
         console.error("Error en la solicitud:", error);
-        alert("Hubo un problema al obtener los datos. Inténtalo nuevamente.");
-    });
-}
-
-// Función para renderizar las tablas de personas y empresas
-function renderUsuarios(personas, empresas) {
-    const tablaPersonas = document.getElementById("tabla-usuarios-personas");
-    const tablaEmpresas = document.getElementById("tabla-usuarios-empresas");
-
-    // Limpiar las tablas antes de renderizar
-    tablaPersonas.innerHTML = "";
-    tablaEmpresas.innerHTML = "";
-
-    // Renderizar personas
-    personas.forEach(persona => {
-        const fila = `
-            <tr>
-                <td>${persona.id_usuario}</td>
-                <td>${persona.DNI}</td>
-                <td>${persona.Nombre}</td> 
-                <td>${persona.Apellido}</td>
-                <td>${persona.email}</td>
-                <td>${persona.contraseña}</td>
-                <td>${persona.Edad}</td>
-                <td>${persona.Telefono}</td>
-                <td>${persona.Rol}</td>
-                <td>
-                    <button class="btn btn-warning" onclick="mostrarModalActualizar(${persona.id_usuario}, 'persona')">Actualizar</button>
-                    <button class="btn btn-danger" onclick="eliminarUsuario(${persona.id_usuario}, 'persona')">Eliminar</button>
-                </td>
-            </tr>`;
-        tablaPersonas.innerHTML += fila;
-    });
-
-    // Renderizar empresas
-    empresas.forEach(empresa => {
-        const fila = `
-            <tr>
-                <td>${empresa.id_usuario}</td>
-                <td>${empresa.nombreEmpresa}</td>
-                <td>${empresa.email}</td>
-                <td>${empresa.contraseña}</td>
-                <td>${empresa.razonSocial}</td>
-                <td>${empresa.registroFiscal}</td>
-                <td>${empresa.telefonoEmpresa}</td>
-                <td>${empresa.direccion}</td>
-                <td>${empresa.Rol}</td>
-                <td>
-                    <button class="btn btn-warning" onclick="mostrarModalActualizar(${empresa.id_usuario}, 'empresa')">Actualizar</button>
-                    <button class="btn btn-danger" onclick="eliminarUsuario(${empresa.id_usuario}, 'empresa')">Eliminar</button>
-                </td>
-            </tr>`;
-        tablaEmpresas.innerHTML += fila;
-    });
-}
-
-// Función para mostrar el modal de actualización
-function mostrarModalActualizar(id_usuario, tipo) {
-    // Obtener el modal y los elementos de los campos
-    const modal = new bootstrap.Modal(document.getElementById('modalActualizarUsuario'));
-    const modalTitle = document.getElementById('modalActualizarUsuarioLabel');
-    const inputId = document.getElementById('updateUsuarioId');
-    const inputTipo = document.getElementById('updateUsuarioTipo');
-    const inputEmail = document.getElementById('updateEmail');
-    const personaFields = document.getElementById('personaFields');
-    const empresaFields = document.getElementById('empresaFields');
-    const inputRol = document.getElementById('updateUsuarioRol');  // Campo oculto para el rol
-
-    // Limpiar los campos antes de mostrar los datos
-    inputId.value = '';
-    inputEmail.value = '';
-    inputTipo.value = '';
-    inputRol.value = '';  // Limpiar el campo de rol
-    personaFields.style.display = 'none';
-    empresaFields.style.display = 'none';
-
-    // Obtener los datos de la API para el usuario
-    fetch(`http://localhost/Crowdfunding/public/GetAllUsuarios/${id_usuario}?tipo=${tipo}`)
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-            let usuario = null;
-            
-            if (tipo === 'persona' && data.persona.length > 0) {
-                // Buscar el usuario con el id_usuario correcto
-                usuario = data.persona.find(u => u.id_usuario == id_usuario);
-            } else if (tipo === 'empresa' && data.empresa.length > 0) {
-                // Buscar el usuario con el id_usuario correcto
-                usuario = data.empresa.find(u => u.id_usuario == id_usuario);  // Asumiendo que `id_empresa` es el identificador
-            }            
-
-            if (usuario) {
-                // Asignar los valores del usuario
-                inputId.value = usuario.id_usuario;
-                inputEmail.value = usuario.email;
-                inputTipo.value = tipo;
-                inputRol.value = usuario.rol;  // Asignar el rol al campo oculto
-
-                if (tipo === 'persona') {
-                    modalTitle.textContent = 'Actualizar Usuario - Persona';
-                    personaFields.style.display = 'block';
-
-                    // Asignar datos de la persona
-                    document.getElementById('updateDNI').value = usuario.DNI;
-                    document.getElementById('updateNombre').value = usuario.Nombre;
-                    document.getElementById('updateApellido').value = usuario.Apellido;
-                    document.getElementById('updateTelefono').value = usuario.Telefono;
-                    document.getElementById('updateEdad').value = usuario.Edad;
-                } else if (tipo === 'empresa') {
-                    modalTitle.textContent = 'Actualizar Usuario - Empresa';
-                    empresaFields.style.display = 'block';
-
-                    // Asignar datos de la empresa
-                    document.getElementById('updateNombreEmpresa').value = usuario.nombreEmpresa;
-                    document.getElementById('updateRazonSocial').value = usuario.razonSocial;
-                    document.getElementById('updateTelefonoEmpresa').value = usuario.telefonoEmpresa;
-                    document.getElementById('updateDireccion').value = usuario.direccion;
-                    document.getElementById('updateRegistroFiscal').value = usuario.registroFiscal;
-                }
-
-                modal.show();
-            }
+        if (error.message.includes('401')) {
+            alert("Sesión expirada. Por favor, inicie sesión nuevamente.");
+            window.location.href = '../html/login.html';
+        } else {
+            alert("Error al obtener los datos. Por favor, intente nuevamente.");
         }
-    })
-    .catch(error => console.log('Error al cargar el usuario: ', error));
+    });
 }
 
-document.getElementById('btnGuardarCambios').addEventListener('click', updateUsuario);
-// Función para actualizar el usuario
-function updateUsuario() {
-    const id_usuario = document.getElementById('updateUsuarioId').value;  // Obtenemos correctamente el ID
-    const tipo = document.getElementById('updateUsuarioTipo').value;
+// Función para eliminar usuario
+function eliminarUsuario(id) {
+    if (confirm('¿Está seguro de que desea eliminar este usuario?')) {
+        const apiUrl = `http://localhost/Crowdfunding/public/DeleteUsuario/${id}`;
+        const token = localStorage.getItem('jwt_token');
 
-    let payload = {
-        id_usuario: id_usuario,
-        email: document.getElementById('updateEmail').value,
-        contraseña: document.getElementById('updateContraseña').value,  // Asegúrate de capturar este campo
-        tipo: tipo,  // Tipo debe ser incluido
-    };
-
-    if (tipo === 'persona') {
-        payload = {
-            ...payload,
-            nombre: document.getElementById('updateNombre').value,
-            apellido: document.getElementById('updateApellido').value,
-            dni: document.getElementById('updateDNI').value,
-            edad: document.getElementById('updateEdad').value,
-            telefono: document.getElementById('updateTelefono').value
-        };
-    } else if (tipo === 'empresa') {
-        payload = {
-            ...payload,
-            nombreEmpresa: document.getElementById('updateNombreEmpresa').value,
-            razonSocial: document.getElementById('updateRazonSocial').value,
-            telefonoEmpresa: document.getElementById('updateTelefonoEmpresa').value,
-            direccion: document.getElementById('updateDireccion').value,
-            registroFiscal: document.getElementById('updateRegistroFiscal').value
-        };
+        fetch(apiUrl, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 200) {
+                alert('Usuario eliminado con éxito');
+                getAllUsuarios(); // Recargar la lista
+            } else {
+                alert(data.message || 'Error al eliminar el usuario');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al eliminar el usuario');
+        });
     }
+}
 
-    // Verifica que todos los campos obligatorios estén presentes antes de enviar la solicitud
-    if (!payload.id_usuario || !payload.email || !payload.contraseña || !payload.tipo) {
-        alert("Faltan datos obligatorios.");
-        return;  // Evita continuar si faltan datos
-    }
-
-    fetch(`http://localhost/Crowdfunding/public/UpdateUsuario/${id_usuario}`, {
-        method: 'PUT',
+// Función para editar usuario
+function editarUsuario(id, tipo) {
+    const token = localStorage.getItem('jwt_token');
+    
+    fetch(`http://localhost/Crowdfunding/public/GetUsuarioById?id=${id}`, {
+        method: 'GET',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
     })
     .then(response => response.json())
     .then(data => {
-        if (data.status === 'success') {
-            alert('Usuario actualizado correctamente.');
-            getAllUsuarios(); // Refrescar la tabla después de actualizar
-            // Cerrar el modal
-            const modal = bootstrap.Modal.getInstance(document.getElementById('modalActualizarUsuario'));
-            modal.hide();
+        if (data.status === 200 || data.status === 'success') {
+            // Asignar valores básicos
+            document.getElementById('updateUsuarioId').value = id;
+            document.getElementById('updateEmail').value = data.data.email || '';
+            document.getElementById('updateUsuarioTipo').value = tipo; // Mantener como hidden
+
+            // Mostrar/ocultar campos según el tipo
+            const personaFields = document.getElementById('personaFields');
+            const empresaFields = document.getElementById('empresaFields');
+
+            console.log('Tipo de usuario:', tipo); // Para depuración
+
+            if (tipo.toLowerCase() === 'persona') {
+                personaFields.style.display = 'block';
+                empresaFields.style.display = 'none';
+                
+                // Llenar campos de persona
+                document.getElementById('updateDNI').value = data.data.dni || '';
+                document.getElementById('updateNombre').value = data.data.nombre || '';
+                document.getElementById('updateApellido').value = data.data.apellido || '';
+                document.getElementById('updateTelefono').value = data.data.telefono || '';
+                document.getElementById('updateEdad').value = data.data.edad || '';
+            } else if (tipo.toLowerCase() === 'empresa') {
+                personaFields.style.display = 'none';
+                empresaFields.style.display = 'block';
+                
+                // Llenar campos de empresa
+                document.getElementById('updateNombreEmpresa').value = data.data.nombreEmpresa || '';
+                document.getElementById('updateRazonSocial').value = data.data.razonSocial || '';
+                document.getElementById('updateRegistroFiscal').value = data.data.registroFiscal || '';
+                document.getElementById('updateTelefonoEmpresa').value = data.data.telefonoEmpresa || '';
+                document.getElementById('updateDireccion').value = data.data.direccion || '';
+            }
+
+            // Mostrar el modal
+            const modal = new bootstrap.Modal(document.getElementById('modalActualizarUsuario'));
+            modal.show();
         } else {
-            alert(`Error al actualizar usuario: ${data.message}`);
+            alert(data.message || 'Error al obtener los datos del usuario');
         }
     })
     .catch(error => {
-        console.error('Error en la solicitud:', error);
-        alert('Hubo un problema al actualizar el usuario.');
+        console.error('Error:', error);
+        alert('Error al obtener los datos del usuario');
     });
 }
+
+// Manejar el botón de guardar cambios
+document.getElementById('btnGuardarCambios').addEventListener('click', function() {
+    const id = document.getElementById('updateUsuarioId').value;
+    const tipoOriginal = document.getElementById('updateUsuarioTipo').value;
+    // Normalizar el tipo con la primera letra en mayúscula
+    const tipo = tipoOriginal.charAt(0).toUpperCase() + tipoOriginal.slice(1).toLowerCase();
+    const token = localStorage.getItem('jwt_token');
+
+    // Datos base que siempre se envían
+    let userData = {
+        id_usuario: id,
+        email: document.getElementById('updateEmail').value.trim(),
+        tipo: tipo // Usar el tipo normalizado
+    };
+
+    // Agregar campos específicos según el tipo
+    if (tipo === 'Persona') {
+        userData = {
+            ...userData,
+            nombre: document.getElementById('updateNombre').value.trim(),
+            apellido: document.getElementById('updateApellido').value.trim(),
+            dni: document.getElementById('updateDNI').value.trim(),
+            edad: document.getElementById('updateEdad').value.trim(),
+            telefono: document.getElementById('updateTelefono').value.trim()
+        };
+    } else if (tipo === 'Empresa') {
+        userData = {
+            ...userData,
+            nombreEmpresa: document.getElementById('updateNombreEmpresa').value.trim(),
+            razonSocial: document.getElementById('updateRazonSocial').value.trim(),
+            registroFiscal: document.getElementById('updateRegistroFiscal').value.trim(),
+            telefonoEmpresa: document.getElementById('updateTelefonoEmpresa').value.trim(),
+            direccion: document.getElementById('updateDireccion').value.trim()
+        };
+    }
+
+    // Si hay contraseña, agregarla
+    const contraseña = document.getElementById('updateContraseña').value.trim();
+    if (contraseña) {
+        userData.contraseña = contraseña;
+    }
+
+    console.log('Tipo de usuario:', tipo);
+    console.log('Datos a enviar:', userData);
+
+    fetch('http://localhost/Crowdfunding/public/UpdateUsuario', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+        if (data.status === 200 || data.status === 'success') {
+            // Cerrar el modal primero
+            const modal = bootstrap.Modal.getInstance(document.getElementById('modalActualizarUsuario'));
+            modal.hide();
+            
+            // Mostrar mensaje y luego recargar
+            if (confirm('Usuario actualizado exitosamente')) {
+                window.location.href = window.location.href;
+            } else {
+                window.location.href = window.location.href;
+            }
+        } else {
+            alert(data.message || 'Error al actualizar el usuario');
+        }
+    })
+    .catch(error => {
+        console.error('Error completo:', error);
+        alert('Error al actualizar el usuario. Por favor, revise la consola para más detalles.');
+    });
+});
+
+// Agregar event listener para el cambio de tipo
+document.getElementById('updateUsuarioTipo').addEventListener('change', function() {
+    const personaFields = document.getElementById('personaFields');
+    const empresaFields = document.getElementById('empresaFields');
+    
+    if (this.value === 'Persona') {
+        personaFields.style.display = 'block';
+        empresaFields.style.display = 'none';
+    } else {
+        personaFields.style.display = 'none';
+        empresaFields.style.display = 'block';
+    }
+});
+
+// Asegurarse de que el DOM esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+    // Inicializar la tabla
+    getAllUsuarios();
+    
+    // Agregar event listener para el formulario de actualización
+    const formUpdate = document.getElementById('formUpdateUsuario');
+    if (formUpdate) {
+        formUpdate.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // El botón de guardar cambios manejará la actualización
+        });
+    }
+
+    // Inicializar el cambio de tipo de usuario
+    const tipoSelect = document.getElementById('updateUsuarioTipo');
+    if (tipoSelect) {
+        // Disparar el evento change inicialmente para configurar los campos correctamente
+        tipoSelect.dispatchEvent(new Event('change'));
+    }
+});
 

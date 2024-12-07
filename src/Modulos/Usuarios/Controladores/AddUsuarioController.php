@@ -13,17 +13,17 @@ class AddUsuarioController
 
 
             // Validaciones iniciales de campos requeridos
-            $tipo = $data['Tipo'] ?? null;
-            if (!$tipo || !in_array($tipo, ['Empresa', 'Persona'])) {
+            $Tipo = $data['Tipo'] ?? null;
+            if (!$Tipo || !in_array($Tipo, ['Empresa', 'Persona'])) {
                 return $this->jsonResponse(ResponseHTTP::status400('Tipo de usuario no válido.'));
             }
 
             $email = $data['email'] ?? null;
             $contraseña = $data['contraseña'] ?? null;
-            $rol = $data['rol'] ?? null;
+            $Rol = $data['Rol'] ?? null;
 
             // Validaciones básicas comunes
-            if (empty($email) || empty($contraseña) || empty($rol)) {
+            if (empty($email) || empty($contraseña) || empty($Rol)) {
                 return $this->jsonResponse(ResponseHTTP::status400('Email, contraseña y rol son obligatorios.'));
             }
 
@@ -42,7 +42,7 @@ class AddUsuarioController
             }
 
             // Validaciones específicas por tipo de usuario
-            if ($tipo === 'Empresa') {
+            if ($Tipo === 'Empresa') {
                 $nombreEmpresa = $data['nombreEmpresa'] ?? null;
                 $razonSocial = $data['razonSocial'] ?? null;
                 $registroFiscal = $data['registroFiscal'] ?? null;
@@ -61,7 +61,7 @@ class AddUsuarioController
                 if (!preg_match('/^[0-9]{10}$/', $telefonoEmpresa)) {
                     return $this->jsonResponse(ResponseHTTP::status400('El teléfono debe contener 10 dígitos numéricos.'));
                 }
-            } elseif ($tipo === 'Persona') {
+            } elseif ($Tipo === 'Persona') {
                 $nombre = $data['nombre'] ?? null;
                 $apellido = $data['apellido'] ?? null;
                 $dni = $data['dni'] ?? null;
@@ -92,8 +92,8 @@ class AddUsuarioController
             $resultado = Usuario::addUsuario(
                 $email,
                 $contraseña,
-                $rol,
-                $tipo,
+                $Rol,
+                $Tipo,
                 $nombre ?? null,
                 $apellido ?? null,
                 $dni ?? null,
@@ -112,8 +112,8 @@ class AddUsuarioController
                 $payload = [
                     'id_usuario' => $p_id_usuario,
                     'email' => $email,
-                    'rol' => $rol,
-                    'tipo' => $tipo
+                    'Rol' => $Rol,
+                    'Tipo' => $Tipo
                 ];
 
                 // Generar el token JWT
@@ -127,8 +127,8 @@ class AddUsuarioController
                     'usuario' => [
                         'id_usuario' => $p_id_usuario,
                         'email' => $email,
-                        'rol' => $rol,
-                        'tipo' => $tipo
+                        'Rol' => $Rol,
+                        'Tipo' => $Tipo
                     ]
                 ]);
             }

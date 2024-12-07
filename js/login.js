@@ -1,48 +1,50 @@
-    document.getElementById('loginForm').addEventListener('submit', async function(event) {
-        event.preventDefault();  // Prevenir que el formulario se envíe de la manera tradicional
+document.getElementById('loginForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-        // Obtener los valores del formulario
-        const email = document.getElementById('email').value;
-        const contraseña = document.getElementById('contraseña').value;
+    const email = document.getElementById('email').value;
+    const contraseña = document.getElementById('contraseña').value;
 
-        const loginData = {
-            email: email,
-            contraseña: contraseña
-        };
+    const loginData = {
+        email: email,
+        contraseña: contraseña
+    };
 
-        try {
-            // Realizar la solicitud POST a la API de login
-            const response = await fetch('http://localhost/Crowdfunding/public/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(loginData)
-            });
+    try {
+        const response = await fetch('http://localhost/Crowdfunding/public/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(loginData)
+        });
 
-            // Convertir la respuesta a JSON
-            const data = await response.json();
+        const data = await response.json();
+        console.log('Respuesta del servidor:', data);
 
-            // Verificar si el login fue exitoso
-            if (data.status === 'success') {
-                // Guardar el JWT en el almacenamiento local si es necesario
-                localStorage.setItem('jwt', data.jwt);
+        if (data.status === 200) {
+            await Promise.all([
+                localStorage.setItem('jwt_token', data.token),
+                localStorage.setItem('user_rol', data.user.rol)
+            ]);
 
-                // Redirigir al usuario según el rol (ajusta esta lógica según el rol)
-                if (data.rol === 'Administrador') {
-                    window.location.href = '../html/dashboard.html';  // Redirigir al dashboard de administrador
-                } else if (data.rol === 'usuario') {
-                    window.location.href = '/dashboard-user';  // Redirigir al dashboard de usuario
-                } else {
-                    console.error('Rol no reconocido');
-                }
+            await new Promise(resolve => setTimeout(resolve, 100));
+
+            const rol = data.user.rol;
+            if (rol === 'Administrador') {
+                window.location.replace('../html/dashboard.html');
+            } else if (['Usuario', 'Voluntario', 'Organizador'].includes(rol)) {
+                window.location.replace('../html/dashboard-user.html');
             } else {
-                // Si hay un error, mostrar el mensaje al usuario
-                alert(data.message);
+                console.error('Rol no reconocido:', rol);
+                alert('Error: Rol de usuario no definido');
             }
-        } catch (error) {
-            console.error('Error en la solicitud:', error);
-            alert('Hubo un problema al intentar iniciar sesión. Inténtalo nuevamente.');
+        } else {
+            alert(data.message || 'Error en el inicio de sesión');
         }
-    });
+    } catch (error) {
+        console.error('Error en la solicitud:', error);
+        alert('Hubo un problema al intentar iniciar sesión. Inténtalo nuevamente.');
+    }
+});
 
