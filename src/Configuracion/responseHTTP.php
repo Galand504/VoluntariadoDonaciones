@@ -1,7 +1,7 @@
 <?php
 namespace App\Configuracion;
 
-class ResponseHTTP {
+class responseHTTP {
     public static $mensaje = array(
         'status' => '',
         'message' => '',
