@@ -9,16 +9,16 @@ class recompensaController {
     public static function obtenerDonadoresEstrella() {
         try {
             $donadores = recompensa::obtenerDonadoresEstrella();
-            echo json_encode(ResponseHTTP::status200($donadores));
+            echo json_encode(responseHTTP::status200($donadores));
         } catch (\Exception $e) {
-            echo json_encode(ResponseHTTP::status500($e->getMessage()));
+            echo json_encode(responseHTTP::status500($e->getMessage()));
         }
     }
     public static function registrarRecompensa($data) {
         try {
             // Validación básica: Datos mínimos requeridos
             if (!isset($data['usuario_id'], $data['tipo_recompensa'])) {
-                echo json_encode(ResponseHTTP::status400("Datos insuficientes"));
+                echo json_encode(responseHTTP::status400("Datos insuficientes"));
                 return;
             }
     
@@ -69,7 +69,6 @@ class recompensaController {
             echo $respuesta;
         }
     }
-    
 
     public static function verificarElegibilidad($idUsuario) {
         try {
