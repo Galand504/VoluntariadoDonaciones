@@ -9788,3 +9788,39 @@ Stack trace:
 
 [07-Dec-2024 22:56:07 America/Tegucigalpa] Conexión exitosa
 [07-Dec-2024 22:56:19 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:50:22 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[08-Dec-2024 10:50:22 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:50:34 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:50:54 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:51:20 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:51:24 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:51:42 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:51:53 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:51:56 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:52:08 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:52:25 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:52:41 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:52:48 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:52:51 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:52:54 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:52:57 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:52:59 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:53:08 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:54:09 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:54:09 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fecha_actualizacion' in 'field list'
+[08-Dec-2024 10:56:33 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:57:22 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:57:22 America/Tegucigalpa] Error al cancelar pago: SQLSTATE[45000]: <<Unknown error>>: 1644 El pago no existe o ya está completado
+[08-Dec-2024 10:57:49 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:58:24 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 10:58:24 America/Tegucigalpa] Error al cancelar pago: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fecha_actualizacion' in 'field list'
+[08-Dec-2024 10:59:47 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 11:01:57 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 11:02:25 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 11:03:38 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 11:04:48 America/Tegucigalpa] Conexión exitosa

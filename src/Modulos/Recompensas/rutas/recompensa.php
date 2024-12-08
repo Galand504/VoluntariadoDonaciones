@@ -37,8 +37,6 @@ try {
         case 'POST':
             if ($rutaEspecifica === 'registrar') {
                 $recompensaController->registrarRecompensa();
-            } elseif ($rutaEspecifica === 'verificar') {
-                $recompensaController->verificarRecompensas();
             } else {
                 echo json_encode(ResponseHTTP::status400("Ruta no encontrada"));
             }

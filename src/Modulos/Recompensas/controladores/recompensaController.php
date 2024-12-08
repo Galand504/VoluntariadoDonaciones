@@ -2,7 +2,7 @@
 
 namespace App\Modulos\Recompensas\Controladores;
 
-use App\Modulos\Recompensas\Modelos\Recompensa;
+use App\Modulos\Recompensas\Modelos\recompensa;
 use App\Configuracion\ResponseHTTP;
 use App\Configuracion\Security;
 use Exception;
