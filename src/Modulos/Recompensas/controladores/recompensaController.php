@@ -12,6 +12,7 @@ class recompensaController {
      */
     public function obtenerDonadoresEstrella(): void {
         try {
+<<<<<<< HEAD
             $resultado = Recompensa::obtenerDonadoresEstrellaGeneral();
             
             if ($resultado) {
@@ -19,6 +20,34 @@ class recompensaController {
                     "message" => "Donadores estrella obtenidos exitosamente",
                     "data" => $resultado
                 ]));
+=======
+            $donadores = recompensa::obtenerDonadoresEstrella();
+            echo json_encode(responseHTTP::status200($donadores));
+        } catch (\Exception $e) {
+            echo json_encode(responseHTTP::status500($e->getMessage()));
+        }
+    }
+    public static function registrarRecompensa($data) {
+        try {
+            // Validación básica: Datos mínimos requeridos
+            if (!isset($data['usuario_id'], $data['tipo_recompensa'])) {
+                echo json_encode(responseHTTP::status400("Datos insuficientes"));
+                return;
+            }
+    
+            // Validación específica: usuario_id debe ser un número y tipo_recompensa no debe estar vacío
+            if (!is_numeric($data['usuario_id']) || empty(trim($data['tipo_recompensa']))) {
+                echo json_encode(responseHTTP::status400("Datos inválidos"));
+                return;
+            }
+    
+            // Intentar registrar la recompensa en el modelo
+            $exito = recompensa::registrarRecompensa($data['usuario_id'], $data['tipo_recompensa']);
+    
+            // Respuesta según el resultado
+            if ($exito) {
+                echo json_encode(responseHTTP::status201("Recompensa registrada exitosamente"));
+>>>>>>> ac61f6ca3862175cd99dc9ec0975e0f315a262aa
             } else {
                 echo json_encode(ResponseHTTP::status200([
                     "message" => "No hay donadores estrella registrados",
