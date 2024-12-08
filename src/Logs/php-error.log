@@ -9530,3 +9530,261 @@ Stack trace:
 [06-Dec-2024 19:24:03 America/Tegucigalpa] Conexión exitosa
 [06-Dec-2024 19:24:03 America/Tegucigalpa] Conexión exitosa
 [06-Dec-2024 19:24:03 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:13:44 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:13:44 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 10:13:44 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\responseHTTP::status200(): Argument #1 ($res) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Controladores\recompensaController.php on line 12 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\responseHTTP.php:11
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Controladores\recompensaController.php(12): App\Configuracion\responseHTTP::status200(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php(13): App\Modulos\Recompensas\Controladores\recompensaController::obtenerDonadoresEstrella()
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\responseHTTP.php on line 11
+[07-Dec-2024 10:13:45 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:13:45 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 10:13:45 America/Tegucigalpa] PHP Fatal error:  Uncaught TypeError: App\Configuracion\responseHTTP::status200(): Argument #1 ($res) must be of type string, array given, called in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Controladores\recompensaController.php on line 12 and defined in C:\xampp\htdocs\Crowdfunding\src\Configuracion\responseHTTP.php:11
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Controladores\recompensaController.php(12): App\Configuracion\responseHTTP::status200(Array)
+#1 C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php(13): App\Modulos\Recompensas\Controladores\recompensaController::obtenerDonadoresEstrella()
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Configuracion\responseHTTP.php on line 11
+[07-Dec-2024 10:29:21 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:29:21 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 10:29:58 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:29:58 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 10:40:20 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:40:20 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 10:40:21 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:40:21 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 10:40:21 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:40:21 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 10:40:21 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:40:21 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 10:42:25 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:42:25 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 10:50:37 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:50:37 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 10:51:34 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:52:21 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 10:52:21 America/Tegucigalpa] Error al obtener donadores estrella: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'voluntariadodonaciones.usuarios' doesn't exist
+[07-Dec-2024 14:04:38 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:04:56 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:05:03 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:05:27 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:05:28 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:05:32 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:05:51 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:07:12 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:08:03 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:09:11 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:09:19 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:09:20 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:09:28 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:12:00 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:12:11 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:12:11 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 14:21:47 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:21:47 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 14:24:16 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:24:16 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 14:24:17 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:24:17 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 14:24:23 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:24:23 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 14:27:49 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:27:49 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 14:31:19 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 14:31:19 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 14:32:53 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 17:27:09 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[07-Dec-2024 17:27:09 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 17:29:11 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Non-static method App\Modulos\Recompensas\Controladores\recompensaController::registrarRecompensa() cannot be called statically in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php:30
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php on line 30
+[07-Dec-2024 17:29:23 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Non-static method App\Modulos\Recompensas\Controladores\recompensaController::registrarRecompensa() cannot be called statically in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php:30
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php on line 30
+[07-Dec-2024 17:30:13 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Non-static method App\Modulos\Recompensas\Controladores\recompensaController::registrarRecompensa() cannot be called statically in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php:30
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php on line 30
+[07-Dec-2024 17:41:36 America/Tegucigalpa] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php on line 5
+[07-Dec-2024 17:41:36 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 17:41:36 America/Tegucigalpa] Error en aprobarRecompensa: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_aprobar_recompensa; expected 3, got 2
+[07-Dec-2024 17:47:36 America/Tegucigalpa] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php on line 5
+[07-Dec-2024 17:47:36 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 17:47:36 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Modelos\Recompensa.php:85
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Controladores\RecompensaController.php(88): App\Modulos\Recompensas\Modelos\recompensa::aprobarRecompensa(2, 'Aprobada')
+#1 C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php(51): App\Modulos\Recompensas\Controladores\recompensaController->aprobarRecompensa()
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Modelos\Recompensa.php on line 85
+[07-Dec-2024 17:47:37 America/Tegucigalpa] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php on line 5
+[07-Dec-2024 17:47:37 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 17:47:37 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Modelos\Recompensa.php:85
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Controladores\RecompensaController.php(88): App\Modulos\Recompensas\Modelos\recompensa::aprobarRecompensa(2, 'Aprobada')
+#1 C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php(51): App\Modulos\Recompensas\Controladores\recompensaController->aprobarRecompensa()
+#2 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Modelos\Recompensa.php on line 85
+[07-Dec-2024 17:53:30 America/Tegucigalpa] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\rutas\recompensa.php on line 5
+[07-Dec-2024 17:59:13 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[07-Dec-2024 17:59:13 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 17:59:18 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[07-Dec-2024 17:59:18 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 17:59:19 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[07-Dec-2024 17:59:19 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 18:02:29 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 18:02:29 America/Tegucigalpa] Error en aprobarRecompensa: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while there are pending result sets. Consider unsetting the previous PDOStatement or calling PDOStatement::closeCursor()
+[07-Dec-2024 18:03:31 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 19:44:53 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 19:51:15 America/Tegucigalpa] Error validando token: Expired token
+[07-Dec-2024 19:51:25 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[07-Dec-2024 19:51:25 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 19:51:43 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 19:51:43 America/Tegucigalpa] Error en aprobarRecompensa: No tienes permisos para aprobar recompensas
+[07-Dec-2024 19:51:43 America/Tegucigalpa] Error en aprobarRecompensa: No tienes permisos para aprobar recompensas
+[07-Dec-2024 19:51:48 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 19:51:48 America/Tegucigalpa] Error en aprobarRecompensa: No tienes permisos para aprobar recompensas
+[07-Dec-2024 19:51:48 America/Tegucigalpa] Error en aprobarRecompensa: No tienes permisos para aprobar recompensas
+[07-Dec-2024 19:52:02 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[07-Dec-2024 19:52:02 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 19:52:23 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 19:52:23 America/Tegucigalpa] Error en aprobarRecompensa: No tienes permisos para aprobar recompensas
+[07-Dec-2024 19:52:23 America/Tegucigalpa] Error en aprobarRecompensa: No tienes permisos para aprobar recompensas
+[07-Dec-2024 19:52:24 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 19:52:24 America/Tegucigalpa] Error en aprobarRecompensa: No tienes permisos para aprobar recompensas
+[07-Dec-2024 19:52:24 America/Tegucigalpa] Error en aprobarRecompensa: No tienes permisos para aprobar recompensas
+[07-Dec-2024 19:52:57 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 19:52:57 America/Tegucigalpa] Error en aprobarRecompensa: No tienes permisos para aprobar recompensas
+[07-Dec-2024 19:52:57 America/Tegucigalpa] Error en aprobarRecompensa: No tienes permisos para aprobar recompensas
+[07-Dec-2024 20:04:02 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 20:04:02 America/Tegucigalpa] Datos del token: stdClass Object
+(
+    [iat] => 1733622722
+    [exp] => 1733626322
+    [data] => stdClass Object
+        (
+            [id] => 62
+            [email] => juan.perez@ejemplo.com
+            [rol] => Administrador
+        )
+
+)
+
+[07-Dec-2024 20:04:02 America/Tegucigalpa] PHP Warning:  Undefined property: stdClass::$id_usuario in C:\xampp\htdocs\Crowdfunding\src\Modulos\Recompensas\Modelos\Recompensa.php on line 91
+[07-Dec-2024 20:04:02 America/Tegucigalpa] Error en aprobarRecompensa: No se pudo obtener el ID del administrador del token
+[07-Dec-2024 20:07:36 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 20:07:36 America/Tegucigalpa] Error al aprobar recompensa: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while there are pending result sets. Consider unsetting the previous PDOStatement or calling PDOStatement::closeCursor()
+[07-Dec-2024 20:08:51 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 20:31:12 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[07-Dec-2024 20:31:12 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 20:31:16 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 20:31:16 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 20:31:16 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 20:31:17 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 20:31:17 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 20:31:17 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 20:31:19 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 20:31:19 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 20:31:19 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 20:31:32 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 20:31:32 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 20:31:32 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 21:38:06 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[07-Dec-2024 21:38:06 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 21:39:00 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 21:39:00 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.nombre' in 'field list'
+[07-Dec-2024 21:41:23 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 21:41:23 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.nombre' in 'field list'
+[07-Dec-2024 21:41:25 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 21:41:25 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.nombre' in 'field list'
+[07-Dec-2024 21:43:08 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 21:43:08 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.nombre' in 'field list'
+[07-Dec-2024 21:43:09 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 21:43:09 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.nombre' in 'field list'
+[07-Dec-2024 22:42:18 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:42:18 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.nombre' in 'field list'
+[07-Dec-2024 22:42:20 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:42:20 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.nombre' in 'field list'
+[07-Dec-2024 22:43:13 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:43:13 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.nombres' in 'field list'
+[07-Dec-2024 22:43:14 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:43:14 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.nombres' in 'field list'
+[07-Dec-2024 22:43:57 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:43:57 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.monto' in 'field list'
+[07-Dec-2024 22:43:58 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:43:58 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.monto' in 'field list'
+[07-Dec-2024 22:43:58 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:43:58 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.monto' in 'field list'
+[07-Dec-2024 22:43:59 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:43:59 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.monto' in 'field list'
+[07-Dec-2024 22:43:59 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:43:59 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.monto' in 'field list'
+[07-Dec-2024 22:43:59 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:43:59 America/Tegucigalpa] Error en obtenerDonadoresEstrellaGeneral: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.monto' in 'field list'
+[07-Dec-2024 22:45:56 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:46:50 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:46:56 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:46:59 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:53:40 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:53:40 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 22:55:12 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:55:12 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fechaEntrega' in 'field list'
+[07-Dec-2024 22:55:18 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:56:00 America/Tegucigalpa] Error validando token: Expired token
+[07-Dec-2024 22:56:07 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[07-Dec-2024 22:56:07 America/Tegucigalpa] Conexión exitosa
+[07-Dec-2024 22:56:19 America/Tegucigalpa] Conexión exitosa

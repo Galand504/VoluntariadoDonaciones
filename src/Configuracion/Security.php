@@ -56,7 +56,7 @@ class Security {
             JWT::decode($token, new Key($secretKey, 'HS256'));
             return true;
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             error_log("Error validando token: " . $e->getMessage());
             return false;
         }
@@ -85,6 +85,10 @@ class Security {
     public static function hasPermission(array $tokenData, string $requiredRole): bool {
         return isset($tokenData['user_data']['role']) && 
                $tokenData['user_data']['role'] === $requiredRole;
+    }
+
+    public static function getTokenData($token) {
+        return JWT::decode($token, new Key(self::secretKey(), 'HS256'));
     }
 }
 
