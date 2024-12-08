@@ -44,6 +44,37 @@ class recompensa {
     }
 
     /**
+     * Registra una nueva recompensa
+     */
+    public static function registrarRecompensa($descripcion, $montoMinimo, $moneda, $fechaEntregaEstimada, $idProyecto) {
+        try {
+            $con = Database::getConnection();
+            
+            $sql = "INSERT INTO recompensa (descripcion, montoMinimo, moneda, fechaEntregaEstimada, idProyecto, aprobada) 
+                   VALUES (?, ?, ?, ?, ?, 'Pendiente')";
+            
+            $stmt = $con->prepare($sql);
+            $stmt->execute([$descripcion, $montoMinimo, $moneda, $fechaEntregaEstimada, $idProyecto]);
+            
+            $idRecompensa = $con->lastInsertId();
+            
+            return [
+                'idRecompensa' => $idRecompensa,
+                'descripcion' => $descripcion,
+                'montoMinimo' => $montoMinimo,
+                'moneda' => $moneda,
+                'fechaEntregaEstimada' => $fechaEntregaEstimada,
+                'idProyecto' => $idProyecto,
+                'aprobada' => 'Pendiente'
+            ];
+            
+        } catch (PDOException $e) {
+            error_log("Error al registrar recompensa: " . $e->getMessage());
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    /**
      * Aprueba o rechaza una recompensa
      */
     public static function aprobarRecompensa($idRecompensa, $estado) {
@@ -87,101 +118,61 @@ class recompensa {
     }
 
     /**
-     * Registra una nueva recompensa
+     * Actualiza el estado de entrega de una recompensa asignada
      */
-    public static function registrarRecompensa($descripcion, $montoMinimo, $fechaEntregaEstimada, $idProyecto) {
+    public static function actualizarEstadoEntrega($idRecompensa, $idUsuario, $estadoEntrega, $idAdmin) {
         try {
             $con = Database::getConnection();
             
-            $sql = "INSERT INTO recompensa (descripcion, montoMinimo, fechaEntregaEstimada, idProyecto, aprobada) 
-                   VALUES (?, ?, ?, ?, 'Pendiente')";
+            // Llamar al procedimiento almacenado
+            $stmt = $con->prepare("CALL sp_actualizar_estado_recompensa_usuario(?, ?, ?, ?)");
+            $stmt->execute([$idRecompensa, $idUsuario, $estadoEntrega, $idAdmin]);
             
-            $stmt = $con->prepare($sql);
-            $stmt->execute([$descripcion, $montoMinimo, $fechaEntregaEstimada, $idProyecto]);
+            // Obtener la información actualizada
+            $sqlInfo = "SELECT ru.*, r.descripcion,
+                           CASE 
+                               WHEN u.Tipo = 'Persona' THEN CONCAT(p.Nombre, ' ', p.Apellido)
+                               WHEN u.Tipo = 'Empresa' THEN e.nombreEmpresa
+                           END as nombre_donante,
+                           pr.titulo as nombre_proyecto
+                    FROM recompensa_usuario ru
+                    JOIN recompensa r ON ru.idRecompensa = r.idRecompensa
+                    JOIN usuario u ON ru.idUsuario = u.id_usuario
+                    LEFT JOIN persona p ON u.id_usuario = p.id_usuario
+                    LEFT JOIN empresa e ON u.id_usuario = e.id_usuario
+                    JOIN proyecto pr ON r.idProyecto = pr.idProyecto
+                    WHERE ru.idRecompensa = ? AND ru.idUsuario = ?";
             
-            $idRecompensa = $con->lastInsertId();
+            $stmtInfo = $con->prepare($sqlInfo);
+            $stmtInfo->execute([$idRecompensa, $idUsuario]);
             
-            return [
-                'idRecompensa' => $idRecompensa,
-                'descripcion' => $descripcion,
-                'montoMinimo' => $montoMinimo,
-                'fechaEntregaEstimada' => $fechaEntregaEstimada,
-                'idProyecto' => $idProyecto,
-                'aprobada' => 'Pendiente'
-            ];
+            return $stmtInfo->fetch(PDO::FETCH_ASSOC);
             
         } catch (PDOException $e) {
-            error_log("Error al registrar recompensa: " . $e->getMessage());
+            error_log("Error al actualizar estado de recompensa: " . $e->getMessage());
             throw new Exception($e->getMessage());
         }
     }
 
     /**
-     * Verifica y asigna recompensas automáticamente
+     * Obtiene las recompensas asignadas a usuarios
      */
-    public static function verificarYAsignarRecompensas($idUsuario, $idProyecto, $idDonacion) {
+    public static function obtenerRecompensasAsignadas($filtros = []) {
         try {
             $con = Database::getConnection();
             
-            // 1. Obtener el monto total de la donación
-            $sqlMonto = "SELECT SUM(p.monto) as total
-                         FROM donacion d
-                         JOIN pago p ON d.idDonacion = p.idDonacion
-                         WHERE d.idDonacion = ? AND p.estado = 'Completado'";
+            $stmt = $con->prepare("CALL sp_obtener_recompensas_asignadas(?, ?, ?)");
+            $stmt->execute([
+                $filtros['estadoEntrega'] ?? null,
+                $filtros['idUsuario'] ?? null,
+                $filtros['idProyecto'] ?? null
+            ]);
             
-            $stmtMonto = $con->prepare($sqlMonto);
-            $stmtMonto->execute([$idDonacion]);
-            $montoTotal = $stmtMonto->fetch(PDO::FETCH_ASSOC)['total'] ?? 0;
-            
-            // 2. Obtener recompensas disponibles según el monto
-            $sqlRecompensas = "SELECT r.idRecompensa, r.descripcion, r.montoMinimo
-                              FROM recompensa r
-                              WHERE r.idProyecto = ?
-                              AND r.aprobada = 'Aprobada'
-                              AND r.montoMinimo <= ?
-                              AND NOT EXISTS (
-                                  SELECT 1 
-                                  FROM recompensa_usuario ru 
-                                  WHERE ru.idRecompensa = r.idRecompensa 
-                                  AND ru.idUsuario = ?
-                              )";
-            
-            $stmtRecompensas = $con->prepare($sqlRecompensas);
-            $stmtRecompensas->execute([$idProyecto, $montoTotal, $idUsuario]);
-            $recompensasDisponibles = $stmtRecompensas->fetchAll(PDO::FETCH_ASSOC);
-
-            // 3. Asignar recompensas
-            $recompensasAsignadas = [];
-            foreach ($recompensasDisponibles as $recompensa) {
-                try {
-                    $sqlAsignar = "INSERT INTO recompensa_usuario 
-                                  (idRecompensa, idUsuario, idDonacion, fechaAsignacion) 
-                                  VALUES (?, ?, ?, NOW())";
-                    
-                    $stmtAsignar = $con->prepare($sqlAsignar);
-                    $stmtAsignar->execute([
-                        $recompensa['idRecompensa'],
-                        $idUsuario,
-                        $idDonacion
-                    ]);
-                    
-                    $recompensasAsignadas[] = [
-                        'idRecompensa' => $recompensa['idRecompensa'],
-                        'descripcion' => $recompensa['descripcion'],
-                        'montoMinimo' => $recompensa['montoMinimo']
-                    ];
-                    
-                } catch (PDOException $e) {
-                    error_log("Error al asignar recompensa: " . $e->getMessage());
-                    continue;
-                }
-            }
-
-            return $recompensasAsignadas;
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
             
         } catch (PDOException $e) {
-            error_log("Error al verificar y asignar recompensas: " . $e->getMessage());
-            throw new Exception($e->getMessage());
+            error_log("Error al obtener recompensas asignadas: " . $e->getMessage());
+            throw new Exception("Error al obtener la lista de recompensas asignadas");
         }
     }
-}                     
+}

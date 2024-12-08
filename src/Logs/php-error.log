@@ -9824,3 +9824,240 @@ Stack trace:
 [08-Dec-2024 11:02:25 America/Tegucigalpa] Conexión exitosa
 [08-Dec-2024 11:03:38 America/Tegucigalpa] Conexión exitosa
 [08-Dec-2024 11:04:48 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:01:38 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:03:48 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:05:21 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:06:02 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[08-Dec-2024 12:06:02 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:06:19 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:06:19 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 12:06:19 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 12:06:30 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:06:30 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 12:06:30 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 12:06:53 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:07:23 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:07:36 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:09:11 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:24:07 America/Tegucigalpa] Error en crearPago: Datos de pago inválidos
+[08-Dec-2024 12:25:43 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:25:43 America/Tegucigalpa] Error en crearPago: La donación especificada no existe
+[08-Dec-2024 12:25:55 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:25:55 America/Tegucigalpa] Error en crearPago: La donación especificada no existe
+[08-Dec-2024 12:26:13 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:26:13 America/Tegucigalpa] Error en crearPago: La donación especificada no existe
+[08-Dec-2024 12:29:21 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[08-Dec-2024 12:29:21 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:31:11 America/Tegucigalpa] Token Data: stdClass Object
+(
+    [iat] => 1733682561
+    [exp] => 1733686161
+    [data] => stdClass Object
+        (
+            [id] => 62
+            [email] => juan.perez@ejemplo.com
+            [rol] => Administrador
+        )
+
+)
+
+[08-Dec-2024 12:31:12 America/Tegucigalpa] Token Data: stdClass Object
+(
+    [iat] => 1733682561
+    [exp] => 1733686161
+    [data] => stdClass Object
+        (
+            [id] => 62
+            [email] => juan.perez@ejemplo.com
+            [rol] => Administrador
+        )
+
+)
+
+[08-Dec-2024 12:32:20 America/Tegucigalpa] Token Data: stdClass Object
+(
+    [iat] => 1733682561
+    [exp] => 1733686161
+    [data] => stdClass Object
+        (
+            [id] => 62
+            [email] => juan.perez@ejemplo.com
+            [rol] => Administrador
+        )
+
+)
+
+[08-Dec-2024 12:32:21 America/Tegucigalpa] Token Data: stdClass Object
+(
+    [iat] => 1733682561
+    [exp] => 1733686161
+    [data] => stdClass Object
+        (
+            [id] => 62
+            [email] => juan.perez@ejemplo.com
+            [rol] => Administrador
+        )
+
+)
+
+[08-Dec-2024 12:32:22 America/Tegucigalpa] Token Data: stdClass Object
+(
+    [iat] => 1733682561
+    [exp] => 1733686161
+    [data] => stdClass Object
+        (
+            [id] => 62
+            [email] => juan.perez@ejemplo.com
+            [rol] => Administrador
+        )
+
+)
+
+[08-Dec-2024 12:32:54 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:32:54 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:32:54 America/Tegucigalpa] Error al crear pago: SQLSTATE[42000]: Syntax error or access violation: 1305 PROCEDURE voluntariadodonaciones.sp_registrar_pago does not exist
+[08-Dec-2024 12:32:54 America/Tegucigalpa] Error en crearPago: Error al procesar el pago: SQLSTATE[42000]: Syntax error or access violation: 1305 PROCEDURE voluntariadodonaciones.sp_registrar_pago does not exist
+[08-Dec-2024 12:34:06 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:34:06 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:37:37 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:37:37 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:39:36 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:39:36 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[0A000]: Feature not supported: 1415 Not allowed to return a result set from a trigger
+[08-Dec-2024 12:42:07 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:42:07 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[0A000]: Feature not supported: 1415 Not allowed to return a result set from a trigger
+[08-Dec-2024 12:42:09 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:42:09 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[0A000]: Feature not supported: 1415 Not allowed to return a result set from a trigger
+[08-Dec-2024 12:45:11 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:45:11 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_asignar_recompensa; expected 1, got 3
+[08-Dec-2024 12:45:11 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 12:45:23 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:45:23 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_asignar_recompensa; expected 1, got 3
+[08-Dec-2024 12:45:23 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 12:45:24 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:45:24 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_asignar_recompensa; expected 1, got 3
+[08-Dec-2024 12:45:24 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 12:45:24 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:45:24 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_asignar_recompensa; expected 1, got 3
+[08-Dec-2024 12:45:24 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 12:46:40 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:46:40 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_asignar_recompensa; expected 1, got 3
+[08-Dec-2024 12:46:40 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 12:46:41 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:46:41 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_asignar_recompensa; expected 1, got 3
+[08-Dec-2024 12:46:41 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 12:47:37 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:47:37 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_asignar_recompensa; expected 1, got 3
+[08-Dec-2024 12:47:37 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 12:51:53 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:51:53 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_asignar_recompensa; expected 1, got 3
+[08-Dec-2024 12:51:53 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 12:57:20 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 12:57:20 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_asignar_recompensa; expected 1, got 3
+[08-Dec-2024 12:57:20 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 13:01:43 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 13:01:43 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'field list'
+[08-Dec-2024 13:01:43 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 13:07:26 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 13:40:00 America/Tegucigalpa] Error validando token: Expired token
+[08-Dec-2024 13:40:03 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[08-Dec-2024 13:40:03 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 13:40:14 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 13:40:14 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1172 Result consisted of more than one row
+[08-Dec-2024 13:40:14 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 13:42:05 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 13:42:05 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for FUNCTION voluntariadodonaciones.fn_convertir_moneda; expected 3, got 2
+[08-Dec-2024 13:42:05 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 13:44:21 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 13:44:21 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for FUNCTION voluntariadodonaciones.fn_convertir_moneda; expected 3, got 4
+[08-Dec-2024 13:44:21 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 13:46:15 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 13:46:15 America/Tegucigalpa] Error al actualizar estado del pago: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'v_fecha' in 'where clause'
+[08-Dec-2024 13:46:15 America/Tegucigalpa] Error en actualizarEstadoPago: Error al actualizar el estado del pago
+[08-Dec-2024 13:46:55 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:02:44 America/Tegucigalpa] Error validando token: Expired token
+[08-Dec-2024 14:02:46 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[08-Dec-2024 14:02:47 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:03:01 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:03:01 America/Tegucigalpa] Error al obtener recompensas asignadas: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.nombre' in 'field list'
+[08-Dec-2024 14:03:01 America/Tegucigalpa] Error en obtenerRecompensasAsignadas: Error al obtener la lista de recompensas asignadas
+[08-Dec-2024 14:14:36 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:14:36 America/Tegucigalpa] Error al obtener recompensas asignadas: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.monto' in 'field list'
+[08-Dec-2024 14:14:36 America/Tegucigalpa] Error en obtenerRecompensasAsignadas: Error al obtener la lista de recompensas asignadas
+[08-Dec-2024 14:15:34 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:15:34 America/Tegucigalpa] Error al obtener recompensas asignadas: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pa.monto' in 'field list'
+[08-Dec-2024 14:15:34 America/Tegucigalpa] Error en obtenerRecompensasAsignadas: Error al obtener la lista de recompensas asignadas
+[08-Dec-2024 14:21:25 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:24:33 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:24:33 America/Tegucigalpa] Error al actualizar estado de recompensa: SQLSTATE[45000]: <<Unknown error>>: 1644 La recompensa especificada no existe para este usuario.
+[08-Dec-2024 14:24:33 America/Tegucigalpa] Error en actualizarEstadoEntrega: SQLSTATE[45000]: <<Unknown error>>: 1644 La recompensa especificada no existe para este usuario.
+[08-Dec-2024 14:24:43 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:28:07 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:28:26 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:28:33 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:31:14 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:31:18 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:31:24 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:34:21 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[08-Dec-2024 14:34:21 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:34:22 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:34:22 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:34:22 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:34:34 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:34:34 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:34:34 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:37:24 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[08-Dec-2024 14:37:24 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:37:36 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:37:36 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:37:36 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:37:49 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:37:49 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:37:49 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:39:19 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:39:19 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:39:19 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:39:19 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:39:19 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:39:19 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:39:20 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:39:20 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:39:20 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:39:20 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:39:20 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:39:20 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:40:50 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:40:50 America/Tegucigalpa] Error al registrar recompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:40:50 America/Tegucigalpa] Error en registrarRecompensa: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`voluntariadodonaciones`.`recompensa`, CONSTRAINT `fk_recompensa_proyecto` FOREIGN KEY (`idProyecto`) REFERENCES `proyecto` (`idProyecto`) ON DELETE CASCADE ON UPDATE CASCADE)
+[08-Dec-2024 14:43:03 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:55:39 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 14:56:30 America/Tegucigalpa] Conexión exitosa

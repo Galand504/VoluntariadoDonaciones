@@ -29,6 +29,8 @@ try {
         case 'GET':
             if ($rutaEspecifica === 'donadores') {
                 $recompensaController->obtenerDonadoresEstrella();
+            } elseif ($rutaEspecifica === 'asignadas') {
+                $recompensaController->obtenerRecompensasAsignadas();
             } else {
                 echo json_encode(ResponseHTTP::status400("Ruta no encontrada"));
             }
@@ -45,6 +47,8 @@ try {
         case 'PUT':
             if ($rutaEspecifica === 'aprobar') {
                 $recompensaController->aprobarRecompensa();
+            } elseif ($rutaEspecifica === 'estado') {
+                $recompensaController->actualizarEstadoEntrega();
             } else {
                 echo json_encode(ResponseHTTP::status400("Ruta no encontrada"));
             }

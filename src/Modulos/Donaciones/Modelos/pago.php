@@ -44,30 +44,27 @@ class pago {
      */
     public static function actualizarEstado($idPago, $estado) {
         try {
-            if (!in_array($estado, ['Pendiente', 'Completado', 'Fallido'])) {
-                throw new Exception("Estado de pago inválido");
-            }
-
             $con = Database::getConnection();
             
-            $sql = "UPDATE pago 
-                    SET estado = ?, fecha = NOW() 
-                    WHERE idPago = ?";
-            
-            $stmt = $con->prepare($sql);
-            $stmt->execute([$estado, $idPago]);
-
-            if ($stmt->rowCount() > 0) {
-                return [
-                    'idPago' => $idPago,
-                    'estado' => $estado
-                ];
+            // Validar estado
+            $estadosValidos = ['Pendiente', 'Completado', 'Fallido'];
+            if (!in_array($estado, $estadosValidos)) {
+                throw new Exception("Estado inválido. Estados permitidos: Pendiente, Completado, Fallido");
             }
-            throw new Exception("No se pudo actualizar el estado del pago");
+            
+            // Llamar al procedimiento almacenado
+            $stmt = $con->prepare("CALL sp_actualizar_estado_pago(?, ?)");
+            $stmt->execute([$idPago, $estado]);
+            
+            return [
+                'idPago' => $idPago,
+                'estado' => $estado,
+                'mensaje' => 'Estado actualizado correctamente'
+            ];
             
         } catch (PDOException $e) {
             error_log("Error al actualizar estado del pago: " . $e->getMessage());
-            throw new Exception($e->getMessage());
+            throw new Exception("Error al actualizar el estado del pago");
         }
     }
 
