@@ -7,7 +7,6 @@ header('Content-Type: application/json; charset=utf-8');
 use App\Modulos\Recompensas\Controladores\RecompensaController;
 use App\Configuracion\ResponseHTTP;
 
-
 // Para peticiones OPTIONS (pre-flight CORS)
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header('HTTP/1.1 200 OK');
