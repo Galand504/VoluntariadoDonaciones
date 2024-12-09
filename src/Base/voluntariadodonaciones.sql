@@ -1,9 +1,24 @@
-
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-12-2024 a las 03:51:17
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `voluntariadodonaciones`
 --
 CREATE DATABASE IF NOT EXISTS `voluntariadodonaciones` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `voluntariadodonaciones`;
@@ -143,47 +158,198 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_estado_recompensa_usu
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_proyecto` (IN `p_idProyecto` INT, IN `p_titulo` VARCHAR(255), IN `p_descripcion` TEXT, IN `p_objetivo` VARCHAR(255), IN `p_meta` FLOAT, IN `p_estado` ENUM('En Proceso','Completado','Cancelado'), IN `p_tipo_actividad` ENUM('Voluntariado','Donacion'), IN `p_id_usuario` INT)   BEGIN
-    -- Actualizar los datos del proyecto
-    UPDATE proyecto
-    SET titulo = p_titulo,
-        descripcion = p_descripcion,
-        objetivo = p_objetivo,
-        Meta = p_meta,
-        estado = p_estado,
-        tipo_actividad = p_tipo_actividad,
-        id_usuario = p_id_usuario
+    DECLARE v_creador_id INT;
+    DECLARE v_rol VARCHAR(20);
+    DECLARE v_cambios TEXT DEFAULT '';
+
+    -- Validar que el proyecto existe y obtener datos actuales
+    SELECT id_usuario 
+    INTO v_creador_id
+    FROM proyecto 
     WHERE idProyecto = p_idProyecto;
 
-    -- Insertar una nueva actualización en la tabla 'actualizacion'
-    INSERT INTO actualizacion (fecha, descripcion, idProyecto)
-    VALUES (CURDATE(), CONCAT('Actualización del proyecto: ', p_titulo), p_idProyecto);
+    IF v_creador_id IS NULL THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'El proyecto especificado no existe';
+    END IF;
+
+    -- Validar permisos del usuario
+    SELECT rol INTO v_rol
+    FROM usuario 
+    WHERE id_usuario = p_id_usuario;
+
+    IF v_rol NOT IN ('Organizador', 'Administrador') OR 
+       (v_rol = 'Organizador' AND v_creador_id != p_id_usuario) THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'No tienes permisos para actualizar este proyecto';
+    END IF;
+
+    -- Actualizar el proyecto
+    UPDATE proyecto 
+    SET 
+        titulo = COALESCE(p_titulo, titulo),
+        descripcion = COALESCE(p_descripcion, descripcion),
+        objetivo = COALESCE(p_objetivo, objetivo),
+        Meta = COALESCE(p_meta, Meta),
+        estado = COALESCE(p_estado, estado),
+        tipo_actividad = COALESCE(p_tipo_actividad, tipo_actividad)
+    WHERE idProyecto = p_idProyecto;
+
+    -- Retornar el proyecto actualizado
+    SELECT 
+        p.idProyecto,
+        p.titulo,
+        p.descripcion,
+        p.objetivo,
+        p.Meta,
+        p.estado,
+        p.tipo_actividad,
+        p.id_usuario,
+        u.email email_creador,
+        CASE 
+            WHEN u.Tipo = 'Persona' THEN CONCAT(per.nombre, ' ', per.apellido)
+            WHEN u.Tipo = 'Empresa' THEN emp.nombreEmpresa
+        END nombre_creador,
+        (SELECT fecha 
+         FROM actualizacion 
+         WHERE idProyecto = p.idProyecto 
+         ORDER BY fecha DESC, idActualizacion DESC
+         LIMIT 1) fecha_ultima_actualizacion,
+        (SELECT descripcion 
+         FROM actualizacion 
+         WHERE idProyecto = p.idProyecto 
+         ORDER BY fecha DESC, idActualizacion DESC
+         LIMIT 1) descripcion_ultima_actualizacion
+    FROM proyecto p
+    LEFT JOIN usuario u ON p.id_usuario = u.id_usuario
+    LEFT JOIN persona per ON u.id_usuario = per.id_usuario AND u.Tipo = 'Persona'
+    LEFT JOIN empresa emp ON u.id_usuario = emp.id_usuario AND u.Tipo = 'Empresa'
+    WHERE p.idProyecto = p_idProyecto;
+
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_riesgo` (IN `p_idRiesgo` INT, IN `p_descripcion` TEXT, IN `p_planMitigacion` TEXT)   BEGIN
-    -- Validar que el riesgo existe
-    IF NOT EXISTS (SELECT 1 FROM riesgo WHERE idRiesgo = p_idRiesgo) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El riesgo especificado no existe.';
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_riesgo` (IN `p_idRiesgo` INT, IN `p_descripcion` TEXT, IN `p_planMitigacion` TEXT, IN `p_idUsuario` INT)   BEGIN
+    -- Validar que el usuario es el organizador del proyecto
+    IF NOT EXISTS (
+        SELECT 1 
+        FROM riesgo r
+        JOIN proyecto p ON r.idProyecto = p.idProyecto
+        WHERE r.idRiesgo = p_idRiesgo 
+        AND p.id_usuario = p_idUsuario
+    ) THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'No tienes permisos para actualizar este riesgo.';
     END IF;
 
     -- Actualizar el riesgo
-    UPDATE riesgo
-    SET descripcion = p_descripcion,
-        planMitigacion = p_planMitigacion
+    UPDATE riesgo 
+    SET 
+        descripcion = p_descripcion,
+        planMitigacion = p_planMitigacion,
+        fecha_actualizacion = NOW()
     WHERE idRiesgo = p_idRiesgo;
-
-    SELECT 'Riesgo actualizado correctamente.' AS message;
+    
+    -- Retornar el riesgo actualizado
+    SELECT 
+        idRiesgo,
+        descripcion,
+        planMitigacion,
+        fecha_registro,
+        fecha_actualizacion
+    FROM riesgo 
+    WHERE idRiesgo = p_idRiesgo;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_proyecto` (IN `p_titulo` VARCHAR(255), IN `p_descripcion` TEXT, IN `p_objetivo` VARCHAR(255), IN `p_meta` FLOAT, IN `p_estado` ENUM('En Proceso','Completado','Cancelado'), IN `p_tipo_actividad` ENUM('Voluntariado','Donacion'), IN `p_id_usuario` INT)   BEGIN
-    -- Validar si el tipo de actividad es Donacion y la Meta es NULL o 0
-    IF p_tipo_actividad = 'Donacion' AND (p_meta IS NULL OR p_meta <= 0) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'La meta es obligatoria y debe ser un valor mayor que cero para actividades de tipo Donacion';
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_proyecto` (IN `p_titulo` VARCHAR(255), IN `p_descripcion` TEXT, IN `p_objetivo` VARCHAR(255), IN `p_meta` FLOAT, IN `p_tipo_actividad` ENUM('Voluntariado','Donacion'), IN `p_id_usuario` INT)   BEGIN
+    DECLARE v_id_proyecto INT;
+    DECLARE v_rol VARCHAR(20);
+
+    -- Validar que el usuario existe y tiene rol adecuado
+    SELECT rol INTO v_rol
+    FROM usuario 
+    WHERE id_usuario = p_id_usuario;
+
+    IF v_rol IS NULL THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'El usuario especificado no existe';
     END IF;
 
-    -- Insertar el proyecto en la tabla
-    INSERT INTO proyecto (titulo, descripcion, objetivo, Meta, estado, tipo_actividad, id_usuario)
-    VALUES (p_titulo, p_descripcion, p_objetivo, p_meta, p_estado, p_tipo_actividad, p_id_usuario);
-    
+    IF v_rol NOT IN ('Organizador', 'Administrador', 'Voluntario', 'Donante') THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'El usuario no tiene permisos para crear proyectos';
+    END IF;
+
+    -- Validar campos obligatorios
+    IF p_titulo IS NULL OR TRIM(p_titulo) = '' THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'El título es obligatorio';
+    END IF;
+
+    IF p_descripcion IS NULL OR TRIM(p_descripcion) = '' THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'La descripción es obligatoria';
+    END IF;
+
+    -- Validar meta para proyectos de donación
+    IF p_tipo_actividad = 'Donacion' AND (p_meta IS NULL OR p_meta <= 0) THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'La meta es obligatoria y debe ser un valor mayor que cero para actividades de tipo Donacion';
+    END IF;
+
+    -- Insertar el proyecto
+    INSERT INTO proyecto (
+        titulo, 
+        descripcion, 
+        objetivo, 
+        Meta, 
+        estado, 
+        tipo_actividad, 
+        id_usuario
+    ) VALUES (
+        p_titulo, 
+        p_descripcion, 
+        p_objetivo, 
+        p_meta, 
+        'En Proceso', -- Estado inicial siempre es "En Proceso"
+        p_tipo_actividad, 
+        p_id_usuario
+    );
+
+    -- Obtener el ID del proyecto insertado
+    SET v_id_proyecto = LAST_INSERT_ID();
+
+    -- Registrar la primera actualización
+    INSERT INTO actualizacion (
+        fecha, 
+        descripcion, 
+        idProyecto
+    ) VALUES (
+        CURDATE(),
+        'Proyecto creado',
+        v_id_proyecto
+    );
+
+    -- Retornar el proyecto creado
+    SELECT 
+        p.idProyecto,
+        p.titulo,
+        p.descripcion,
+        p.objetivo,
+        p.Meta,
+        p.estado,
+        p.tipo_actividad,
+        p.id_usuario,
+        u.email as email_creador,
+        CASE 
+            WHEN u.Tipo = 'Persona' THEN CONCAT(per.nombre, ' ', per.apellido)
+            WHEN u.Tipo = 'Empresa' THEN emp.nombreEmpresa
+        END as nombre_creador
+    FROM proyecto p
+    LEFT JOIN usuario u ON p.id_usuario = u.id_usuario
+    LEFT JOIN persona per ON u.id_usuario = per.id_usuario AND u.Tipo = 'Persona'
+    LEFT JOIN empresa emp ON u.id_usuario = emp.id_usuario AND u.Tipo = 'Empresa'
+    WHERE p.idProyecto = v_id_proyecto;
+
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_aprobar_recompensa` (IN `p_idRecompensa` INT, IN `p_aprobada` VARCHAR(20), IN `p_idAdmin` INT)   BEGIN
@@ -261,10 +427,103 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_asignar_recompensa` (IN `p_idDon
     END IF;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cambiar_estado_proyecto` (IN `p_idProyecto` INT, IN `p_estado` ENUM('En Proceso','Completado','Cancelado'))   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cambiar_estado_proyecto` (IN `p_idProyecto` INT, IN `p_estado` ENUM('En Proceso','Completado','Cancelado'), IN `p_id_usuario` INT)   BEGIN
+    DECLARE v_creador_id INT;
+    DECLARE v_rol VARCHAR(20);
+    DECLARE v_estado_actual VARCHAR(20);
+    DECLARE v_tipo_actividad VARCHAR(20);
+    DECLARE v_meta FLOAT;
+    DECLARE v_total_recaudado FLOAT;
+
+    -- Validar que el proyecto existe y obtener datos
+    SELECT id_usuario, estado, tipo_actividad, Meta
+    INTO v_creador_id, v_estado_actual, v_tipo_actividad, v_meta
+    FROM proyecto 
+    WHERE idProyecto = p_idProyecto;
+
+    IF v_creador_id IS NULL THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'El proyecto especificado no existe';
+    END IF;
+
+    -- Validar permisos del usuario
+    SELECT rol INTO v_rol
+    FROM usuario 
+    WHERE id_usuario = p_id_usuario;
+
+    IF v_rol NOT IN ('Organizador', 'Administrador') OR 
+       (v_rol = 'Organizador' AND v_creador_id != p_id_usuario) THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'No tienes permisos para cambiar el estado de este proyecto';
+    END IF;
+
+    -- No permitir cambios si ya está cancelado
+    IF v_estado_actual = 'Cancelado' THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'No se puede cambiar el estado de un proyecto cancelado';
+    END IF;
+
+    -- Validaciones específicas para marcar como completado
+    IF p_estado = 'Completado' THEN
+        -- Para proyectos de donación, verificar si se alcanzó la meta
+        IF v_tipo_actividad = 'Donacion' THEN
+            SELECT COALESCE(SUM(p.monto), 0)
+            INTO v_total_recaudado
+            FROM donacion d
+            JOIN pago p ON d.idDonacion = p.idDonacion
+            WHERE d.idProyecto = p_idProyecto
+            AND p.estado = 'Completado';
+
+            IF v_total_recaudado < v_meta THEN
+                SIGNAL SQLSTATE '45000' 
+                SET MESSAGE_TEXT = 'No se puede marcar como completado: no se ha alcanzado la meta de donación';
+            END IF;
+        END IF;
+    END IF;
+
+    -- Actualizar el estado
     UPDATE proyecto
     SET estado = p_estado
     WHERE idProyecto = p_idProyecto;
+
+    -- Registrar la actualización
+    INSERT INTO actualizacion (fecha, descripcion, idProyecto)
+    VALUES (
+        CURDATE(), 
+        CONCAT('Estado del proyecto cambiado a: ', p_estado), 
+        p_idProyecto
+    );
+
+    -- Retornar el proyecto actualizado
+    SELECT 
+        p.idProyecto,
+        p.titulo,
+        p.descripcion,
+        p.objetivo,
+        p.Meta,
+        p.estado,
+        p.tipo_actividad,
+        p.id_usuario,
+        u.email as email_creador,
+        CASE 
+            WHEN u.Tipo = 'Persona' THEN CONCAT(per.nombre, ' ', per.apellido)
+            WHEN u.Tipo = 'Empresa' THEN emp.nombreEmpresa
+        END as nombre_creador,
+        (SELECT fecha 
+         FROM actualizacion 
+         WHERE idProyecto = p.idProyecto 
+         ORDER BY fecha DESC, idActualizacion DESC
+         LIMIT 1) as fecha_ultima_actualizacion,
+        (SELECT descripcion 
+         FROM actualizacion 
+         WHERE idProyecto = p.idProyecto 
+         ORDER BY fecha DESC, idActualizacion DESC
+         LIMIT 1) as descripcion_ultima_actualizacion
+    FROM proyecto p
+    LEFT JOIN usuario u ON p.id_usuario = u.id_usuario
+    LEFT JOIN persona per ON u.id_usuario = per.id_usuario AND u.Tipo = 'Persona'
+    LEFT JOIN empresa emp ON u.id_usuario = emp.id_usuario AND u.Tipo = 'Empresa'
+    WHERE p.idProyecto = p_idProyecto;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cancelar_pago` (IN `p_idPago` INT, IN `p_motivo` VARCHAR(255))   BEGIN
@@ -292,31 +551,52 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cancelar_pago` (IN `p_idPago` IN
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_progreso_donacion` (IN `p_idProyecto` INT)   BEGIN
+    DECLARE v_tipo_actividad VARCHAR(20);
+    DECLARE v_estado VARCHAR(20);
+
+    -- Validar que el proyecto existe y es de tipo donación
+    SELECT tipo_actividad, estado
+    INTO v_tipo_actividad, v_estado
+    FROM proyecto 
+    WHERE idProyecto = p_idProyecto;
+
+    IF v_tipo_actividad IS NULL THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'El proyecto especificado no existe';
+    END IF;
+
+    IF v_tipo_actividad != 'Donacion' THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'Este proyecto no es de tipo Donación';
+    END IF;
+
+    -- Consultar el progreso
     SELECT 
         p.idProyecto,
         p.titulo,
+        p.descripcion,
+        p.objetivo,
         p.Meta,
-        COALESCE(SUM(pg.monto), 0) AS total_recaudado,
+        p.estado,
+        COALESCE(SUM(CASE WHEN pg.estado = 'Completado' THEN pg.monto ELSE 0 END), 0) AS total_recaudado,
+        COUNT(DISTINCT CASE WHEN pg.estado = 'Completado' THEN d.id_usuario END) AS total_donantes,
+        MIN(CASE WHEN pg.estado = 'Completado' THEN pg.fecha END) AS fecha_primera_donacion,
+        MAX(CASE WHEN pg.estado = 'Completado' THEN pg.fecha END) AS fecha_ultima_donacion,
         CASE 
-            WHEN COALESCE(SUM(pg.monto), 0) >= p.Meta THEN 'Meta Alcanzada'
+            WHEN p.estado = 'Cancelado' THEN 'Proyecto Cancelado'
+            WHEN p.estado = 'Completado' THEN 'Proyecto Completado'
+            WHEN COALESCE(SUM(CASE WHEN pg.estado = 'Completado' THEN pg.monto ELSE 0 END), 0) >= p.Meta THEN 'Meta Alcanzada'
             ELSE 'Meta No Alcanzada'
-        END AS estado_meta
+        END AS estado_meta,
+        ROUND(
+            (COALESCE(SUM(CASE WHEN pg.estado = 'Completado' THEN pg.monto ELSE 0 END), 0) / p.Meta) * 100,
+            2
+        ) AS porcentaje_completado
     FROM proyecto p
     LEFT JOIN donacion d ON p.idProyecto = d.idProyecto
     LEFT JOIN pago pg ON d.idDonacion = pg.idDonacion
-    WHERE p.idProyecto = p_idProyecto;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_proyectos_por_tipo` (IN `p_tipo_actividad` ENUM('Voluntariado','Donacion'))   BEGIN
-    SELECT * 
-    FROM proyecto
-    WHERE tipo_actividad = p_tipo_actividad;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_proyectos_usuario` (IN `p_id_usuario` INT)   BEGIN
-    SELECT *
-    FROM proyecto
-    WHERE id_usuario = p_id_usuario;
+    WHERE p.idProyecto = p_idProyecto
+    GROUP BY p.idProyecto, p.titulo, p.descripcion, p.objetivo, p.Meta, p.estado;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_riesgos` (IN `p_idProyecto` INT)   BEGIN
@@ -331,51 +611,171 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_riesgos` (IN `p_idProy
     WHERE idProyecto = p_idProyecto;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_proyecto` (IN `p_idProyecto` INT)   BEGIN
-    DELETE FROM proyecto
-    WHERE idProyecto = p_idProyecto;
-END$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_proyecto` (IN `p_idProyecto` INT, IN `p_id_usuario` INT)   BEGIN
+    DECLARE v_creador_id INT;
+    DECLARE v_rol VARCHAR(20);
+    DECLARE v_estado VARCHAR(20);
+    DECLARE v_tiene_donaciones BOOLEAN;
+    DECLARE v_tiene_voluntarios BOOLEAN;
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_riesgo` (IN `p_idRiesgo` INT)   BEGIN
-    -- Validar que el riesgo existe
-    IF NOT EXISTS (SELECT 1 FROM riesgo WHERE idRiesgo = p_idRiesgo) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El riesgo especificado no existe.';
+    -- Validar que el proyecto existe y obtener datos
+    SELECT id_usuario, estado 
+    INTO v_creador_id, v_estado
+    FROM proyecto 
+    WHERE idProyecto = p_idProyecto;
+
+    IF v_creador_id IS NULL THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'El proyecto especificado no existe';
     END IF;
 
-    -- Eliminar el riesgo
-    DELETE FROM riesgo
-    WHERE idRiesgo = p_idRiesgo;
+    -- Validar permisos del usuario
+    SELECT rol INTO v_rol
+    FROM usuario 
+    WHERE id_usuario = p_id_usuario;
 
-    SELECT 'Riesgo eliminado correctamente.' AS message;
+    IF v_rol NOT IN ('Organizador', 'Administrador', 'Voluntario', 'Donante') OR 
+       (v_rol = 'Organizador' AND v_creador_id != p_id_usuario) THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'No tienes permisos para eliminar este proyecto';
+    END IF;
+
+    -- Verificar si tiene donaciones
+    SELECT EXISTS(
+        SELECT 1 FROM donacion 
+        WHERE idProyecto = p_idProyecto
+    ) INTO v_tiene_donaciones;
+
+    -- Verificar si tiene voluntarios
+    SELECT EXISTS(
+        SELECT 1 FROM voluntariado 
+        WHERE proyecto_idProyecto = p_idProyecto
+    ) INTO v_tiene_voluntarios;
+
+    -- Si tiene donaciones o voluntarios, solo se marca como cancelado
+    IF v_tiene_donaciones OR v_tiene_voluntarios THEN
+        UPDATE proyecto 
+        SET estado = 'Cancelado'
+        WHERE idProyecto = p_idProyecto;
+
+        -- Registrar la actualización
+        INSERT INTO actualizacion (fecha, descripcion, idProyecto)
+        VALUES (
+            CURDATE(), 
+            'Proyecto marcado como cancelado por tener donaciones o voluntarios asociados', 
+            p_idProyecto
+        );
+
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'El proyecto tiene donaciones o voluntarios asociados. Se ha marcado como cancelado.';
+    ELSE
+        -- Si no tiene dependencias, se puede eliminar
+        DELETE FROM actualizacion 
+        WHERE idProyecto = p_idProyecto;
+
+        DELETE FROM proyecto
+        WHERE idProyecto = p_idProyecto;
+    END IF;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_voluntariado` (IN `p_idVoluntario` INT)   BEGIN
-    -- Verificar que el registro exista
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_riesgo` (IN `p_idRiesgo` INT, IN `p_idUsuario` INT)   BEGIN
+    -- Validar que el usuario es el organizador del proyecto
     IF NOT EXISTS (
         SELECT 1 
-        FROM voluntariado 
-        WHERE idVoluntario = p_idVoluntario
+        FROM riesgo r
+        JOIN proyecto p ON r.idProyecto = p.idProyecto
+        WHERE r.idRiesgo = p_idRiesgo 
+        AND p.id_usuario = p_idUsuario
     ) THEN
         SIGNAL SQLSTATE '45000' 
-        SET MESSAGE_TEXT = 'El voluntario no existe';
+        SET MESSAGE_TEXT = 'No tienes permisos para eliminar este riesgo.';
     END IF;
 
-    -- Eliminar al voluntario
-    DELETE FROM voluntariado
-    WHERE idVoluntario = p_idVoluntario;
+    DELETE FROM riesgo 
+    WHERE idRiesgo = p_idRiesgo;
+    
+    SELECT 'Riesgo eliminado correctamente.' as message;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_get_actividades` ()   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_voluntario` (IN `p_idVoluntario` INT, IN `p_idUsuario` INT)   BEGIN
+    DECLARE v_idProyecto INT;
+    
+    -- Obtener el ID del proyecto
+    SELECT proyecto_idProyecto INTO v_idProyecto
+    FROM voluntariado 
+    WHERE idVoluntario = p_idVoluntario;
+    
+    -- Verificar si el usuario es el organizador del proyecto
+    IF NOT EXISTS (
+        SELECT 1 FROM proyecto 
+        WHERE idProyecto = v_idProyecto 
+        AND id_usuario = p_idUsuario
+    ) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'No tienes permisos para eliminar voluntarios de este proyecto';
+    END IF;
+
+    -- Eliminar el voluntario
+    DELETE FROM voluntariado 
+    WHERE idVoluntario = p_idVoluntario;
+    
+    -- Verificar si se eliminó correctamente
+    IF ROW_COUNT() = 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'No se encontró el voluntario especificado';
+    END IF;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_get_actividades` (IN `p_tipo_actividad` VARCHAR(20))   BEGIN
     SELECT 
         p.idProyecto,
         p.titulo,
         p.descripcion,
         p.objetivo,
+        p.Meta,
         p.estado,
-        p.tipo_actividad
+        p.tipo_actividad,
+        p.id_usuario,
+        u.email AS email_creador,
+        CASE 
+            WHEN u.Tipo = 'Persona' THEN CONCAT(per.nombre, ' ', per.apellido)
+            WHEN u.Tipo = 'Empresa' THEN emp.nombreEmpresa
+        END AS nombre_creador,
+        (SELECT fecha 
+         FROM actualizacion 
+         WHERE idProyecto = p.idProyecto 
+         ORDER BY fecha DESC, idActualizacion DESC
+         LIMIT 1) AS fecha_ultima_actualizacion,
+        (SELECT descripcion 
+         FROM actualizacion 
+         WHERE idProyecto = p.idProyecto 
+         ORDER BY fecha DESC, idActualizacion DESC
+         LIMIT 1) AS descripcion_ultima_actualizacion,
+        CASE 
+            WHEN p.tipo_actividad = 'Donacion' THEN (
+                SELECT COALESCE(SUM(pg.monto), 0)
+                FROM donacion d
+                LEFT JOIN pago pg ON d.idDonacion = pg.idDonacion
+                WHERE d.idProyecto = p.idProyecto
+                AND pg.estado = 'Completado'
+            )
+            ELSE NULL
+        END AS total_recaudado,
+        CASE 
+            WHEN p.tipo_actividad = 'Voluntariado' THEN (
+                SELECT COUNT(*)
+                FROM voluntariado v
+                WHERE v.proyecto_idProyecto = p.idProyecto
+            )
+            ELSE NULL
+        END AS total_voluntarios
     FROM proyecto p
-    WHERE p.estado = 'En Proceso'
-    ORDER BY p.idProyecto DESC
+    LEFT JOIN usuario u ON p.id_usuario = u.id_usuario
+    LEFT JOIN persona per ON u.id_usuario = per.id_usuario AND u.Tipo = 'Persona'
+    LEFT JOIN empresa emp ON u.id_usuario = emp.id_usuario AND u.Tipo = 'Empresa'
+    WHERE p.estado != 'Cancelado'
+    AND (p_tipo_actividad IS NULL OR p.tipo_actividad = p_tipo_actividad)
+    ORDER BY fecha_ultima_actualizacion DESC
     LIMIT 10;
 END$$
 
@@ -399,27 +799,34 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_get_registros_por_fecha` ()   BE
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_listar_voluntarios` (IN `p_idProyecto` INT, IN `p_idUsuario` INT)   BEGIN
-    -- Validar que el proyecto pertenece al organizador que solicita
+    -- Verificar si el usuario es el organizador del proyecto
     IF NOT EXISTS (
-        SELECT 1 
-        FROM proyecto 
-        WHERE idProyecto = p_idProyecto AND id_usuario = p_idUsuario
+        SELECT 1 FROM proyecto 
+        WHERE idProyecto = p_idProyecto 
+        AND id_usuario = p_idUsuario
     ) THEN
-        SIGNAL SQLSTATE '45000' 
-        SET MESSAGE_TEXT = 'El usuario no tiene acceso a este proyecto';
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'No tienes permisos para ver los voluntarios de este proyecto';
     END IF;
 
-    -- Listar voluntarios del proyecto
+    -- Obtener la lista de voluntarios
     SELECT 
         v.idVoluntario,
         v.disponibilidad,
-        pers.nombre AS nombreUsuario,
-        pers.apellido AS apellidoUsuario,
-        p.titulo AS tituloProyecto
+        u.email,
+        CASE 
+            WHEN p.idPersona IS NOT NULL THEN 'Persona'
+            WHEN e.id_empresa IS NOT NULL THEN 'Empresa'
+        END as tipo_voluntario,
+        COALESCE(p.nombre, e.nombreEmpresa) as nombre,
+        p.apellido,
+        COALESCE(p.dni, e.registroFiscal) as identificacion,
+        COALESCE(p.telefono, e.telefonoEmpresa) as telefono,
+        e.razonSocial
     FROM voluntariado v
     JOIN usuario u ON v.idUsuario = u.id_usuario
-    JOIN persona pers ON u.id_usuario = pers.id_usuario  -- Relación entre usuario y persona
-    JOIN proyecto p ON v.proyecto_idProyecto = p.idProyecto
+    LEFT JOIN persona p ON u.id_usuario = p.id_usuario
+    LEFT JOIN empresa e ON u.id_usuario = e.id_usuario
     WHERE v.proyecto_idProyecto = p_idProyecto;
 END$$
 
@@ -559,6 +966,22 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_recompensas_asignadas` (
     ORDER BY ru.idRecompensaUsuario DESC;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_riesgos_proyecto` (IN `p_idProyecto` INT)   BEGIN
+    SELECT 
+        r.idRiesgo,
+        r.descripcion,
+        r.planMitigacion,
+        r.fecha_registro,
+        r.fecha_actualizacion,
+        p.titulo as proyecto_titulo,
+        u.email as organizador_email
+    FROM riesgo r
+    JOIN proyecto p ON r.idProyecto = p.idProyecto
+    JOIN usuario u ON p.id_usuario = u.id_usuario
+    WHERE r.idProyecto = p_idProyecto
+    ORDER BY r.fecha_registro DESC;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_total_pagos_proyecto` (IN `p_idProyecto` INT)   BEGIN
     SELECT 
         p.idProyecto,
@@ -571,12 +994,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_total_pagos_proyecto` (I
     LEFT JOIN pago pa ON d.idDonacion = pa.idDonacion
     WHERE p.idProyecto = p_idProyecto
     GROUP BY p.idProyecto;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_registrar_actualizacion` (IN `p_idProyecto` INT, IN `p_descripcion` TEXT)   BEGIN
-    -- Insertar un registro en la tabla de actualizaciones
-    INSERT INTO actualizacion (fecha, descripcion, idProyecto)
-    VALUES (CURDATE(), p_descripcion, p_idProyecto);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_registrar_recompensa` (IN `p_idUsuario` INT, IN `p_descripcion` TEXT, IN `p_montoMinimo` FLOAT, IN `p_moneda` ENUM('HNL','USD','EUR','MXN'), IN `p_fechaEntrega` DATE, IN `p_idProyecto` INT)   BEGIN
@@ -648,33 +1065,147 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_registrar_recompensa` (IN `p_idU
     WHERE r.idRecompensa = LAST_INSERT_ID();
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_registrar_riesgo` (IN `p_descripcion` TEXT, IN `p_planMitigacion` TEXT, IN `p_idProyecto` INT)   BEGIN
-    -- Validar que el proyecto existe
-    IF NOT EXISTS (SELECT 1 FROM proyecto WHERE idProyecto = p_idProyecto) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El proyecto especificado no existe.';
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_registrar_riesgo` (IN `p_descripcion` TEXT, IN `p_planMitigacion` TEXT, IN `p_idProyecto` INT, IN `p_idUsuario` INT)   BEGIN
+    -- Validar que el proyecto existe y el usuario es el organizador
+    IF NOT EXISTS (
+        SELECT 1 FROM proyecto 
+        WHERE idProyecto = p_idProyecto 
+        AND id_usuario = p_idUsuario
+    ) THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'El proyecto no existe o no tienes permisos para registrar riesgos.';
     END IF;
 
     -- Insertar el riesgo
-    INSERT INTO riesgo (descripcion, planMitigacion, idProyecto)
-    VALUES (p_descripcion, p_planMitigacion, p_idProyecto);
+    INSERT INTO riesgo (
+        descripcion, 
+        planMitigacion, 
+        idProyecto,
+        fecha_registro
+    ) VALUES (
+        p_descripcion, 
+        p_planMitigacion, 
+        p_idProyecto,
+        NOW()
+    );
     
-    SELECT 'Riesgo registrado correctamente.' AS message;
+    -- Retornar el riesgo creado
+    SELECT 
+        idRiesgo,
+        descripcion,
+        planMitigacion,
+        fecha_registro
+    FROM riesgo 
+    WHERE idRiesgo = LAST_INSERT_ID();
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_registrar_voluntariado` (IN `p_disponibilidad` VARCHAR(255), IN `p_idUsuario` INT, IN `p_idProyecto` INT)   BEGIN
-    -- Verificar que el proyecto exista
-    IF NOT EXISTS (
-        SELECT 1 
-        FROM proyecto 
-        WHERE idProyecto = p_idProyecto AND tipo_actividad = 'Voluntariado'
-    ) THEN
-        SIGNAL SQLSTATE '45000' 
-        SET MESSAGE_TEXT = 'El proyecto no existe o no es de tipo Voluntariado';
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_registrar_usuario` (IN `p_email` VARCHAR(255), IN `p_contraseña` VARCHAR(255), IN `p_rol` ENUM('Donante','Voluntario','Organizador'), IN `p_tipo` ENUM('Persona','Empresa'), IN `p_nombre` VARCHAR(100), IN `p_apellido` VARCHAR(100), IN `p_dni` VARCHAR(50), IN `p_edad` VARCHAR(50), IN `p_telefono` VARCHAR(50), IN `p_nombreEmpresa` VARCHAR(255), IN `p_razonSocial` VARCHAR(255), IN `p_registroFiscal` VARCHAR(255), IN `p_telefonoEmpresa` VARCHAR(20), IN `p_direccion` VARCHAR(255))   BEGIN
+    DECLARE v_id_usuario INT;
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Error al registrar usuario';
+    END;
+
+    START TRANSACTION;
+    
+    -- Verificar si el email ya existe
+    IF EXISTS (SELECT 1 FROM usuario WHERE email = p_email) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El email ya está registrado';
     END IF;
 
-    -- Registrar al usuario en el proyecto de voluntariado
-    INSERT INTO voluntariado (disponibilidad, idUsuario, proyecto_idProyecto)
-    VALUES (p_disponibilidad, p_idUsuario, p_idProyecto);
+    -- Insertar en la tabla usuario
+    INSERT INTO usuario (
+        email, 
+        contraseña, 
+        FechaRegistro,
+        Rol,
+        Tipo
+    ) VALUES (
+        p_email, 
+        p_contraseña, 
+        CURRENT_TIMESTAMP,
+        p_rol,
+        p_tipo
+    );
+    
+    SET v_id_usuario = LAST_INSERT_ID();
+
+    -- Insertar según el tipo de usuario
+    IF p_tipo = 'Persona' THEN
+        INSERT INTO persona (
+            id_usuario,
+            DNI,
+            Nombre,
+            Apellido,
+            Edad,
+            Telefono
+        ) VALUES (
+            v_id_usuario,
+            p_dni,
+            p_nombre,
+            p_apellido,
+            p_edad,
+            p_telefono
+        );
+    ELSE
+        INSERT INTO empresa (
+            id_usuario,
+            nombreEmpresa,
+            razonSocial,
+            registroFiscal,
+            telefonoEmpresa,
+            direccion
+        ) VALUES (
+            v_id_usuario,
+            p_nombreEmpresa,
+            p_razonSocial,
+            p_registroFiscal,
+            p_telefonoEmpresa,
+            p_direccion
+        );
+    END IF;
+
+    COMMIT;
+    
+    -- Retornar datos del usuario registrado
+    SELECT 
+        u.id_usuario,
+        u.email,
+        u.Rol,
+        u.Tipo,
+        CASE 
+            WHEN u.Tipo = 'Persona' THEN p.Nombre
+            ELSE e.nombreEmpresa
+        END as nombre,
+        p.Apellido,
+        p.DNI,
+        CASE 
+            WHEN u.Tipo = 'Persona' THEN p.Telefono
+            ELSE e.telefonoEmpresa
+        END as telefono,
+        'Usuario registrado exitosamente' as mensaje
+    FROM usuario u
+    LEFT JOIN persona p ON u.id_usuario = p.id_usuario
+    LEFT JOIN empresa e ON u.id_usuario = e.id_usuario
+    WHERE u.id_usuario = v_id_usuario;
+    
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_registrar_voluntariado` (IN `p_idUsuario` INT, IN `p_idProyecto` INT, IN `p_disponibilidad` TEXT)   BEGIN
+    -- Insertar el voluntariado
+    INSERT INTO voluntariado (
+        idUsuario, 
+        proyecto_idProyecto, 
+        disponibilidad
+    ) VALUES (
+        p_idUsuario,
+        p_idProyecto,
+        p_disponibilidad
+    );
+    
+    -- Retornar el ID generado
+    SELECT LAST_INSERT_ID() AS idVoluntario;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_validar_pago` (IN `p_idPago` INT, OUT `p_es_valido` BOOLEAN, OUT `p_mensaje` VARCHAR(255))   BEGIN
@@ -709,6 +1240,21 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_validar_pago` (IN `p_idPago` INT
         SET p_es_valido = TRUE;
         SET p_mensaje = 'Pago válido';
     END IF;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_verificar_tipo_proyecto` (IN `p_idProyecto` INT)   BEGIN
+    SELECT (tipo_actividad = 'Voluntariado') AS es_voluntariado
+    FROM proyecto 
+    WHERE idProyecto = p_idProyecto;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_verificar_vinculacion_voluntario` (IN `p_idUsuario` INT, IN `p_idProyecto` INT)   BEGIN
+    SELECT EXISTS (
+        SELECT 1 
+        FROM voluntariado 
+        WHERE idUsuario = p_idUsuario 
+        AND proyecto_idProyecto = p_idProyecto 
+    ) AS existe;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_vincular_donacion` (IN `p_id_usuario` INT, IN `p_idProyecto` INT)   BEGIN
@@ -828,6 +1374,14 @@ CREATE TABLE `actualizacion` (
   `idProyecto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `actualizacion`
+--
+
+INSERT INTO `actualizacion` (`idActualizacion`, `fecha`, `descripcion`, `idProyecto`) VALUES
+(3, '2024-12-08', 'Proyecto creado', 6),
+(6, '2024-12-08', 'Estado del proyecto cambiado a: Cancelado', 6);
+
 -- --------------------------------------------------------
 
 --
@@ -845,9 +1399,7 @@ CREATE TABLE `donacion` (
 --
 
 INSERT INTO `donacion` (`idDonacion`, `id_usuario`, `idProyecto`) VALUES
-(7, 71, 5),
-(8, 75, 5),
-(9, 62, 5);
+(10, 62, 6);
 
 -- --------------------------------------------------------
 
@@ -864,13 +1416,6 @@ CREATE TABLE `empresa` (
   `direccion` varchar(255) NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `empresa`
---
-
-INSERT INTO `empresa` (`id_empresa`, `nombreEmpresa`, `razonSocial`, `registroFiscal`, `telefonoEmpresa`, `direccion`, `id_usuario`) VALUES
-(15, 'gfgfhf', 'ghfghgf', 'dfgfdgdfgdf', '7894561231', 'gdfgfdg', 75);
 
 -- --------------------------------------------------------
 
@@ -914,17 +1459,6 @@ CREATE TABLE `pago` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `pago`
---
-
-INSERT INTO `pago` (`idPago`, `fecha`, `monto`, `estado`, `idDonacion`, `id_metodopago`, `referencia_externa`, `moneda`, `motivo`) VALUES
-(3, '2024-12-07 17:26:20', 40000, 'Completado', 7, 2, 'ui4h39yrioer34$ioior4', 'USD', NULL),
-(4, '2024-12-07 17:27:49', 75000, 'Completado', 8, 1, 'duh34h534$3', 'USD', NULL),
-(5, '2024-12-08 17:03:38', 100, 'Cancelado', 8, 3, 'REF123', 'HNL', 'Sin plata'),
-(6, '2024-12-08 18:34:06', 100, 'Completado', 9, 2, 'PAY-123456789', 'USD', NULL),
-(7, '2024-12-08 18:37:37', 100, 'Completado', 9, 2, 'DEBT-20241208-123737-USD-0000010000', 'USD', NULL);
-
---
 -- Disparadores `pago`
 --
 DELIMITER $$
@@ -959,9 +1493,7 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`IdPersona`, `DNI`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `id_usuario`) VALUES
-(19, '12345678', 'Juan', 'Pérez', '25', '1234567890', 62),
-(25, '00000000', 'Gerardo', 'ewwew', '43', '1443234234', 69),
-(26, '87978987', 'gfdgfdgdf', 'gfdgfdg', '43', '3232323232', 71);
+(19, '12345678', 'Juan', 'Pérez', '25', '1234567890', 62);
 
 -- --------------------------------------------------------
 
@@ -985,7 +1517,7 @@ CREATE TABLE `proyecto` (
 --
 
 INSERT INTO `proyecto` (`idProyecto`, `titulo`, `descripcion`, `objetivo`, `Meta`, `estado`, `tipo_actividad`, `id_usuario`) VALUES
-(5, 'ereterter', 'tertertre', 'retretre', 120000, 'En Proceso', 'Donacion', 69);
+(6, 'Proyecto de Prueba', 'Descripción detallada del proyecto', 'Objetivo principal del proyecto', 0, 'En Proceso', 'Voluntariado', 62);
 
 -- --------------------------------------------------------
 
@@ -1003,18 +1535,6 @@ CREATE TABLE `recompensa` (
   `moneda` enum('HNL','USD','EUR','MXN') NOT NULL DEFAULT 'HNL' COMMENT 'Moneda en la que se debe alcanzar el monto mínimo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `recompensa`
---
-
-INSERT INTO `recompensa` (`idRecompensa`, `descripcion`, `montoMinimo`, `fechaEntregaEstimada`, `idProyecto`, `aprobada`, `moneda`) VALUES
-(2, 'Medalla de Oro por Donación', 1000.00, '2024-12-31', 5, 'Aprobada', 'HNL'),
-(3, 'Medalla de Oro por Donación', 1000.00, '2024-12-31', 5, 'Aprobada', 'HNL'),
-(4, 'Medalla de Oro por Donación', 1000.00, '2024-12-31', 5, 'Aprobada', 'HNL'),
-(7, 'Camiseta del proyecto', 25.00, '2024-12-31', 5, 'Pendiente', 'USD'),
-(8, 'Camiseta del proyecto', 25.00, '2024-12-31', 5, 'Aprobada', 'USD'),
-(16, 'Certificado de donación', 100.00, '2024-12-31', 5, 'Aprobada', 'USD');
-
 -- --------------------------------------------------------
 
 --
@@ -1028,15 +1548,6 @@ CREATE TABLE `recompensa_usuario` (
   `idDonacion` int(11) NOT NULL,
   `estadoEntrega` enum('Pendiente','En Proceso','Entregado') NOT NULL DEFAULT 'Pendiente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `recompensa_usuario`
---
-
-INSERT INTO `recompensa_usuario` (`idRecompensaUsuario`, `idRecompensa`, `idUsuario`, `idDonacion`, `estadoEntrega`) VALUES
-(2, 4, 75, 8, 'En Proceso'),
-(3, 8, 62, 9, 'Entregado'),
-(4, 3, 62, 9, 'Pendiente');
 
 -- --------------------------------------------------------
 
@@ -1096,10 +1607,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `email`, `contraseña`, `FechaRegistro`, `Rol`, `Tipo`) VALUES
-(62, 'juan.perez@ejemplo.com', '$2y$10$Afpu368vvwp1KMB3FfZayeTe2xTVqRoIgHZgL7NraIs61d3eKuncW', '2024-12-05 02:22:48', 'Administrador', 'Persona'),
-(69, 'juan@gmail.com', '$2y$10$/RrYEm/VT40rx2mgkoaQye5UZcc2EPMzbRidXXA9NYNzTr1Y9J7Zq', '2024-12-06 21:15:39', 'Organizador', 'Persona'),
-(71, 'lola@ejemplo.com', '$2y$10$guJujO3JDKjeI5EHEKofY.MfVK3FpoHwYCdF/6avYP.7YR9y4Kk96', '2024-12-06 21:51:38', 'Voluntario', 'Persona'),
-(75, 'zunigagerardo541@gmail.com', '$2y$10$XNbVDQ1L15g1kUozE2D09OokuQNNo.pUlIwaJOmY1TvVN05PGkXfS', '2024-12-06 22:12:46', 'Voluntario', 'Empresa');
+(62, 'juan.perez@ejemplo.com', '$2y$10$Afpu368vvwp1KMB3FfZayeTe2xTVqRoIgHZgL7NraIs61d3eKuncW', '2024-12-05 02:22:48', 'Administrador', 'Persona');
 
 -- --------------------------------------------------------
 
@@ -1219,19 +1727,19 @@ ALTER TABLE `voluntariado`
 -- AUTO_INCREMENT de la tabla `actualizacion`
 --
 ALTER TABLE `actualizacion`
-  MODIFY `idActualizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idActualizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `donacion`
 --
 ALTER TABLE `donacion`
-  MODIFY `idDonacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idDonacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `id_empresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_empresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `metodo_pago`
@@ -1249,13 +1757,13 @@ ALTER TABLE `pago`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `IdPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `IdPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `proyecto`
 --
 ALTER TABLE `proyecto`
-  MODIFY `idProyecto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idProyecto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `recompensa`
@@ -1279,13 +1787,13 @@ ALTER TABLE `riesgo`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de la tabla `voluntariado`
 --
 ALTER TABLE `voluntariado`
-  MODIFY `idVoluntario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idVoluntario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

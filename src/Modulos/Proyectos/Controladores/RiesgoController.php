@@ -1,63 +1,171 @@
 <?php
-namespace App\Controller;
 
-use App\Database\DatabaseConnection;
-use App\Model\Riesgo;
-use PDO;
+namespace App\Modulos\Riesgo\Controladores;
 
-class RiesgoController
-{
-    private $db;
+use App\Modulos\Riesgo\Modelos\Riesgo;
+use App\Configuracion\ResponseHTTP;
+use App\Configuracion\Security;
+use Exception;
 
-    public function __construct()
-    src/Database/DatabaseConnection.php
+class RiesgoController {
+    
+    /**
+     * Registra un nuevo riesgo
+     */
+    public function registrar($data) {
+        try {
+            // Validar token
+            if (!Security::validateTokenJwt(Security::secretKey())) {
+                return ResponseHTTP::status401("Token inválido");
+            }
 
-    {
-        $database = new DatabaseConnection();
-        
-        $this->db = $database->getConnection();
+            // Obtener id_usuario del token
+            $headers = apache_request_headers();
+            if (!isset($headers['Authorization'])) {
+                return ResponseHTTP::status401("Token no proporcionado");
+            }
+
+            $token = str_replace('Bearer ', '', $headers['Authorization']);
+            $tokenData = Security::getTokenData($token);
+            
+            if (!isset($tokenData->data->id)) {
+                return ResponseHTTP::status400("No se pudo obtener la información del usuario");
+            }
+
+            // Validar datos requeridos
+            if (!isset($data['descripcion']) || !isset($data['planMitigacion']) || 
+                !isset($data['idProyecto'])) {
+                return ResponseHTTP::status400('Faltan datos requeridos');
+            }
+
+            $riesgo = Riesgo::registrar(
+                $data['descripcion'],
+                $data['planMitigacion'],
+                $data['idProyecto'],
+                $tokenData->data->id
+            );
+
+            return ResponseHTTP::status200('Riesgo registrado exitosamente');
+            
+        } catch (Exception $e) {
+            error_log("Error en RiesgoController::registrar - " . $e->getMessage());
+            return ResponseHTTP::status500($e->getMessage());
+        }
     }
 
-    public function create(Riesgo $riesgo)
-    {
-        $query = "INSERT INTO riesgo (descripcion, planMitigacion, idProyecto) VALUES (:descripcion, :planMitigacion, :idProyecto)";
-        $stmt = $this->db->prepare($query);
+    /**
+     * Actualiza un riesgo existente
+     */
+    public function actualizar($data) {
+        try {
+            // Validar token
+            if (!Security::validateTokenJwt(Security::secretKey())) {
+                return ResponseHTTP::status401("Token inválido");
+            }
 
-        $stmt->bindValue(':descripcion', $riesgo->getDescripcion());
-        $stmt->bindValue(':planMitigacion', $riesgo->getPlanMitigacion());
-        $stmt->bindValue(':idProyecto', $riesgo->getIdProyecto());
+            // Obtener id_usuario del token
+            $headers = apache_request_headers();
+            if (!isset($headers['Authorization'])) {
+                return ResponseHTTP::status401("Token no proporcionado");
+            }
 
-        return $stmt->execute();
+            $token = str_replace('Bearer ', '', $headers['Authorization']);
+            $tokenData = Security::getTokenData($token);
+            
+            if (!isset($tokenData->data->id)) {
+                return ResponseHTTP::status400("No se pudo obtener la información del usuario");
+            }
+
+            // Validar datos requeridos
+            if (!isset($data['idRiesgo']) || !isset($data['descripcion']) || 
+                !isset($data['planMitigacion'])) {
+                return ResponseHTTP::status400('Faltan datos requeridos');
+            }
+
+            $riesgo = Riesgo::actualizar(
+                $data['idRiesgo'],
+                $data['descripcion'],
+                $data['planMitigacion'],
+                $tokenData->data->id
+            );
+
+            return ResponseHTTP::status200('Riesgo actualizado exitosamente');
+            
+        } catch (Exception $e) {
+            error_log("Error en RiesgoController::actualizar - " . $e->getMessage());
+            return ResponseHTTP::status500($e->getMessage());
+        }
     }
 
-    public function read($idRiesgo)
-    {
-        $query = "SELECT * FROM riesgo WHERE idRiesgo = :idRiesgo";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindValue(':idRiesgo', $idRiesgo);
-        $stmt->execute();
+    /**
+     * Elimina un riesgo
+     */
+    public function eliminar($idRiesgo) {
+        try {
+            // Validar token
+            if (!Security::validateTokenJwt(Security::secretKey())) {
+                return ResponseHTTP::status401("Token inválido");
+            }
 
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+            // Obtener id_usuario del token
+            $headers = apache_request_headers();
+            if (!isset($headers['Authorization'])) {
+                return ResponseHTTP::status401("Token no proporcionado");
+            }
+
+            $token = str_replace('Bearer ', '', $headers['Authorization']);
+            $tokenData = Security::getTokenData($token);
+            
+            if (!isset($tokenData->data->id)) {
+                return ResponseHTTP::status400("No se pudo obtener la información del usuario");
+            }
+
+            if (!$idRiesgo) {
+                return ResponseHTTP::status400('ID de riesgo requerido');
+            }
+
+            $resultado = Riesgo::eliminar($idRiesgo, $tokenData->data->id);
+            return ResponseHTTP::status200('Riesgo eliminado exitosamente');
+            
+        } catch (Exception $e) {
+            error_log("Error en RiesgoController::eliminar - " . $e->getMessage());
+            return ResponseHTTP::status500($e->getMessage());
+        }
     }
 
-    public function update(Riesgo $riesgo)
-    {
-        $query = "UPDATE riesgo SET descripcion = :descripcion, planMitigacion = :planMitigacion WHERE idRiesgo = :idRiesgo";
-        $stmt = $this->db->prepare($query);
+    /**
+     * Lista los riesgos de un proyecto
+     */
+    public function listarPorProyecto($idProyecto) {
+        try {
+            // Validar token
+            if (!Security::validateTokenJwt(Security::secretKey())) {
+                return ResponseHTTP::status401("Token inválido");
+            }
 
-        $stmt->bindValue(':descripcion', $riesgo->getDescripcion());
-        $stmt->bindValue(':planMitigacion', $riesgo->getPlanMitigacion());
-        $stmt->bindValue(':idRiesgo', $riesgo->getIdRiesgo());
+            // Obtener id_usuario del token
+            $headers = apache_request_headers();
+            if (!isset($headers['Authorization'])) {
+                return ResponseHTTP::status401("Token no proporcionado");
+            }
 
-        return $stmt->execute();
-    }
+            $token = str_replace('Bearer ', '', $headers['Authorization']);
+            $tokenData = Security::getTokenData($token);
+            
+            if (!isset($tokenData->data->id)) {
+                return ResponseHTTP::status400("No se pudo obtener la información del usuario");
+            }
 
-    public function delete($idRiesgo)
-    {
-        $query = "DELETE FROM riesgo WHERE idRiesgo = :idRiesgo";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindValue(':idRiesgo', $idRiesgo);
+            if (!$idProyecto) {
+                return ResponseHTTP::status400('ID de proyecto requerido');
+            }
 
-        return $stmt->execute();
+            $riesgos = Riesgo::listarPorProyecto($idProyecto);
+            return ResponseHTTP::status200('Riesgos obtenidos exitosamente');
+            
+        } catch (Exception $e) {
+            error_log("Error en RiesgoController::listarPorProyecto - " . $e->getMessage());
+            return ResponseHTTP::status500($e->getMessage());
+        }
     }
 }

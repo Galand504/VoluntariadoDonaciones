@@ -6,7 +6,7 @@ use PDO;
 use PDOException;
 use Exception;
 
-class pago {
+class Pago {
     /**
      * Crea un nuevo pago usando el procedimiento almacenado RegistrarPago
      */

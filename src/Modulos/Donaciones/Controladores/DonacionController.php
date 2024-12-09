@@ -1,124 +1,99 @@
 <?php
 
-namespace App\Controladores;
+namespace App\Modulos\Donaciones\Controladores;
 
-use App\Configuracion\Donacion;
+use App\Modulos\Donaciones\Modelos\Donacion;
 use App\Configuracion\ResponseHTTP;
 use App\Configuracion\Security;
-use App\Base\Database;
+use Exception;
 
 class DonacionController
 {
-    private $donacion;
-
-    public function __construct()
+    /**
+     * Vincula un usuario a un proyecto de donación
+     */
+    public function vincular(): void
     {
-        // Crear conexión a la base de datos
-        $dbConnection = new DatabaseConnection();
-        $db = $dbConnection->getConnection();
-        $this->donacion = new Donacion($db);
-    }
+        try {
+            // Validar token
+            if (!Security::validateTokenJwt(Security::secretKey())) {
+                echo json_encode(ResponseHTTP::status401("Token inválido"));
+                return;
+            }
 
-    public function crearDonacion($monto, $fecha, $id_usuario, $idProyecto): array
-    {
-        // Verificar el token de seguridad
-        if (!Security::validateTokenJwt(Security::secretKey())) {
-            return ResponseHTTP::status401('Acceso no autorizado.');
-        }
+            // Obtener datos
+            $data = json_decode(file_get_contents("php://input"), true);
+            if (!isset($data['idProyecto'])) {
+                echo json_encode(ResponseHTTP::status400("ID de proyecto requerido"));
+                return;
+            }
 
-        $this->donacion->monto = $monto;
-        $this->donacion->fecha = $fecha;
-        $this->donacion->id_usuario = $id_usuario;
-        $this->donacion->idProyecto = $idProyecto;
+            // Obtener ID de usuario del token
+            $headers = apache_request_headers();
+            $token = str_replace('Bearer ', '', $headers['Authorization']);
+            $tokenData = Security::getTokenData($token);
 
-        if ($this->donacion->createDonacion()) {
-            return [
-                'status' => 200,
-                'message' => 'Donación creada exitosamente'
-            ];
-        }
-        return ResponseHTTP::status400('Error al crear la donación.');
-    }
+            // Verificar si ya existe una vinculación
+            if (Donacion::existeVinculacion($tokenData->data->id, $data['idProyecto'])) {
+                echo json_encode(ResponseHTTP::status400("Ya existe una vinculación para este proyecto"));
+                return;
+            }
 
-    public function obtenerDonaciones(): array
-    {
-        // Verificar el token de seguridad
-        if (!Security::validateTokenJwt(Security::secretKey())) {
-            return ResponseHTTP::status401('Acceso no autorizado.');
-        }
+            // Vincular usuario con proyecto
+            $idDonacion = Donacion::vincular(
+                $tokenData->data->id,
+                $data['idProyecto']
+            );
 
-        $result = $this->donacion->obtenerDonaciones();
-        if ($result) {
-            return [
-                'status' => 200,
-                'data' => $result
-            ];
-        }
-        return ResponseHTTP::status400('No se pudieron obtener las donaciones.');
-    }
-
-    public function obtenerDonacion($idDonacion): array
-    {
-        // Verificar el token de seguridad
-        if (!Security::validateTokenJwt(Security::secretKey())) {
-            return ResponseHTTP::status401('Acceso no autorizado.');
-        }
-
-        $this->donacion->idDonacion = $idDonacion;
-        $result = $this->donacion->obtenerDonacion();
-
-        if ($result) {
-            return [
-                'status' => 200,
-                'data' => [
-                    "idDonacion" => $this->donacion->idDonacion,
-                    "monto" => $this->donacion->monto,
-                    "fecha" => $this->donacion->fecha,
-                    "id_usuario" => $this->donacion->id_usuario,
-                    "idProyecto" => $this->donacion->idProyecto
+            echo json_encode(ResponseHTTP::status200([
+                "message" => "Usuario vinculado exitosamente al proyecto",
+                "data" => [
+                    "idDonacion" => $idDonacion
                 ]
-            ];
+            ]));
+
+        } catch (Exception $e) {
+            error_log("Error en DonacionController::vincular - " . $e->getMessage());
+            echo json_encode(ResponseHTTP::status400($e->getMessage()));
         }
-        return ResponseHTTP::status400('No se encontró la donación.');
     }
 
-    public function actualizarDonacion($idDonacion, $monto, $fecha, $id_usuario, $idProyecto): array
+    /**
+     * Verifica si existe una vinculación
+     */
+    public function verificarVinculacion(): void
     {
-        // Verificar el token de seguridad
-        if (!Security::validateTokenJwt(Security::secretKey())) {
-            return ResponseHTTP::status401('Acceso no autorizado.');
+        try {
+            if (!Security::validateTokenJwt(Security::secretKey())) {
+                echo json_encode(ResponseHTTP::status401("Token inválido"));
+                return;
+            }
+
+            $idProyecto = $_GET['idProyecto'] ?? null;
+            if (!$idProyecto) {
+                echo json_encode(ResponseHTTP::status400("ID de proyecto requerido"));
+                return;
+            }
+
+            $headers = apache_request_headers();
+            $token = str_replace('Bearer ', '', $headers['Authorization']);
+            $tokenData = Security::getTokenData($token);
+
+            $existe = Donacion::existeVinculacion(
+                $tokenData->data->id,
+                $idProyecto
+            );
+
+            echo json_encode(ResponseHTTP::status200([
+                "message" => "Verificación exitosa",
+                "data" => [
+                    "existe" => $existe
+                ]
+            ]));
+
+        } catch (Exception $e) {
+            error_log("Error en DonacionController::verificarVinculacion - " . $e->getMessage());
+            echo json_encode(ResponseHTTP::status400($e->getMessage()));
         }
-
-        $this->donacion->idDonacion = $idDonacion;
-        $this->donacion->monto = $monto;
-        $this->donacion->fecha = $fecha;
-        $this->donacion->id_usuario = $id_usuario;
-        $this->donacion->idProyecto = $idProyecto;
-
-        if ($this->donacion->actualizarDonacion()) {
-            return [
-                'status' => 200,
-                'message' => 'Donación actualizada exitosamente'
-            ];
-        }
-        return ResponseHTTP::status400('Error al actualizar la donación.');
-    }
-
-    public function eliminarDonacion($idDonacion): array
-    {
-        // Verificar el token de seguridad
-        if (!Security::validateTokenJwt(Security::secretKey())) {
-            return ResponseHTTP::status401('Acceso no autorizado.');
-        }
-
-        $this->donacion->idDonacion = $idDonacion;
-
-        if ($this->donacion->eliminarDonacion()) {
-            return [
-                'status' => 200,
-                'message' => 'Donación eliminada exitosamente'
-            ];
-        }
-        return ResponseHTTP::status400('Error al eliminar la donación.');
     }
 }

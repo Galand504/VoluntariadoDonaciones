@@ -33,7 +33,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
             const rol = data.user.rol;
             if (rol === 'Administrador') {
                 window.location.replace('../html/dashboard.html');
-            } else if (['Usuario', 'Voluntario', 'Organizador'].includes(rol)) {
+            } else if (['Donante', 'Voluntario', 'Organizador'].includes(rol)) {
                 window.location.replace('../html/dashboard-user.html');
             } else {
                 console.error('Rol no reconocido:', rol);

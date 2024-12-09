@@ -68,7 +68,43 @@ class usuario {
             }
         }
     
-
+        public static function registrarUsuario($data) {
+            try {
+                $con = Database::getConnection();
+                
+                // Hash de la contraseña
+                $hashedPassword = Security::createPassword($data['contraseña']);
+                
+                // Preparar la llamada al procedimiento almacenado
+                $stmt = $con->prepare("CALL sp_registrar_usuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        
+                // Ejecutar el procedimiento con los parámetros en el orden correcto
+                $stmt->execute([
+                    $data['email'],
+                    $hashedPassword,
+                    strtoupper($data['rol']),
+                    $data['tipo_usuario'] === 'persona' ? 'Persona' : 'Empresa',
+                    // Campos para persona
+                    $data['nombre'] ?? null,
+                    $data['apellido'] ?? null,
+                    $data['dni'] ?? null,
+                    $data['edad'] ?? null,
+                    $data['telefono'] ?? null,
+                    // Campos para empresa
+                    $data['nombre_empresa'] ?? null,
+                    $data['razon_social'] ?? null,
+                    $data['registro_fiscal'] ?? null,
+                    $data['telefono_empresa'] ?? null,
+                    $data['direccion'] ?? null
+                ]);
+        
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+                
+            } catch (PDOException $e) {
+                error_log("Error en registrarUsuario: " . $e->getMessage());
+                throw new Exception($e->getMessage());
+            }
+        }
 
     // Ejecuta el procedimiento almacenado AddUsuario
     public static function addusuario($email, $contraseña, $Rol, $Tipo, $nombre, $apellido, $dni, $edad, $telefono, &$p_id_usuario, $nombreEmpresa = null, $direccion = null, $telefonoEmpresa = null, $razonSocial = null, $registroFiscal = null) {

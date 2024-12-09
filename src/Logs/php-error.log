@@ -10061,3 +10061,133 @@ Stack trace:
 [08-Dec-2024 14:43:03 America/Tegucigalpa] Conexión exitosa
 [08-Dec-2024 14:55:39 America/Tegucigalpa] Conexión exitosa
 [08-Dec-2024 14:56:30 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:18:41 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:33:46 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:34:02 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:34:12 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:35:03 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[08-Dec-2024 17:35:03 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:35:13 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:35:34 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:36:33 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:37:14 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:37:14 America/Tegucigalpa] Error en eliminarProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 El proyecto especificado no existe
+[08-Dec-2024 17:37:14 America/Tegucigalpa] Error en eliminarProyecto: Error al eliminar el proyecto
+[08-Dec-2024 17:37:23 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:37:23 America/Tegucigalpa] Error en eliminarProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 El proyecto tiene donaciones o voluntarios asociados. Se ha marcado como cancelado.
+[08-Dec-2024 17:37:23 America/Tegucigalpa] Error en eliminarProyecto: Error al eliminar el proyecto
+[08-Dec-2024 17:37:45 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:46:50 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:46:50 America/Tegucigalpa] Error en cambiarEstadoProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 No se puede cambiar el estado de un proyecto cancelado
+[08-Dec-2024 17:46:50 America/Tegucigalpa] Error en cambiarEstadoProyecto: Error al cambiar el estado del proyecto
+[08-Dec-2024 17:48:01 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:48:01 America/Tegucigalpa] Error en cambiarEstadoProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 No se puede marcar como completado: no se ha alcanzado la meta de donación
+[08-Dec-2024 17:48:01 America/Tegucigalpa] Error en cambiarEstadoProyecto: Error al cambiar el estado del proyecto
+[08-Dec-2024 17:48:24 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:49:53 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 17:49:53 America/Tegucigalpa] Error en cambiarEstadoProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 No se puede cambiar el estado de un proyecto cancelado
+[08-Dec-2024 17:49:53 America/Tegucigalpa] Error en cambiarEstadoProyecto: Error al cambiar el estado del proyecto
+[08-Dec-2024 18:09:48 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[08-Dec-2024 18:09:48 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 18:10:51 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 18:10:56 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 18:10:56 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 18:11:57 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 18:12:06 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 18:12:09 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:00:20 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[08-Dec-2024 19:00:20 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:01:26 America/Tegucigalpa] Error validando token: Wrong number of segments
+[08-Dec-2024 19:02:55 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:02:55 America/Tegucigalpa] Error en Voluntariado::vincular - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'
+[08-Dec-2024 19:02:55 America/Tegucigalpa] Error en VoluntariadoController::vincular - Error al registrar el voluntariado
+[08-Dec-2024 19:03:50 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:03:50 America/Tegucigalpa] Error en Voluntariado::vincular - SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[08-Dec-2024 19:03:50 America/Tegucigalpa] Error en VoluntariadoController::vincular - Error al registrar el voluntariado
+[08-Dec-2024 19:04:58 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:04:58 America/Tegucigalpa] Error en Voluntariado::vincular - SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[08-Dec-2024 19:04:58 America/Tegucigalpa] Error en VoluntariadoController::vincular - Error al registrar el voluntariado
+[08-Dec-2024 19:06:40 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:07:41 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:07:41 America/Tegucigalpa] Error en Voluntariado::existeVinculacion - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'
+[08-Dec-2024 19:07:41 America/Tegucigalpa] Error en VoluntariadoController::verificarVinculacion - Error al verificar vinculación
+[08-Dec-2024 19:08:12 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:08:51 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:08:51 America/Tegucigalpa] Error en Voluntariado::listarVoluntarios - SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_listar_voluntarios; expected 1, got 2
+[08-Dec-2024 19:08:51 America/Tegucigalpa] Error en VoluntariadoController::listarVoluntarios - SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_listar_voluntarios; expected 1, got 2
+[08-Dec-2024 19:11:12 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:11:12 America/Tegucigalpa] Error en Voluntariado::listarVoluntarios - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.idEmpresa' in 'field list'
+[08-Dec-2024 19:11:12 America/Tegucigalpa] Error en VoluntariadoController::listarVoluntarios - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.idEmpresa' in 'field list'
+[08-Dec-2024 19:13:50 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:14:35 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 19:14:35 America/Tegucigalpa] Error en Voluntariado::eliminar - SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_eliminar_voluntario; expected 1, got 2
+[08-Dec-2024 19:14:35 America/Tegucigalpa] Error en VoluntariadoController::eliminar - SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_eliminar_voluntario; expected 1, got 2
+[08-Dec-2024 19:16:15 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:15:55 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:15:55 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:15:55 America/Tegucigalpa] Error en registrarUsuario: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[08-Dec-2024 20:15:55 America/Tegucigalpa] Error en UsuarioController::registrar - SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[08-Dec-2024 20:16:21 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:16:21 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:16:21 America/Tegucigalpa] Error en registrarUsuario: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[08-Dec-2024 20:16:21 America/Tegucigalpa] Error en UsuarioController::registrar - SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[08-Dec-2024 20:17:45 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:17:45 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:17:45 America/Tegucigalpa] Error en registrarUsuario: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[08-Dec-2024 20:17:45 America/Tegucigalpa] Error en UsuarioController::registrar - SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[08-Dec-2024 20:18:58 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:18:58 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:36:30 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:36:30 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:36:42 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => erasmo@gmail.com
+    [contraseña] => *Galand504*
+)
+
+[08-Dec-2024 20:36:42 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:43:37 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:43:37 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:43:47 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => fdsfdsf@yahoo.es
+    [contraseña] => galand504
+)
+
+[08-Dec-2024 20:43:47 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:47:31 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => fdsfdsf@yahoo.es
+    [contraseña] => galand504
+)
+
+[08-Dec-2024 20:47:31 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:48:06 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => fdsfdsf@yahoo.es
+    [contraseña] => galand504
+)
+
+[08-Dec-2024 20:48:06 America/Tegucigalpa] Conexión exitosa
+[08-Dec-2024 20:48:58 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => fdsfdsf@yahoo.es
+    [contraseña] => galand504
+)
+
+[08-Dec-2024 20:48:58 America/Tegucigalpa] Conexión exitosa

@@ -6,9 +6,8 @@ use App\Modulos\Donaciones\Modelos\Pago;
 use App\Configuracion\ResponseHTTP;
 use App\Configuracion\Security;
 use Exception;
-use App\Base\Database;
 
-class PagoController {
+class Pagocontroller {
 
     /**
      * Crea un nuevo pago
@@ -51,13 +50,6 @@ class PagoController {
             }
 
             // Verificar que la donación pertenece al usuario
-            $con = Database::getConnection();
-            $stmt = $con->prepare("SELECT idDonacion FROM donacion WHERE idDonacion = ? AND id_usuario = ?");
-            $stmt->execute([$data['idDonacion'], $idUsuario]);
-            if (!$stmt->fetch()) {
-                echo json_encode(ResponseHTTP::status403("No tienes permiso para realizar el pago de esta donación"));
-                return;
-            }
 
             // Crear el pago
             $pago = Pago::crearPago(

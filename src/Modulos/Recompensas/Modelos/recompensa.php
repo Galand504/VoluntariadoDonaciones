@@ -8,7 +8,7 @@ use PDO;
 use PDOException;
 use App\Configuracion\Security;
 
-class recompensa {
+class Recompensa {
     /**
      * Obtiene los donadores estrella por proyecto
      */

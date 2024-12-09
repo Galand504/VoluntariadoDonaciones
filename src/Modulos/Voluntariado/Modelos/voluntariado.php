@@ -1,113 +1,132 @@
 <?php
 
-class Voluntario {
-    private $db;
-    private $id;
-    private $nombre;
-    private $email;
+namespace App\Modulos\Voluntariado\Modelos;
 
-    // Constructor para inicializar la conexión a la base de datos
-    public function __construct($dbConnection, $id = null) {
-        $this->db = $dbConnection;
-        if ($id) {
-            $this->id = $id;
-            $this->cargarVoluntario();
+use App\Base\Database;
+use PDO;
+use Exception;
+
+class Voluntariado {
+    /**
+     * Vincula un usuario como voluntario a un proyecto
+     */
+    public static function vincular($idUsuario, $idProyecto, $disponibilidad): int {
+        try {
+            $con = Database::getConnection();
+            
+            $stmt = $con->prepare("CALL sp_registrar_voluntariado(?, ?, ?)");
+            $stmt->execute([
+                $idUsuario,
+                $idProyecto,
+                $disponibilidad
+            ]);
+            
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$resultado || !isset($resultado['idVoluntario'])) {
+                throw new Exception("Error al registrar voluntariado");
+            }
+            
+            return (int)$resultado['idVoluntario'];
+            
+        } catch (Exception $e) {
+            error_log("Error en Voluntariado::vincular - " . $e->getMessage());
+            throw new Exception("Error al registrar el voluntariado");
         }
     }
 
-    // Cargar los datos del voluntario desde la base de datos
-    private function cargarVoluntario() {
-        $query = "SELECT * FROM voluntarios WHERE id = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param("i", $this->id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            $voluntario = $result->fetch_assoc();
-            $this->nombre = $voluntario['nombre'];
-            $this->email = $voluntario['email'];
-        } else {
-            throw new Exception("Voluntario no encontrado.");
+    /**
+     * Verifica si un usuario ya está vinculado a un proyecto
+     */
+    public static function existeVinculacion($idUsuario, $idProyecto): bool {
+        try {
+            $con = Database::getConnection();
+            
+            $stmt = $con->prepare("CALL sp_verificar_vinculacion_voluntario(?, ?)");
+            $stmt->execute([$idUsuario, $idProyecto]);
+            
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (bool)($resultado['existe'] ?? false);
+            
+        } catch (Exception $e) {
+            error_log("Error en Voluntariado::existeVinculacion - " . $e->getMessage());
+            throw new Exception("Error al verificar vinculación");
         }
     }
 
-    // Función para registrar un nuevo voluntario
-    public static function registrarVoluntario($dbConnection, $nombre, $email) {
-        $query = "INSERT INTO voluntarios (nombre, email) VALUES (?, ?)";
-        $stmt = $dbConnection->prepare($query);
-        $stmt->bind_param("ss", $nombre, $email);
-        if ($stmt->execute()) {
-            return $dbConnection->insert_id; // Retorna el ID del voluntario recién creado
+    /**
+     * Verifica si un proyecto es de tipo Voluntariado
+     */
+    public static function esProyectoVoluntariado($idProyecto): bool {
+        try {
+            $con = Database::getConnection();
+            $stmt = $con->prepare("CALL sp_verificar_tipo_proyecto(?)");
+            $stmt->execute([$idProyecto]);
+            
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $resultado['es_voluntariado'] ?? false;
+            
+        } catch (Exception $e) {
+            error_log("Error en Voluntariado::esProyectoVoluntariado - " . $e->getMessage());
+            throw new Exception("Error al verificar tipo de proyecto");
         }
-        return false;
     }
 
-    // Función para ver las organizaciones disponibles
-    public function verOrganizaciones() {
-        $query = "SELECT * FROM organizaciones";
-        $result = $this->db->query($query);
-        $organizaciones = [];
-        while ($row = $result->fetch_assoc()) {
-            $organizaciones[] = $row;
-        }
-        return $organizaciones;
-    }
-
-    // Función para realizar una donación (voluntariado en tiempo, dinero o productos)
-    public function donar($organizacionId, $monto, $tipo) {
-        // Verificar que la organización exista
-        $query = "SELECT * FROM organizaciones WHERE id = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param("i", $organizacionId);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows == 0) {
-            throw new Exception("La organización seleccionada no existe.");
-        }
-
-        // Registrar la donación
-        $query = "INSERT INTO donaciones (voluntario_id, organizacion_id, monto, tipo, fecha) VALUES (?, ?, ?, ?, NOW())";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param("iiis", $this->id, $organizacionId, $monto, $tipo);
-        if ($stmt->execute()) {
-            return true;
-        }
-        return false;
-    }
-
-    // Función para obtener el historial de donaciones
-    public function obtenerDonaciones() {
-        $query = "SELECT donaciones.*, organizaciones.nombre AS organizacion_nombre FROM donaciones
-                  JOIN organizaciones ON donaciones.organizacion_id = organizaciones.id
-                  WHERE donaciones.voluntario_id = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param("i", $this->id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $donaciones = [];
-        while ($row = $result->fetch_assoc()) {
-            $donaciones[] = $row;
-        }
-        return $donaciones;
-    }
-
-    // Función para obtener los datos del voluntario
-    public function obtenerDatos() {
-        return [
-            'id' => $this->id,
-            'nombre' => $this->nombre,
-            'email' => $this->email
-        ];
+   /**
+ * Lista los voluntarios de un proyecto
+ * Solo accesible para el organizador del proyecto
+ */
+public static function listarVoluntarios($idProyecto, $idUsuario): array {
+    try {
+        $con = Database::getConnection();
+        
+        // Llamar al procedimiento almacenado
+        $stmt = $con->prepare("CALL sp_listar_voluntarios(?, ?)");
+        $stmt->execute([$idProyecto, $idUsuario]);
+        
+        $voluntarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        // Formatear los datos
+        return array_map(function($voluntario) {
+            return [
+                'id' => $voluntario['idVoluntario'],
+                'disponibilidad' => $voluntario['disponibilidad'],
+                'email' => $voluntario['email'],
+                'tipo' => $voluntario['tipo_voluntario'],
+                'nombre_completo' => $voluntario['tipo_voluntario'] === 'Persona' 
+                    ? $voluntario['nombre'] . ' ' . $voluntario['apellido']
+                    : $voluntario['nombre'],
+                'identificacion' => $voluntario['identificacion'],
+                'telefono' => $voluntario['telefono'],
+                'razon_social' => $voluntario['razonSocial'] ?? null
+            ];
+        }, $voluntarios);
+        
+    } catch (Exception $e) {
+        error_log("Error en Voluntariado::listarVoluntarios - " . $e->getMessage());
+        throw new Exception($e->getMessage());
     }
 }
 
-?>
-
-
-
-
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
+/**
+ * Elimina un voluntario del proyecto
+ * Solo el organizador puede eliminar voluntarios
  */
+public static function eliminar($idVoluntario, $idUsuario): void {
+    try {
+        $con = Database::getConnection();
+        
+        // Llamar al procedimiento almacenado
+        $stmt = $con->prepare("CALL sp_eliminar_voluntario(?, ?)");
+        $stmt->execute([
+            $idVoluntario,
+            $idUsuario
+        ]);
+        
+    } catch (Exception $e) {
+        error_log("Error en Voluntariado::eliminar - " . $e->getMessage());
+        throw new Exception($e->getMessage());
+    }
+}
+}
 
+?>
