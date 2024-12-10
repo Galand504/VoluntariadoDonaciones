@@ -1,0 +1,211 @@
+/* Variables de colores */
+:root {
+    --primary-color: #24b2dd;
+    --sidebar-width: 250px;
+}
+
+/* Estilos generales */
+body {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: var(--sidebar-width);
+    background: var(--primary-color);
+    padding: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.sidebar .logo-details {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-name {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.nav-links {
+    padding: 0;
+    margin-top: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a i {
+    margin-right: 10px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: var(--sidebar-width);
+    transition: all 0.3s ease;
+}
+
+/* Navbar personalizado */
+.navbar {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Iconos en las cards */
+.card i {
+    opacity: 0.8;
+}
+
+/* Gráfico */
+#userChart {
+    min-height: 300px;
+}
+
+/* Lista de actividades */
+.activity-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.activity-item {
+    padding: 15px;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Botones de filtro */
+.btn-group .btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-group .btn-outline-primary:hover,
+.btn-group .btn-outline-primary.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Modal */
+.modal-content {
+    border: none;
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-header .btn-close {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        padding: 0;
+    }
+    
+    .sidebar.active {
+        width: 200px;
+        padding: 20px;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .navbar-toggler {
+        display: block;
+    }
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1d9dbd;
+}
+
+/* Animaciones */
+.card, .activity-item {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+.bg-bronze {
+    background-color: #cd7f32;
+    color: white;
+}
+

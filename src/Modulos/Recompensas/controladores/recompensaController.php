@@ -233,4 +233,34 @@ class recompensaController {
             echo json_encode(ResponseHTTP::status400($e->getMessage()));
         }
     }
+    public function obtenerTodasRecompensas() {
+        try {
+            $recompensas = Recompensa::obtenerTodasRecompensas();
+            echo json_encode(ResponseHTTP::status200($recompensas));
+        } catch (Exception $e) {
+            echo json_encode(ResponseHTTP::status500($e->getMessage()));
+        }
+    }
+    public function obtenerRecompensaPorId() {
+        try {
+            $idRecompensa = $_GET['id'] ?? null;
+            
+            if (!$idRecompensa) {
+                echo json_encode(ResponseHTTP::status400("ID de recompensa no proporcionado"));
+                return;
+            }
+    
+            $recompensa = Recompensa::obtenerRecompensaPorId($idRecompensa);
+    
+            if (!$recompensa) {
+                echo json_encode(ResponseHTTP::status404("Recompensa no encontrada"));
+                return;
+            }
+    
+            echo json_encode(ResponseHTTP::status200($recompensa));
+            
+        } catch (Exception $e) {
+            echo json_encode(ResponseHTTP::status500($e->getMessage()));
+        }
+    }
 }

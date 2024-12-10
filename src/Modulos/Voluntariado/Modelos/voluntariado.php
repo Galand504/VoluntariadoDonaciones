@@ -5,8 +5,28 @@ namespace App\Modulos\Voluntariado\Modelos;
 use App\Base\Database;
 use PDO;
 use Exception;
+use PDOException;
 
 class Voluntariado {
+    /**
+     * Obtiene las actividades de voluntariado disponibles con su progreso
+     * @return array Lista de voluntariados con sus detalles y cantidad de voluntarios
+     * @throws Exception Si hay un error al obtener los voluntariados
+     */
+    public static function obtenerVoluntariadosConProgreso(): array {
+        try {
+            $con = Database::getConnection();
+            
+            $stmt = $con->prepare("CALL sp_consultar_progreso_voluntariado()");
+            $stmt->execute();
+            
+            return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
+            
+        } catch (PDOException $e) {
+            error_log("Error en obtenerVoluntariadosConProgreso: " . $e->getMessage());
+            throw new Exception("Error al obtener los voluntariados disponibles");
+        }
+    }
     /**
      * Vincula un usuario como voluntario a un proyecto
      */

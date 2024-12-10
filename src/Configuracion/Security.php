@@ -20,7 +20,7 @@ class Security {
      * @return string
      */
     public static function secretKey(): string {
-        return $_ENV['JWT_SECRET_KEY'] ?? 'tu_clave_secreta_por_defecto';
+        return $_ENV['JWT_SECRET_KEY'] ?? '12345HOLAMUNDO/*/&^%';
     }
 
     /**
@@ -34,7 +34,7 @@ class Security {
         
         $payload = [
             'iat' => $time,
-            'exp' => $time + 3600, // 1 hora
+            'exp' => $time + 21600, // 6 horas
             'data' => $userData
         ];
 

@@ -27,7 +27,9 @@ try {
     // Manejar las rutas
     switch ($method) {
         case 'GET':
-            if ($rutaEspecifica === 'verificar') {
+            if ($rutaEspecifica === 'obtener') {
+                $donacionController->obtenerDonaciones();
+            } else if ($rutaEspecifica === 'verificar') {
                 $donacionController->verificarVinculacion();
             } else {
                 echo json_encode(ResponseHTTP::status400("Ruta no encontrada"));

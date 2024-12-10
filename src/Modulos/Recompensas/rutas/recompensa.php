@@ -30,6 +30,10 @@ try {
                 $recompensaController->obtenerDonadoresEstrella();
             } elseif ($rutaEspecifica === 'asignadas') {
                 $recompensaController->obtenerRecompensasAsignadas();
+            } elseif ($rutaEspecifica === 'listar') {
+                $recompensaController->obtenerTodasRecompensas();
+            } elseif ($rutaEspecifica === 'obtener') {
+                $recompensaController->obtenerRecompensaPorId();
             } else {
                 echo json_encode(ResponseHTTP::status400("Ruta no encontrada"));
             }

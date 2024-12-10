@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Base; //nombre de espacios con la carpeta donde esta ubicado este archivo
-use App\Configuracion\responseHTTP;
 use PDO;
 require __DIR__.'/dataDB.php';
 

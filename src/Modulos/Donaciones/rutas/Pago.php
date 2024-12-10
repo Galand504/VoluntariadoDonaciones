@@ -27,12 +27,27 @@ try {
     // Manejar las rutas
     switch ($method) {
         case 'GET':
-            if ($rutaEspecifica === 'estadisticas') {
-                $pagoController->obtenerEstadisticas();
-            } elseif (empty($rutaEspecifica)) {
-                $pagoController->obtenerPagos();
-            } else {
-                echo json_encode(ResponseHTTP::status400("Ruta no encontrada"));
+            switch ($rutaEspecifica) {
+                case 'estadisticas':
+                    $pagoController->obtenerEstadisticas();
+                    break;
+                case 'listar':
+                    $pagoController->obtenerPagos();
+                    break;
+                case 'por-fecha':
+                    $pagoController->obtenerPagosPorFecha();
+                    break;
+                case 'por-usuario':
+                    $pagoController->obtenerPagosPorUsuario();
+                    break;
+                case 'detalles': 
+                    $pagoController->obtenerDetallesPago();
+                    break;
+                case 'totales':
+                    $pagoController->obtenerTotales();
+                    break;
+                default:
+                    echo json_encode(ResponseHTTP::status400("Ruta no encontrada"));
             }
             break;
 
@@ -63,6 +78,11 @@ try {
 /**
  * API Endpoints:
  * 
+ * GET /pagos/estadisticas
+ * GET /pagos/listar
+ * GET /pagos/por-fecha?fecha_inicio=YYYY-MM-DD&fecha_fin=YYYY-MM-DD
+ * GET /pagos/por-usuario?id_usuario=123
+ * 
  * POST /pagos/crear
  * Body: {
  *   "monto": float,
@@ -84,19 +104,6 @@ try {
  *   "idPago": int,
  *   "estado": string
  * }
- * 
- * GET /pagos
- * Query params opcionales:
- *   - estado
- *   - proyecto
- *   - usuario
- *   - fecha_inicio
- *   - fecha_fin
- *   - moneda
- *   - metodo_pago
- * 
- * GET /pagos/estadisticas
- * Requiere rol de Administrador
  */
 ?>
 

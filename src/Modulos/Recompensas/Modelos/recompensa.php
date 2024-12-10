@@ -50,11 +50,42 @@ class Recompensa {
         try {
             $con = Database::getConnection();
             
+            // Validar rol del usuario
+            $headers = apache_request_headers();
+            $token = str_replace('Bearer ', '', $headers['Authorization']);
+            $tokenData = Security::getTokenData($token);
+            
+            if (!isset($tokenData->data->rol) || !in_array($tokenData->data->rol, ['Administrador', 'Emprendedor'])) {
+                throw new Exception("No tienes permisos para registrar recompensas");
+            }
+    
+            // Determinar el estado inicial según el rol
+            $estadoInicial = 'Pendiente';
+            if ($tokenData->data->rol === 'Administrador') {
+                // Si es admin, puede establecer el estado directamente
+                $estadoInicial = isset($_POST['estado']) ? $_POST['estado'] : 'Aprobada';
+                
+                // Validar que el estado sea válido
+                if (!in_array($estadoInicial, ['Aprobada', 'Rechazada', 'Pendiente'])) {
+                    throw new Exception("Estado de aprobación inválido");
+                }
+            }
+    
+            if (in_array($tokenData->data->rol, ['Organizador', 'Donante', 'Voluntario']))  {
+                $stmt = $con->prepare("SELECT idUsuario FROM proyecto WHERE idProyecto = ?");
+                $stmt->execute([$idProyecto]);
+                $proyecto = $stmt->fetch(PDO::FETCH_ASSOC);
+                
+                if (!$proyecto || $proyecto['idUsuario'] != $tokenData->data->id) {
+                    throw new Exception("No tienes permisos para agregar recompensas a este proyecto");
+                }
+            }
+            
             $sql = "INSERT INTO recompensa (descripcion, montoMinimo, moneda, fechaEntregaEstimada, idProyecto, aprobada) 
-                   VALUES (?, ?, ?, ?, ?, 'Pendiente')";
+                   VALUES (?, ?, ?, ?, ?, ?)";
             
             $stmt = $con->prepare($sql);
-            $stmt->execute([$descripcion, $montoMinimo, $moneda, $fechaEntregaEstimada, $idProyecto]);
+            $stmt->execute([$descripcion, $montoMinimo, $moneda, $fechaEntregaEstimada, $idProyecto, $estadoInicial]);
             
             $idRecompensa = $con->lastInsertId();
             
@@ -65,7 +96,7 @@ class Recompensa {
                 'moneda' => $moneda,
                 'fechaEntregaEstimada' => $fechaEntregaEstimada,
                 'idProyecto' => $idProyecto,
-                'aprobada' => 'Pendiente'
+                'aprobada' => $estadoInicial
             ];
             
         } catch (PDOException $e) {
@@ -73,7 +104,6 @@ class Recompensa {
             throw new Exception($e->getMessage());
         }
     }
-
     /**
      * Aprueba o rechaza una recompensa
      */
@@ -173,6 +203,34 @@ class Recompensa {
         } catch (PDOException $e) {
             error_log("Error al obtener recompensas asignadas: " . $e->getMessage());
             throw new Exception("Error al obtener la lista de recompensas asignadas");
+        }
+    }
+    public static function obtenerTodasRecompensas() {
+        try {
+            $con = Database::getConnection();
+            
+            $stmt = $con->prepare("CALL sp_obtener_todas_recompensas()");
+            $stmt->execute();
+            
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+        } catch (PDOException $e) {
+            error_log("Error en obtenerTodasRecompensas: " . $e->getMessage());
+            throw new Exception("Error al obtener la lista de recompensas");
+        }
+    }
+    public static function obtenerRecompensaPorId($idRecompensa) {
+        try {
+            $con = Database::getConnection();
+            
+            $stmt = $con->prepare("CALL sp_obtener_recompensa_por_id(?)");
+            $stmt->execute([$idRecompensa]);
+            
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+            
+        } catch (PDOException $e) {
+            error_log("Error en obtenerRecompensaPorId: " . $e->getMessage());
+            throw new Exception("Error al obtener la recompensa");
         }
     }
 }

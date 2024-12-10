@@ -1,6 +1,4 @@
 <?php
-use App\Configuracion\errorlogs;
-use App\Configuracion\responseHTTP;
 use App\Base\Database;
 use Dotenv\Dotenv;
 

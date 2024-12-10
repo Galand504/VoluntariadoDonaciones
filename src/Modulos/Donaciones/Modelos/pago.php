@@ -236,5 +236,91 @@ class Pago {
         }
         return true;
     }
+
+    /**
+     * Obtiene pagos por rango de fechas
+     */
+    public static function obtenerPagosPorFecha(string $fechaInicio, string $fechaFin): array {
+        try {
+            // Preparar la conexión
+            $con = Database::getConnection();
+            $stmt = $con->prepare('CALL sp_obtener_pagos_por_fecha(?, ?)');
+            
+            // Ejecutar el procedimiento
+            $stmt->execute([$fechaInicio, $fechaFin]);
+            
+            // Obtener y retornar resultados
+            $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            // Cerrar la consulta y la conexión
+            $stmt->closeCursor();
+            $con = null;
+            
+            return $resultados;
+            
+        } catch (PDOException $e) {
+            error_log("Error en obtenerPagosPorFecha: " . $e->getMessage());
+            throw new Exception("Error al obtener pagos por fecha");
+        }
+    }
+
+    /**
+     * Obtiene pagos por usuario
+     */
+    public static function obtenerPagosPorUsuario($idUsuario) {
+        try {
+            $con = Database::getConnection();
+            $stmt = $con->prepare("CALL sp_obtener_pagos_usuario(?)");
+            $stmt->execute([$idUsuario]);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Error al obtener pagos del usuario: " . $e->getMessage());
+            throw new Exception("Error al obtener pagos del usuario");
+        }
+    }
+
+    /**
+     * Obtiene los detalles de un pago por ID
+     */
+    public static function obtenerPorId(int $idPago): ?array {
+        try {
+            $con = Database::getConnection();
+            $stmt = $con->prepare('CALL sp_obtener_detalles_pago(?)');
+            
+            $stmt->execute([$idPago]);
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            $stmt->closeCursor();
+            $con = null;
+            
+            return $resultado ?: null;
+            
+        } catch (PDOException $e) {
+            error_log("Error en obtenerPorId: " . $e->getMessage());
+            throw new Exception("Error al obtener detalles del pago");
+        }
+    }
+    public static function obtenerTotales(): array {
+        try {
+            $con = Database::getConnection  ();
+            $stmt = $con->prepare('CALL sp_obtener_totales_pagos()');
+            
+            $stmt->execute();
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            $stmt->closeCursor();
+            $con = null;
+            
+            return $resultado ?: [
+                'total_HNL' => 0,
+                'total_USD' => 0,
+                'total_pagos' => 0
+            ];
+            
+        } catch (PDOException $e) {
+            error_log("Error en obtenerTotales: " . $e->getMessage());
+            throw new Exception("Error al obtener totales de pagos");
+        }
+    }
 }
 ?>

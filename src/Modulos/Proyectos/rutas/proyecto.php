@@ -21,24 +21,26 @@ try {
     // Obtener el método HTTP
     $method = $_SERVER['REQUEST_METHOD'];
 
-    // Obtener la ruta específica (si existe)
+    // Obtener la ruta específica y el ID si existe
     $rutaEspecifica = isset($url[1]) ? $url[1] : '';
+    $id = isset($url[2]) ? $url[2] : null;
 
     // Manejar las rutas
     switch ($method) {
         case 'GET':
             if ($rutaEspecifica === 'actividades') {
                 $proyectoController->obtenerActividades();
-
+            } elseif ($rutaEspecifica === 'obtener' && $id) {
+                $_GET['id'] = $id; // Asignar el ID a $_GET
+                $proyectoController->obtenerProyecto();
             } else {
-                echo json_encode(ResponseHTTP::status400("Ruta no encontrada"));
+                echo json_encode(ResponseHTTP::status400("Ruta no encontrada o ID no proporcionado"));
             }
             break;
 
         case 'POST':
             if ($rutaEspecifica === 'crear') {
                 $proyectoController->crearProyecto();
-
             } else {
                 echo json_encode(ResponseHTTP::status400("Ruta no encontrada"));
             }
@@ -53,7 +55,6 @@ try {
                 echo json_encode(ResponseHTTP::status400("Ruta no encontrada"));
             }
             break;
-
         case 'DELETE':
             if ($rutaEspecifica === 'eliminar') {
                 $proyectoController->eliminarProyecto();

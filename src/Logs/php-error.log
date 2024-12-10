@@ -10191,3 +10191,1685 @@ Stack trace:
 )
 
 [08-Dec-2024 20:48:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:36:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:36:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:36:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:36:34 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:37:04 America/Tegucigalpa] Error validando token: Expired token
+[09-Dec-2024 14:37:14 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[09-Dec-2024 14:37:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:37:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:37:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:37:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:37:14 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:37:22 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:38:51 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:38:51 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:38:51 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:38:51 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:39:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:39:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:39:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:39:05 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:39:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:39:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:39:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:39:24 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:44:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:24 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:44:25 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:26 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:44:46 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:46 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:44:46 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:46 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:55 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:55 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:44:55 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:44:55 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:49:45 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:49:45 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:49:45 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:49:45 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:50:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:50:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:56:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:56:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:56:17 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 14:56:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:57:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:57:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:57:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 14:57:16 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:00:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:00:12 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:00:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:00:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:05:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:05:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:05:13 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:05:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:10:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:10:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:10:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:10:13 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:12:21 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:12:21 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:12:21 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:12:21 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:17:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:17:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:17:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:17:26 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:26 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:53 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:53 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:53 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:53 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:58 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:22:59 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:00 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:01 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:12 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:12 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:15 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:15 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:15 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:15 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:15 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:16 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:18 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:21 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:23:21 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:21 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:21 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:23:21 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:24:50 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:24:50 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:24:50 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:24:50 America/Tegucigalpa] Error en ConteoyFechas::getActividades: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_get_actividades; expected 1, got 0
+[09-Dec-2024 15:24:57 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:35:49 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:35:49 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:35:49 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:36:08 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:36:08 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:36:08 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:41:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:41:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:41:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:46:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:46:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:46:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:51:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:51:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:51:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:56:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:56:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 15:56:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:01:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:01:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:01:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:02:30 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:02:30 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:02:40 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:02:40 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:02:40 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:03:56 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:03:56 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:03:56 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:03:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:03:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:03:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:03:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:03:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:03:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:04:11 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:04:11 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:04:11 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:04:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:04:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:04:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:04:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:04:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:04:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 16:04:52 America/Tegucigalpa] Error validando token: Expired token
+[09-Dec-2024 16:07:55 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[09-Dec-2024 16:07:55 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 17:27:19 America/Tegucigalpa] Error validando token: Expired token
+[09-Dec-2024 17:29:09 America/Tegucigalpa] Error validando token: Expired token
+[09-Dec-2024 17:43:40 America/Tegucigalpa] Error validando token: Signature verification failed
+[09-Dec-2024 17:44:02 America/Tegucigalpa] Error validando token: Signature verification failed
+[09-Dec-2024 17:46:48 America/Tegucigalpa] Error validando token: Signature verification failed
+[09-Dec-2024 17:50:00 America/Tegucigalpa] Error validando token: Signature verification failed
+[09-Dec-2024 17:53:56 America/Tegucigalpa] Error validando token: Signature verification failed
+[09-Dec-2024 18:03:12 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[09-Dec-2024 18:03:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:04:02 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[09-Dec-2024 18:04:02 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:04:03 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:04:03 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:04:03 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:09:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:09:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:09:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:14:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:14:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:14:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:15:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:15:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:15:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:24:16 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 18:24:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:25:37 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:25:37 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:25:37 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:25:41 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:25:41 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:25:41 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:27:29 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:27:29 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:27:29 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:29:02 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:29:02 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:29:02 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:30:25 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:30:25 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:30:25 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:30:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:30:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:30:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:31:57 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:31:57 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:31:57 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:32:49 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:34:10 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:34:10 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:34:10 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:34:31 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:36:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:36:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:36:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:41:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:41:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:41:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:46:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:46:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:46:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:51:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:51:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:51:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:56:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:56:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 18:56:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:00:16 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[09-Dec-2024 19:00:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:00:23 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:01:25 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:01:33 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:01:33 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:06:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:06:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:06:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:11:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:11:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:11:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:16:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:16:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:16:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:19:20 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[09-Dec-2024 19:19:20 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:19:28 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:21:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:21:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:21:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:26:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:26:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:26:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:31:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:31:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:31:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:32:23 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 19:34:28 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:34:28 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:36:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:36:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:36:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:36:30 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 19:37:57 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:37:57 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:40:47 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 19:40:57 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 19:41:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:41:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:41:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:41:50 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:41:50 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:41:52 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 19:41:59 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 19:42:08 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 19:42:34 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 19:43:40 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:43:40 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:44:16 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:44:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:44:16 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:44:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:44:16 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:44:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:44:17 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:44:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:44:17 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:44:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:44:17 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:44:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:44:17 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:44:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:45:41 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:45:41 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:46:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:46:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:46:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:51:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:51:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:51:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:52:44 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:52:44 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:52:45 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:52:45 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:52:45 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:52:45 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:52:45 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:52:45 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:52:45 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:52:45 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:52:45 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:52:45 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:53:27 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:53:27 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidorameni@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:53:27 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:53:54 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:53:54 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:53:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:54:19 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:54:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:54:31 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:54:40 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 19:55:09 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:55:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:55:11 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 19:56:07 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:56:07 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:56:07 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:59:39 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 19:59:39 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 19:59:41 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 20:01:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:01:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:01:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:02:04 America/Tegucigalpa] Error validando token: Wrong number of segments
+[09-Dec-2024 20:03:43 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:04:32 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:04:52 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 20:04:52 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:04:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:06:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:06:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:06:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:06:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:07:27 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:08:15 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:10:51 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:10:51 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:10:59 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => gerardozuniga2003@gmail.com
+    [contraseña] => Galand504
+)
+
+[09-Dec-2024 20:10:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:11:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:11:23 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:11:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:11:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:12:14 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => gerardozuniga2003@gmail.com
+    [contraseña] => Galand504
+)
+
+[09-Dec-2024 20:12:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:12:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:13:32 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:13:49 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:15:52 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:16:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:16:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:16:27 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:17:23 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:17:43 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:20:08 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:20:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:20:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:21:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:21:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:21:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:21:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:21:41 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:21:43 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:23:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:23:21 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:23:22 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:24:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:24:36 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:24:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:25:40 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:25:46 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:25:46 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:26:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:26:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:26:06 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:27:04 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:27:55 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:28:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:30:46 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:31:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:31:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:31:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:31:38 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:32:10 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:32:10 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:32:10 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:32:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:32:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:32:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:32:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:32:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:32:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:32:31 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:33:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:33:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:33:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:38:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:38:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:38:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:39:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:39:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:39:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:39:39 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:39:39 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:39:39 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:40:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:40:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:40:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:42:27 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:43:40 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[09-Dec-2024 20:43:40 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:45:07 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:45:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:47:08 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:47:33 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:48:35 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:49:41 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:52:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:52:23 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:52:23 America/Tegucigalpa] Error en crearProyecto: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Meta' cannot be null
+[09-Dec-2024 20:52:23 America/Tegucigalpa] Error en crearProyecto: Error al crear el proyecto
+[09-Dec-2024 20:52:55 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:53:03 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:53:03 America/Tegucigalpa] Error en crearProyecto: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Meta' cannot be null
+[09-Dec-2024 20:53:03 America/Tegucigalpa] Error en crearProyecto: Error al crear el proyecto
+[09-Dec-2024 20:54:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:54:13 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:54:13 America/Tegucigalpa] Error en crearProyecto: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Meta' cannot be null
+[09-Dec-2024 20:54:13 America/Tegucigalpa] Error en crearProyecto: Error al crear el proyecto
+[09-Dec-2024 20:55:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:55:33 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:55:33 America/Tegucigalpa] Error en crearProyecto: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Meta' cannot be null
+[09-Dec-2024 20:55:33 America/Tegucigalpa] Error en crearProyecto: Error al crear el proyecto
+[09-Dec-2024 20:57:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:57:23 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:57:23 America/Tegucigalpa] Error en crearProyecto: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Meta' cannot be null
+[09-Dec-2024 20:57:23 America/Tegucigalpa] Error en crearProyecto: Error al crear el proyecto
+[09-Dec-2024 20:58:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:59:03 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 20:59:03 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:03:28 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:03:28 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:07:39 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:08:33 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:10:09 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:12:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:12:33 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:12:33 America/Tegucigalpa] Error en crearProyecto: SQLSTATE[42000]: Syntax error or access violation: 1318 Incorrect number of arguments for PROCEDURE voluntariadodonaciones.sp_agregar_proyecto; expected 6, got 7
+[09-Dec-2024 21:12:33 America/Tegucigalpa] Error en crearProyecto: Error al crear el proyecto
+[09-Dec-2024 21:16:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:16:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:16:17 America/Tegucigalpa] Error en crearProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 La meta es obligatoria y debe ser un valor mayor que cero para actividades de tipo Donacion
+[09-Dec-2024 21:16:17 America/Tegucigalpa] Error en crearProyecto: Error al crear el proyecto
+[09-Dec-2024 21:16:43 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:16:43 America/Tegucigalpa] Error en crearProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 La meta es obligatoria y debe ser un valor mayor que cero para actividades de tipo Donacion
+[09-Dec-2024 21:16:43 America/Tegucigalpa] Error en crearProyecto: Error al crear el proyecto
+[09-Dec-2024 21:18:15 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:18:32 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:18:32 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:27:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:27:30 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 21:27:30 America/Tegucigalpa] Error en eliminarProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 El proyecto especificado no existe
+[09-Dec-2024 21:27:30 America/Tegucigalpa] Error en eliminarProyecto: Error al eliminar el proyecto
+[09-Dec-2024 21:49:45 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:19:40 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:19:45 America/Tegucigalpa] Error en obtenerProyecto: ID de proyecto no proporcionado
+[09-Dec-2024 22:21:38 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:21:42 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:28:30 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:28:35 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:28:42 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:28:47 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:30:08 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:30:11 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:30:14 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:30:16 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:31:37 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:31:39 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:31:45 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:32:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:37:56 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:38:48 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:38:53 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:40:35 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:40:41 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:40:43 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:42:42 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:42:47 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:43:30 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:43:38 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:44:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:44:07 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:44:27 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:44:27 America/Tegucigalpa] Error en actualizarProyecto: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p_moneda' in 'field list'
+[09-Dec-2024 22:44:27 America/Tegucigalpa] Error en actualizarProyecto: Error al actualizar el proyecto
+[09-Dec-2024 22:46:12 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:46:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:47:07 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:47:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:47:29 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:47:29 America/Tegucigalpa] Error en actualizarProyecto: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p_moneda' in 'field list'
+[09-Dec-2024 22:47:29 America/Tegucigalpa] Error en actualizarProyecto: Error al actualizar el proyecto
+[09-Dec-2024 22:49:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:49:01 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:53:00 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:54:02 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:54:07 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:55:51 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:57:03 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:57:07 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:58:32 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 22:58:32 America/Tegucigalpa] Error en obtenerProyecto: No se encontró el proyecto especificado
+[09-Dec-2024 22:59:02 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:00:30 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:00:38 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:02:10 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:02:17 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:08:24 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:08:33 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:13:29 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:13:40 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:14:15 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:14:19 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:14:22 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:14:30 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:14:30 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:16:56 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:19:59 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:21:30 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:21:57 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:22:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:22:18 America/Tegucigalpa] Error en eliminarProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 El proyecto especificado no existe
+[09-Dec-2024 23:22:18 America/Tegucigalpa] Error en eliminarProyecto: Error al eliminar el proyecto
+[09-Dec-2024 23:24:23 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:29:53 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:29:58 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:29:58 America/Tegucigalpa] Error en eliminarProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 El proyecto especificado no existe
+[09-Dec-2024 23:29:58 America/Tegucigalpa] Error en eliminarProyecto: Error al eliminar el proyecto
+[09-Dec-2024 23:30:26 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:30:37 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:30:37 America/Tegucigalpa] Error en eliminarProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 El proyecto especificado no existe
+[09-Dec-2024 23:30:37 America/Tegucigalpa] Error en eliminarProyecto: Error al eliminar el proyecto
+[09-Dec-2024 23:32:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:33:05 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:33:11 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:33:11 America/Tegucigalpa] Error en eliminarProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 El proyecto especificado no existe
+[09-Dec-2024 23:33:11 America/Tegucigalpa] Error en eliminarProyecto: Error al eliminar el proyecto
+[09-Dec-2024 23:35:08 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:35:18 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:35:18 America/Tegucigalpa] Error en eliminarProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 El proyecto especificado no existe
+[09-Dec-2024 23:35:18 America/Tegucigalpa] Error en eliminarProyecto: Error al eliminar el proyecto
+[09-Dec-2024 23:38:33 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:38:39 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:38:39 America/Tegucigalpa] Error en eliminarProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 El proyecto especificado no existe
+[09-Dec-2024 23:38:39 America/Tegucigalpa] Error en eliminarProyecto: Error al eliminar el proyecto
+[09-Dec-2024 23:42:43 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:42:52 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:42:52 America/Tegucigalpa] Error en eliminarProyecto: SQLSTATE[45000]: <<Unknown error>>: 1644 El proyecto especificado no existe
+[09-Dec-2024 23:42:52 America/Tegucigalpa] Error en eliminarProyecto: Error al eliminar el proyecto
+[09-Dec-2024 23:48:34 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:48:41 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:48:41 America/Tegucigalpa] Error en eliminarProyecto: El proyecto con ID  no existe
+[09-Dec-2024 23:51:42 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:51:54 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:51:57 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:52:48 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:52:57 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:52:57 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:53:04 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:53:10 America/Tegucigalpa] Conexión exitosa
+[09-Dec-2024 23:53:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:08:38 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:08:42 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:25:40 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:26:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:26:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:26:31 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:26:31 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:27:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:27:02 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:27:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:28:26 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:28:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:28:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:28:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:28:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:08 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:12 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:14 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:38 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:47 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:29:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:31:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:31:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:31:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:31:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:31:46 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:31:46 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:31:46 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:31:48 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:31:50 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:32:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:33:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:33:35 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:33:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:33:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:34:07 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:34:07 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:34:07 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:34:09 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:34:12 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:35:23 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:35:31 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:35:49 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:36:02 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:38:43 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:39:00 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:39:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:40:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:40:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:40:34 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:40:36 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:40:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:40:50 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:40:55 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:49:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:51:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:53:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:55:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:55:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:56:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:56:17 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:56:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:56:23 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:57:40 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:58:25 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 00:58:42 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:03:45 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:03:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:09:28 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 01:09:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:09:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:09:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:09:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:09:31 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:09:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:09:42 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:09:44 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:09:48 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:11:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:11:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:11:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:12:35 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => gerardozuniga2003@gmail.com
+    [contraseña] => Galand504
+)
+
+[10-Dec-2024 01:12:35 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:12:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:23:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:23:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:23:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 01:49:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:16:23 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:16:31 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:18:22 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 02:18:24 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:18:24 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:18:24 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:18:24 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:18:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:18:31 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:18:40 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:27:45 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:33:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:33:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:34:50 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:34:50 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:35:07 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:35:16 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:35:16 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:37:26 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:37:26 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:39:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:39:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:41:15 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:41:15 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:41:33 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:41:33 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:44:16 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:44:16 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:44:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:45:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:45:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:45:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:46:35 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:47:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:47:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:49:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:49:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:49:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:51:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:51:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:51:07 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:53:44 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:53:44 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:53:48 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:54:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:54:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:54:55 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:54:55 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:55:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:55:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:55:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:55:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:59:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:59:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 02:59:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:03:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:03:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:03:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:05:14 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:05:14 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:05:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:08:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:08:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:09:04 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:09:11 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:09:12 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:10:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:10:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:10:34 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:10:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:10:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:14:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:14:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:14:11 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:15:33 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:15:33 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:15:38 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:15:38 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:16:47 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:16:47 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:16:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:16:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:17:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:17:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:17:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:17:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:19:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:19:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:19:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:19:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:19:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:19:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:19:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:19:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:21:16 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:21:16 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:21:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:21:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:22:32 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:22:32 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:22:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:22:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:23:19 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 03:23:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:23:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:23:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:23:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:23:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:23:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:23:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:23:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:25:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:25:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:25:44 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:25:44 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:26:49 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:26:49 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:26:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:26:57 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:30:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:30:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:30:17 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:30:17 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:31:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:31:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:32:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:32:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:32:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:32:08 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:32:08 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:37:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:37:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:08 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:09 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:14 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:14 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:23 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:23 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:38:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:39:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:39:02 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:39:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:12 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:12 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:17 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:25 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:25 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:40:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:46:08 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:46:08 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:46:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:46:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:47:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:47:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:47:55 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:47:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:47:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:55:43 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:55:43 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:56:00 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 03:56:00 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:00:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:00:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:00:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:00:38 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:06:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:06:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:06:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:06:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:14:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:14:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:14:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:14:08 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:14:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:14:45 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:14:45 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:14:47 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 04:14:48 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:03:16 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => distribuidoramedi@gmail.com
+    [contraseña] => *M3dina*
+)
+
+[10-Dec-2024 12:03:16 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:08:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:08:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:08:46 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:24:57 America/Tegucigalpa] Error validando token: Expired token
+[10-Dec-2024 12:26:56 America/Tegucigalpa] Error validando token: Expired token
+[10-Dec-2024 12:26:56 America/Tegucigalpa] Error validando token: Expired token
+[10-Dec-2024 12:27:21 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 12:27:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:27:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:27:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:27:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:27:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:27:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:27:34 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:27:34 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:27:36 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:28:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:28:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:29:14 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 12:29:14 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:29:15 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:29:15 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:29:15 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:29:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:29:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:31:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:31:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:31:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:31:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:32:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:32:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:32:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:32:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:32:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:32:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:32:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:32:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:33:00 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:33:00 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:08 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:34:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:37:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:37:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:37:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:37:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:15 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:15 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:15 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:17 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:25 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:38:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:39:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:39:40 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:39:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:39:42 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:39:44 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:39:44 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:40:04 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:40:04 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:40:34 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:40:34 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:40:34 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:40:36 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:40:36 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:40:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:40:40 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:41:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:41:31 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:43:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:43:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:44:36 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:44:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:45:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:45:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:48:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:48:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:49:36 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:49:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:57:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:57:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:58:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 12:58:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:00:48 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:00:49 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:01:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:01:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:01:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:01:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:01:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:01:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:01:17 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:01:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:03:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:03:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:03:07 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:03:07 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:03:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:03:54 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:05:59 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:05:59 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:35 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:40 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:40 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:42 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:50 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:50 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:06:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:14:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:14:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:14:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:14:40 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:14:42 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:14:43 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:14:57 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:14:57 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:20:20 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => gerardozuniga2003@gmail.com
+    [contraseña] => Galand504
+)
+
+[10-Dec-2024 13:20:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:21:33 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:21:49 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:21:50 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:22:06 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:22:07 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:22:07 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:25:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:25:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:29:43 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:29:45 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:34:30 America/Tegucigalpa] PHP Fatal error:  Uncaught Error: Call to undefined method App\Modulos\Donaciones\Controladores\Pagocontroller::obtenerDetallesPago() in C:\xampp\htdocs\Crowdfunding\src\Modulos\Donaciones\rutas\pago.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Crowdfunding\public\index.php(36): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\Crowdfunding\src\Modulos\Donaciones\rutas\pago.php on line 44
+[10-Dec-2024 13:43:50 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:43:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:43:54 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:46:32 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:46:34 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:46:36 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:48:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:48:54 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:48:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:49:59 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:50:00 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:50:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:52:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:52:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:52:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:52:37 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:53:11 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:53:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:53:15 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:53:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:53:25 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:55:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:55:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:55:34 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:55:50 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 13:55:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:00:33 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:01:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:01:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:04:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:04:55 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:05:47 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:05:49 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:06:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:07:25 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:07:26 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:08:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:08:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:08:31 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:08:33 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:09:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:09:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:09:25 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:09:25 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:09:25 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:10:40 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:10:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:11:23 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:11:25 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:11:28 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:11:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:11:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:12:08 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:12:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:12:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:12:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:12:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:12:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:14:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:14:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:14:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:14:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:14:32 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:14:32 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:15:30 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => gerardozuniga2003@gmail.com
+    [contraseña] => Galand504
+)
+
+[10-Dec-2024 14:15:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:15:53 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 14:15:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:16:02 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:18:09 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:18:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:18:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:12 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:12 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:55 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:55 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:57 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:57 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:19:57 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:13 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:14 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:14 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:24 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:24 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:45 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 14:20:45 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:46 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:46 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:46 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:49 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:50 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:20:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:21:18 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 14:21:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:21:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:21:18 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:21:19 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:21:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:21:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:21:21 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:23:09 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:23:27 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 14:23:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:23:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:23:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:23:27 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:23:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:23:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:23:29 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:23:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:23:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:24:56 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 14:24:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:24:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:24:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:24:56 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:24:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:24:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:24:58 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:24:59 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:24:59 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:24:59 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:00 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:00 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:00 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:02 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:25:05 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:26:52 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 14:26:52 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:26:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:26:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:26:53 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:29:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:29:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:29:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:29:51 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:31:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:31:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:31:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:34:02 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:34:02 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:34:02 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:39:23 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => juan.perez@ejemplo.com
+    [contraseña] => Contraseña123!
+)
+
+[10-Dec-2024 14:39:23 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:39:23 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:39:23 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:39:23 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:40:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:40:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:40:39 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:42:54 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:42:54 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:42:54 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:47:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:47:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:47:22 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:47:59 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:48:01 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:48:02 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:48:02 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:48:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:48:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:48:03 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:48:08 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:48:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:48:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:48:10 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:50:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:50:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:50:30 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:51:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:51:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:51:20 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:51:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:51:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:51:41 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:52:04 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:52:04 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:52:04 America/Tegucigalpa] Conexión exitosa
+[10-Dec-2024 14:52:16 America/Tegucigalpa] Datos recibidos: Array
+(
+    [email] => gerardozuniga2003@gmail.com
+    [contraseña] => Galand504
+)
+
+[10-Dec-2024 14:52:16 America/Tegucigalpa] Conexión exitosa

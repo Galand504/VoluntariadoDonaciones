@@ -49,6 +49,7 @@ class ProyectoController {
                 $data['descripcion'],
                 $data['objetivo'],
                 $data['meta'] ?? null,
+                $data['moneda'],
                 $data['tipo_actividad'],
                 $tokenData->data->id
             );
@@ -85,6 +86,7 @@ class ProyectoController {
                 $data['descripcion'] ?? null,
                 $data['objetivo'] ?? null,
                 $data['meta'] ?? null,
+                $data['moneda'] ?? null,
                 $data['estado'] ?? null,
                 $data['tipo_actividad'] ?? null,
                 $tokenData->data->id
@@ -156,6 +158,34 @@ class ProyectoController {
 
         } catch (Exception $e) {
             error_log("Error en cambiarEstadoProyecto: " . $e->getMessage());
+            echo json_encode(ResponseHTTP::status400($e->getMessage()));
+        }
+    }
+    public function obtenerProyecto(): void {
+        try {
+            if (!Security::validateTokenJwt(Security::secretKey())) {
+                echo json_encode(ResponseHTTP::status401("Token inválido"));
+                return;
+            }
+
+            $idProyecto = $_GET['id'] ?? null;
+            if (!$idProyecto) {
+                throw new Exception("ID de proyecto no proporcionado");
+            }
+
+            $headers = apache_request_headers();
+            $token = str_replace('Bearer ', '', $headers['Authorization']);
+            $tokenData = Security::getTokenData($token);
+
+            $proyecto = Proyecto::obtenerProyecto($idProyecto, $tokenData->data->id);
+
+            echo json_encode(ResponseHTTP::status200([
+                "message" => "Proyecto obtenido exitosamente",
+                "data" => $proyecto
+            ]));
+
+        } catch (Exception $e) {
+            error_log("Error en obtenerProyecto: " . $e->getMessage());
             echo json_encode(ResponseHTTP::status400($e->getMessage()));
         }
     }

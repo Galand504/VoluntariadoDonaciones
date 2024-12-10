@@ -8,7 +8,22 @@ use App\Configuracion\Security;
 use Exception;
 
 class VoluntariadoController {
-    
+
+    public function obtenerVoluntariados(): void
+    {
+        try {
+            $voluntariados = Voluntariado::obtenerVoluntariadosConProgreso();
+            
+            echo json_encode(ResponseHTTP::status200([
+                "message" => "Voluntariados obtenidos exitosamente",
+                "data" => $voluntariados
+            ]));
+
+        } catch (Exception $e) {
+            error_log("Error en VoluntariadoController::obtenerVoluntariados - " . $e->getMessage());
+            echo json_encode(ResponseHTTP::status500($e->getMessage()));
+        }
+    }
     /**
      * Vincula un usuario como voluntario a un proyecto
      */

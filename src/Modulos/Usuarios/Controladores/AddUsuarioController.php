@@ -77,12 +77,12 @@ class AddUsuarioController
                     return $this->jsonResponse(ResponseHTTP::status400('La edad debe ser un número entre 18 y 120.'));
                 }
 
-                if (!preg_match('/^[0-9]{8}$/', $dni)) {
-                    return $this->jsonResponse(ResponseHTTP::status400('El DNI debe contener 8 dígitos numéricos.'));
+                if (!preg_match('/^[0-9]$/', $dni)) {
+                    return $this->jsonResponse(ResponseHTTP::status400('El DNI no puede contener datos no numericos.'));
                 }
 
-                if (!preg_match('/^[0-9]{10}$/', $telefono)) {
-                    return $this->jsonResponse(ResponseHTTP::status400('El teléfono debe contener 10 dígitos numéricos.'));
+                if (!preg_match('/^[0-9]$/', $telefono)) {
+                    return $this->jsonResponse(ResponseHTTP::status400('El teléfono no puede contener datos no numericos.'));
                 }
             }
 

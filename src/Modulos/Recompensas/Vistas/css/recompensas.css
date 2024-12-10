@@ -1,0 +1,89 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #24b2dd;
+    --sidebar-width: 250px;
+}
+
+/* Estilos generales */
+body {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: var(--sidebar-width);
+    background: var(--primary-color);
+    padding: 20px;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+}
+
+.nav-links {
+    padding: 0;
+    margin-top: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a i {
+    margin-right: 10px;
+}
+
+/* Contenido principal */
+.container {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    padding: 20px;
+}
+
+/* Hacer las tablas responsive */
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+}
+
+/* Ajustes adicionales para el contenido */
+.col {
+    padding: 15px;
+}
+
+.row {
+    margin: 0;
+}
+
+/* Estilos específicos para el formulario de recompensas */
+#recompensaForm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

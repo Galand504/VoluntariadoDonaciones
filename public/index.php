@@ -46,7 +46,7 @@ if (isset($_GET['route'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Incluir Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="/src/Modulos/Usuarios/Vistas/css/index.css">
     <title>Página Principal</title>
 </head>
 <body>
@@ -54,13 +54,13 @@ if (isset($_GET['route'])) {
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-container">
                 <a href="index.php">
-                    <img src="../img/Logo.jpg" alt="Logotipo" class="logo"> 
+                    <img src="/src/img/Logo.jpg" alt="Logotipo" class="logo"> 
                 </a>
             </div>
             <h1 class="h2">Bienvenido a Manos Solidarias</h1>
             <div class="auth-buttons">
-                <a href="../html/registrar.html" class="btn btn-outline-light me-2">Registrarse</a>
-                <a href="../html/login.html" class="btn btn-light">Iniciar Sesión</a>
+                <a href="/src/Modulos/Usuarios/Vistas/registrar.php" class="btn btn-outline-light me-2">Registrarse</a>
+                <a href="/src/Modulos/Usuarios/Vistas/login.php" class="btn btn-light">Iniciar Sesión</a>
             </div>
         </div>
     </header>
@@ -69,18 +69,18 @@ if (isset($_GET['route'])) {
     <div id="carouselExampleAutoplay" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../img/image1.jpeg" class="d-block w-100" alt="Imagen 1">
+                <img src="/src/img/image1.jpeg" class="d-block w-100" alt="Imagen 1">
             </div>
             <div class="carousel-item">
                 <a href="#SobreNosotros">
-                    <img src="../img/image2.jpeg" class="d-block w-100" alt="Imagen 2">
+                    <img src="/src/img/image2.jpeg" class="d-block w-100" alt="Imagen 2">
                 </a>
             </div>
             <div class="carousel-item">
-                <img src="../img/image3.jpeg" class="d-block w-100" alt="Imagen 3">
+                <img src="/src/img/image3.jpeg" class="d-block w-100" alt="Imagen 3">
             </div>
             <div class="carousel-item">
-                <img src="../img/image4.jpeg" class="d-block w-100" alt="Imagen 4">
+                <img src="/src/img/image4.jpeg" class="d-block w-100" alt="Imagen 4">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplay" data-bs-slide="prev">

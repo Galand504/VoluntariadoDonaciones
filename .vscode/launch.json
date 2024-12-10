@@ -13,7 +13,7 @@
             "request": "launch",
             "runtimeArgs": [
                 "-S",
-                "localhost:8000",
+                "localhost:3000/public/index.php",
                 "-t",
                 "."
             ],

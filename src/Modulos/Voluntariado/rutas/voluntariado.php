@@ -1,12 +1,13 @@
 <?php
 
 header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 header('Content-Type: application/json; charset=utf-8');
 
 use App\Modulos\Voluntariado\Controladores\VoluntariadoController;
 use App\Configuracion\ResponseHTTP;
+use App\Configuracion\Security;
 
 // Para peticiones OPTIONS (pre-flight CORS)
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -15,6 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 try {
+    if ($_SERVER['REQUEST_METHOD'] !== 'OPTIONS') {
+        if (!Security::validateTokenJwt(Security::secretKey())) {
+            echo json_encode(ResponseHTTP::status401("Token inválido"));
+            exit();
+        }
+    }
     // Crear instancia del controlador
     $voluntariadoController = new VoluntariadoController();
 
@@ -27,7 +34,9 @@ try {
     // Manejar las rutas
     switch ($method) {
         case 'GET':
-            if ($rutaEspecifica === 'listar') {
+            if ($rutaEspecifica === 'obtener') {
+                $voluntariadoController->obtenerVoluntariados();
+            } else if ($rutaEspecifica === 'listar') {
                 $voluntariadoController->listarVoluntarios();
             } else if ($rutaEspecifica === 'verificar') {
                 $voluntariadoController->verificarVinculacion();

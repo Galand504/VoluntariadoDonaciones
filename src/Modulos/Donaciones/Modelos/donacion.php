@@ -5,8 +5,29 @@ namespace App\Modulos\Donaciones\Modelos;
 use App\Base\Database;
 use PDO;
 use Exception;
+use PDOException;
 
-class donacion {
+class Donacion {
+/**
+     * Obtiene las donaciones disponibles con su progreso
+     * @return array Lista de donaciones con sus detalles y progreso
+     * @throws Exception Si hay un error al obtener las donaciones
+     */
+    public static function obtenerDonacionesConProgreso(): array {
+        try {
+            $con = Database::getConnection();
+            
+            $stmt = $con->prepare("CALL sp_consultar_progreso_donacion()");
+            $stmt->execute();
+            
+            return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
+            
+        } catch (PDOException $e) {
+            error_log("Error en obtenerDonacionesConProgreso: " . $e->getMessage());
+            throw new Exception("Error al obtener las donaciones disponibles");
+        }
+    }
+
     /**
      * Vincula un usuario con un proyecto de donación
      */

@@ -91,10 +91,10 @@ class usuario {
                     $data['edad'] ?? null,
                     $data['telefono'] ?? null,
                     // Campos para empresa
-                    $data['nombre_empresa'] ?? null,
-                    $data['razon_social'] ?? null,
-                    $data['registro_fiscal'] ?? null,
-                    $data['telefono_empresa'] ?? null,
+                    $data['nombreEmpresa'] ?? null,
+                    $data['razonSocial'] ?? null,
+                    $data['registroFiscal'] ?? null,
+                    $data['telefonoEmpresa'] ?? null,
                     $data['direccion'] ?? null
                 ]);
         

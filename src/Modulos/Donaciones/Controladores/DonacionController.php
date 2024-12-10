@@ -9,6 +9,28 @@ use Exception;
 
 class DonacionController
 {
+    public function obtenerDonaciones(): void
+    {
+        try {
+            // Validar token
+            if (!Security::validateTokenJwt(Security::secretKey())) {
+                echo json_encode(ResponseHTTP::status401("Token inválido"));
+                return;
+            }
+
+            // Obtener donaciones
+            $donaciones = Donacion::obtenerDonacionesConProgreso();
+            
+            echo json_encode(ResponseHTTP::status200([
+                "message" => "Donaciones obtenidas exitosamente",
+                "data" => $donaciones
+            ]));
+
+        } catch (Exception $e) {
+            error_log("Error en DonacionController::obtenerDonaciones - " . $e->getMessage());
+            echo json_encode(ResponseHTTP::status500($e->getMessage()));
+        }
+    }
     /**
      * Vincula un usuario a un proyecto de donación
      */
