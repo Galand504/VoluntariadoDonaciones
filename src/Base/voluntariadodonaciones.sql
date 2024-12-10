@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-12-2024 a las 11:27:35
+-- Tiempo de generación: 10-12-2024 a las 21:58:42
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -845,6 +845,37 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_login` (IN `u_email` VARCHAR(255
            v_rol AS rol;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_detalles_pago` (IN `p_idPago` INT)   BEGIN
+    SELECT 
+        p.idPago,
+        p.fecha,
+        p.monto,
+        p.estado,
+        p.moneda,
+        p.referencia_externa,
+        p.id_metodopago,
+        p.idDonacion,
+        p.motivo,
+        d.id_usuario,
+        d.idProyecto,
+        u.tipo,
+        CASE 
+            WHEN u.tipo = 'Persona' THEN per.nombre
+            WHEN u.tipo = 'Empresa' THEN emp.nombreEmpresa
+        END as nombre_donante,
+        u.email as email_usuario,
+        pr.titulo as nombre_proyecto,
+        mp.nombre as nombre_metodo_pago
+    FROM pago p
+    JOIN donacion d ON p.idDonacion = d.idDonacion
+    JOIN usuario u ON d.id_usuario = u.id_usuario
+    LEFT JOIN persona per ON u.id_usuario = per.id_usuario AND u.tipo = 'Persona'
+    LEFT JOIN empresa emp ON u.id_usuario = emp.id_usuario AND u.tipo = 'Empresa'
+    JOIN proyecto pr ON d.idProyecto = pr.idProyecto
+    JOIN metodo_pago mp ON p.id_metodopago = mp.id_metodopago
+    WHERE p.idPago = p_idPago;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_donadores_estrella_general` ()   BEGIN
     SELECT 
         u.id_usuario,
@@ -913,10 +944,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_estadisticas_pagos` ()  
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_pagos_por_fecha` (IN `p_fecha_inicio` DATE, IN `p_fecha_fin` DATE)   BEGIN
-    SELECT p.*, d.id_usuario, d.idProyecto
+    SELECT 
+        p.*,
+        d.id_usuario,
+        d.idProyecto,
+        u.nombre AS nombre_donante,
+        pr.nombre AS nombre_proyecto,
+        mp.nombre AS nombre_metodo_pago
     FROM pago p
     JOIN donacion d ON p.idDonacion = d.idDonacion
-    WHERE p.fecha BETWEEN p_fecha_inicio AND p_fecha_fin
+    LEFT JOIN usuario u ON d.id_usuario = u.id_usuario
+    LEFT JOIN proyecto pr ON d.idProyecto = pr.idProyecto
+    LEFT JOIN metodo_pago mp ON p.id_metodopago = mp.id_metodopago
+    WHERE DATE(p.fecha) BETWEEN p_fecha_inicio AND p_fecha_fin
     ORDER BY p.fecha DESC;
 END$$
 
@@ -1078,6 +1118,17 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_todas_recompensas` ()   
         recompensa r
     JOIN 
         proyecto p ON r.idProyecto = p.idProyecto;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_totales_pagos` ()   BEGIN
+    SELECT 
+        -- Total general convertido a HNL
+        SUM(CASE 
+            WHEN moneda = 'HNL' THEN monto 
+            ELSE fn_convertir_moneda(monto, moneda, 'HNL')
+        END) as total_HNL
+    FROM pago
+    WHERE estado = 'Completado';  -- Solo pagos completados
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_total_pagos_proyecto` (IN `p_idProyecto` INT)   BEGIN
@@ -1509,7 +1560,9 @@ CREATE TABLE `donacion` (
 --
 
 INSERT INTO `donacion` (`idDonacion`, `id_usuario`, `idProyecto`) VALUES
-(10, 62, 6);
+(10, 62, 6),
+(11, 79, 9),
+(12, 80, 9);
 
 -- --------------------------------------------------------
 
@@ -1574,6 +1627,16 @@ CREATE TABLE `pago` (
   `moneda` enum('USD','EUR','MXN','HNL') NOT NULL DEFAULT 'USD',
   `motivo` varchar(255) DEFAULT NULL COMMENT 'Motivo por el cual se canceló el pago'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pago`
+--
+
+INSERT INTO `pago` (`idPago`, `fecha`, `monto`, `estado`, `idDonacion`, `id_metodopago`, `referencia_externa`, `moneda`, `motivo`) VALUES
+(8, '2024-12-10 18:08:03', 1500, 'Completado', 11, 1, 'CRED-20241210-120803-HNL-0000150000', 'HNL', NULL),
+(9, '2024-12-10 18:08:28', 1500, 'Completado', 11, 1, 'CRED-20241210-120828-HNL-0000150000', 'HNL', NULL),
+(10, '2024-12-10 20:12:27', 1500, 'Completado', 11, 1, 'CRED-20241210-120846-HNL-0000150000', 'HNL', NULL),
+(11, '2024-12-10 19:21:33', 1500, 'Completado', 12, 3, 'PYPL-20241210-132133-USD-0000150000', 'USD', NULL);
 
 --
 -- Disparadores `pago`
@@ -1682,6 +1745,17 @@ CREATE TABLE `recompensa_usuario` (
   `idDonacion` int(11) NOT NULL,
   `estadoEntrega` enum('Pendiente','En Proceso','Entregado') NOT NULL DEFAULT 'Pendiente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `recompensa_usuario`
+--
+
+INSERT INTO `recompensa_usuario` (`idRecompensaUsuario`, `idRecompensa`, `idUsuario`, `idDonacion`, `estadoEntrega`) VALUES
+(5, 18, 79, 11, 'Pendiente'),
+(6, 18, 79, 11, 'Pendiente'),
+(7, 18, 80, 12, 'Pendiente'),
+(8, 18, 79, 11, 'Pendiente'),
+(9, 18, 79, 11, 'Pendiente');
 
 -- --------------------------------------------------------
 
@@ -1876,7 +1950,7 @@ ALTER TABLE `actualizacion`
 -- AUTO_INCREMENT de la tabla `donacion`
 --
 ALTER TABLE `donacion`
-  MODIFY `idDonacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idDonacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
@@ -1894,7 +1968,7 @@ ALTER TABLE `metodo_pago`
 -- AUTO_INCREMENT de la tabla `pago`
 --
 ALTER TABLE `pago`
-  MODIFY `idPago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idPago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
@@ -1918,7 +1992,7 @@ ALTER TABLE `recompensa`
 -- AUTO_INCREMENT de la tabla `recompensa_usuario`
 --
 ALTER TABLE `recompensa_usuario`
-  MODIFY `idRecompensaUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idRecompensaUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `riesgo`
